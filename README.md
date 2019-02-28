@@ -1,4 +1,3 @@
-# 九
-## [kyu:]
+# 九 components
 
-Components
+[kyu:] Components
