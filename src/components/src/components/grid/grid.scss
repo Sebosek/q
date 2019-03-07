@@ -1,0 +1,13 @@
+@import "@q/styles/scss/mixins/variables";
+@import "@q/styles/scss/mixins/grid";
+
+:host {
+    @include grid();
+}
+
+@each $gutter in $_gutters {
+    :host(.gutter-#{$gutter}) ::slotted(q-column) {
+        padding-left: $gutter * 1px;
+        padding-right: $gutter * 1px;
+    }
+}

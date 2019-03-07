@@ -1,0 +1,26 @@
+%column {
+    box-sizing: border-box;
+    display: block;
+    position: relative;
+}
+
+@mixin column($width: 1) {
+    @extend %column;
+    @include column-width($width);
+}
+
+@mixin column-width($width) {
+    @if $width == 1 {
+        flex-grow: 1;
+    } @else {
+        flex: 0 0 $width * 1%;
+    }
+}
+
+@mixin column-push($offset) {
+    left: $offset * 1%;
+}
+
+@mixin column-pull($offset) {
+    right: $offset * 1%;
+}
