@@ -1,3 +1,9 @@
+/**
+ * Grid system
+ */
+/**
+ * Typography
+ */
 .col, .col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10, .col-11, .col-12 {
   box-sizing: border-box;
   display: block;
@@ -248,3 +254,77 @@
     flex: 0 0 91.66667%; }
   .col-lg-12 {
     flex: 0 0 100%; } }
+
+:root {
+  --q-font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Ubuntu, 'Helvetica Neue', Arial, sans-serif;
+  --q-base-text-size: 14px;
+  --q-text-scale-ratio: 1.2;
+  --q-base-line-height: 1.5;
+  --q-title-1-size: calc(1em * var(--q-text-scale-ratio) * var(--q-text-scale-ratio) * var(--q-text-scale-ratio) * var(--q-text-scale-ratio));
+  --q-title-2-size: calc(1em * var(--q-text-scale-ratio) * var(--q-text-scale-ratio) * var(--q-text-scale-ratio));
+  --q-title-3-size: calc(1em * var(--q-text-scale-ratio) * var(--q-text-scale-ratio));
+  --q-title-4-size: calc(1em * var(--q-text-scale-ratio));
+  --q-note-size: calc(1em / var(--q-text-scale-ratio))
+; }
+
+html {
+  font-size: 12px; }
+
+body {
+  font-size: var(--q-base-text-size); }
+
+h1,
+.h1 {
+  line-height: var(--q-base-line-height);
+  font-family: var(--q-font-family);
+  font-size: var(--q-title-1-size);
+  font-weight: 600;
+  margin: 48px 0 0 0; }
+
+h2,
+.h2 {
+  line-height: var(--q-base-line-height);
+  font-family: var(--q-font-family);
+  font-size: var(--q-title-2-size);
+  font-weight: 500;
+  margin: 36px 0 0 0; }
+
+h3,
+.h3 {
+  line-height: var(--q-base-line-height);
+  font-family: var(--q-font-family);
+  font-size: var(--q-title-3-size);
+  font-weight: 500;
+  margin: 24px 0 0 0; }
+
+h4,
+.h4 {
+  line-height: var(--q-base-line-height);
+  font-family: var(--q-font-family);
+  font-size: var(--q-title-4-size);
+  font-weight: 500;
+  margin: 24px 0 0 0; }
+
+p {
+  line-height: 24px;
+  font-family: var(--q-font-family);
+  font-size: var(--q-base-text-size);
+  font-weight: 400;
+  margin: 12px 0 12px 0;
+  overflow-wrap: break-word; }
+
+small,
+.note {
+  line-height: var(--q-base-line-height);
+  font-family: var(--q-font-family);
+  font-size: var(--q-note-size);
+  font-weight: 400;
+  margin: 12px 0 12px 0; }
+
+label,
+.label {
+  line-height: var(--q-base-line-height);
+  font-family: var(--q-font-family);
+  font-size: var(--q-base-text-size);
+  font-weight: 400;
+  margin: 0 0 12px 0; }

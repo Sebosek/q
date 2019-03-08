@@ -2,7 +2,7 @@ import { Component, Prop } from '@stencil/core';
 import { cols } from './column.cols';
 
 @Component({
-  tag: 'q-column',
+  tag: 'q-grid-column',
   styleUrl: 'column.scss',
   shadow: true
 })

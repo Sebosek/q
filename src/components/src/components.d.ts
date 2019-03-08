@@ -11,11 +11,14 @@ import '@stencil/core';
 import {
   cols,
 } from './components/column/column.cols';
+import {
+  level,
+} from './components/title/title.size';
 
 
 export namespace Components {
 
-  interface QColumn {
+  interface QGridColumn {
     /**
     * Defines general column size
     */
@@ -37,7 +40,7 @@ export namespace Components {
     */
     'sizeXs': cols | undefined;
   }
-  interface QColumnAttributes extends StencilHTMLAttributes {
+  interface QGridColumnAttributes extends StencilHTMLAttributes {
     /**
     * Defines general column size
     */
@@ -63,54 +66,38 @@ export namespace Components {
   interface QGrid {}
   interface QGridAttributes extends StencilHTMLAttributes {}
 
-  interface MyComponent {
+  interface QTitle {
     /**
-    * The first name
+    * Defines general column size
     */
-    'first': string;
-    /**
-    * The last name
-    */
-    'last': string;
-    /**
-    * The middle name
-    */
-    'middle': string;
+    'level': level;
   }
-  interface MyComponentAttributes extends StencilHTMLAttributes {
+  interface QTitleAttributes extends StencilHTMLAttributes {
     /**
-    * The first name
+    * Defines general column size
     */
-    'first'?: string;
-    /**
-    * The last name
-    */
-    'last'?: string;
-    /**
-    * The middle name
-    */
-    'middle'?: string;
+    'level'?: level;
   }
 }
 
 declare global {
   interface StencilElementInterfaces {
-    'QColumn': Components.QColumn;
+    'QGridColumn': Components.QGridColumn;
     'QGrid': Components.QGrid;
-    'MyComponent': Components.MyComponent;
+    'QTitle': Components.QTitle;
   }
 
   interface StencilIntrinsicElements {
-    'q-column': Components.QColumnAttributes;
+    'q-grid-column': Components.QGridColumnAttributes;
     'q-grid': Components.QGridAttributes;
-    'my-component': Components.MyComponentAttributes;
+    'q-title': Components.QTitleAttributes;
   }
 
 
-  interface HTMLQColumnElement extends Components.QColumn, HTMLStencilElement {}
-  var HTMLQColumnElement: {
-    prototype: HTMLQColumnElement;
-    new (): HTMLQColumnElement;
+  interface HTMLQGridColumnElement extends Components.QGridColumn, HTMLStencilElement {}
+  var HTMLQGridColumnElement: {
+    prototype: HTMLQGridColumnElement;
+    new (): HTMLQGridColumnElement;
   };
 
   interface HTMLQGridElement extends Components.QGrid, HTMLStencilElement {}
@@ -119,22 +106,22 @@ declare global {
     new (): HTMLQGridElement;
   };
 
-  interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {}
-  var HTMLMyComponentElement: {
-    prototype: HTMLMyComponentElement;
-    new (): HTMLMyComponentElement;
+  interface HTMLQTitleElement extends Components.QTitle, HTMLStencilElement {}
+  var HTMLQTitleElement: {
+    prototype: HTMLQTitleElement;
+    new (): HTMLQTitleElement;
   };
 
   interface HTMLElementTagNameMap {
-    'q-column': HTMLQColumnElement
+    'q-grid-column': HTMLQGridColumnElement
     'q-grid': HTMLQGridElement
-    'my-component': HTMLMyComponentElement
+    'q-title': HTMLQTitleElement
   }
 
   interface ElementTagNameMap {
-    'q-column': HTMLQColumnElement;
+    'q-grid-column': HTMLQGridColumnElement;
     'q-grid': HTMLQGridElement;
-    'my-component': HTMLMyComponentElement;
+    'q-title': HTMLQTitleElement;
   }
 
 

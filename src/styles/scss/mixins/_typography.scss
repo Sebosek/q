@@ -1,0 +1,36 @@
+@mixin font($font-size: var(--q-base-text-size), $margin: 0 0 20px 0, $weight: 400, $line-height: var(--q-base-line-height), $font-family: var(--q-font-family)) {
+    line-height: $line-height;
+    font-family: $font-family;
+    font-size: $font-size;
+    font-weight: $weight;
+    margin: $margin;
+}
+
+@mixin title-1() {
+    @include font(var(--q-title-1-size), 48px 0 0 0, 600);
+}
+
+@mixin title-2() {
+    @include font(var(--q-title-2-size), 36px 0 0 0, 500);
+}
+
+@mixin title-3() {
+    @include font(var(--q-title-3-size), 24px 0 0 0, 500);
+}
+
+@mixin title-4() {
+    @include font(var(--q-title-4-size), 24px 0 0 0, 500);
+}
+
+@mixin paregraph() {
+    @include font(var(--q-base-text-size), 12px 0 12px 0, 400, 24px);
+    overflow-wrap: break-word;
+}
+
+@mixin note() {
+    @include font(var(--q-note-size), 12px 0 12px 0);
+}
+
+@mixin label() {
+    @include font(var(--q-base-text-size), 0 0 12px 0, 400);
+}
