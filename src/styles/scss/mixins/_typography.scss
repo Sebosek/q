@@ -1,36 +1,70 @@
-@mixin font($font-size: var(--q-base-text-size), $margin: 0 0 20px 0, $weight: 400, $line-height: var(--q-base-line-height), $font-family: var(--q-font-family)) {
+@import "variables";
+
+@mixin font(
+    $font-size: $_font-size-base, 
+    $margin: #{$_vertical-rhythm} 0 0 0, 
+    $weight: 400, 
+    $line-height: $_font-size-base)
+{
     line-height: $line-height;
-    font-family: $font-family;
+    font-family: $_font-family;
     font-size: $font-size;
     font-weight: $weight;
     margin: $margin;
 }
 
 @mixin title-1() {
-    @include font(var(--q-title-1-size), 48px 0 0 0, 600);
+    @include font(
+        #{$_font-size-title-1}, 
+        calc(2 * #{$_vertical-rhythm}) 0 0 0, 
+        600
+    );
 }
 
 @mixin title-2() {
-    @include font(var(--q-title-2-size), 36px 0 0 0, 500);
+    @include font(
+        #{$_font-size-title-2}, 
+        calc(1.5 * #{$_vertical-rhythm}) 0 0 0, 
+        500
+    );
 }
 
 @mixin title-3() {
-    @include font(var(--q-title-3-size), 24px 0 0 0, 500);
+    @include font(
+        #{$_font-size-title-3}, 
+        #{$_vertical-rhythm} 0 0 0, 
+        500
+    );
 }
 
 @mixin title-4() {
-    @include font(var(--q-title-4-size), 24px 0 0 0, 500);
+    @include font(
+        #{$_font-size-title-4}, 
+        #{$_vertical-rhythm} 0 0 0, 
+        500
+    );
 }
 
 @mixin paregraph() {
-    @include font(var(--q-base-text-size), 12px 0 12px 0, 400, 24px);
-    overflow-wrap: break-word;
+    @include font(
+        #{$_font-size-base}, 
+        calc(#{$_vertical-rhythm} / 2) 0 calc(#{$_vertical-rhythm} / 2), 
+        400, 
+        24px / $_font-size
+    );
 }
 
 @mixin note() {
-    @include font(var(--q-note-size), 12px 0 12px 0);
+    @include font(
+        #{$_font-size-note}, 
+        calc(#{$_vertical-rhythm} / 2) 0 calc(#{$_vertical-rhythm} / 2) 0
+    );
 }
 
 @mixin label() {
-    @include font(var(--q-base-text-size), 0 0 12px 0, 400);
+    @include font(
+        #{$_font-size-base}, 
+        0 0 calc(#{$_vertical-rhythm} / 2) 0, 
+        400
+    );
 }

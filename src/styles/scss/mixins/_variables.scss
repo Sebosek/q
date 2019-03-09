@@ -14,3 +14,20 @@ $_breakpoints: (
 /**
  * Typography
  */
+$_font-family--def: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Ubuntu, 'Helvetica Neue', Arial, sans-serif";
+$_font-scale-ratio--def: 1.2;
+$_font-size-base--def: 1em;
+$_font-line-height--def: 1.5;
+
+$_font-family: var(--q-font-family, #{$_font-family--def});
+$_font-size: 14px;
+$_font-size-base: var(--q-font-base-size, 1em);
+$_font-scale-ratio: var(--q-font-scale-ratio, $_font-scale-ratio--def);
+$_font-size-title-1: calc(1em * #{$_font-scale-ratio} * #{$_font-scale-ratio} * #{$_font-scale-ratio} * #{$_font-scale-ratio});
+$_font-size-title-2: calc(1em * #{$_font-scale-ratio} * #{$_font-scale-ratio} * #{$_font-scale-ratio});
+$_font-size-title-3: calc(1em * #{$_font-scale-ratio} * #{$_font-scale-ratio});
+$_font-size-title-4: calc(1em * #{$_font-scale-ratio});
+$_font-size-note: calc(1em / #{$_font-scale-ratio});
+
+$_vertical-rhythm--def: 24px;
+$_vertical-rhythm: var(--q-vertical-rhythm, $_vertical-rhythm--def);

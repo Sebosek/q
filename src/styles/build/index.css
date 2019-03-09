@@ -255,76 +255,87 @@
   .col-lg-12 {
     flex: 0 0 100%; } }
 
+/**
+ * Grid system
+ */
+/**
+ * Typography
+ */
+/**
+ * Grid system
+ */
+/**
+ * Typography
+ */
 :root {
+  --q-vertical-rhythm: 24px;
   --q-font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Ubuntu, 'Helvetica Neue', Arial, sans-serif;
-  --q-base-text-size: 14px;
-  --q-text-scale-ratio: 1.2;
-  --q-base-line-height: 1.5;
-  --q-title-1-size: calc(1em * var(--q-text-scale-ratio) * var(--q-text-scale-ratio) * var(--q-text-scale-ratio) * var(--q-text-scale-ratio));
-  --q-title-2-size: calc(1em * var(--q-text-scale-ratio) * var(--q-text-scale-ratio) * var(--q-text-scale-ratio));
-  --q-title-3-size: calc(1em * var(--q-text-scale-ratio) * var(--q-text-scale-ratio));
-  --q-title-4-size: calc(1em * var(--q-text-scale-ratio));
-  --q-note-size: calc(1em / var(--q-text-scale-ratio))
-; }
+  --q-font-base-size: 1em;
+  --q-font-scale-ratio: 1.2;
+  --q-font-base-line-height: 1.5;
+  --q-title-1-size: calc(1em * var(--q-font-scale-ratio, 1.2) * var(--q-font-scale-ratio, 1.2) * var(--q-font-scale-ratio, 1.2) * var(--q-font-scale-ratio, 1.2));
+  --q-title-2-size: calc(1em * var(--q-font-scale-ratio, 1.2) * var(--q-font-scale-ratio, 1.2) * var(--q-font-scale-ratio, 1.2));
+  --q-title-3-size: calc(1em * var(--q-font-scale-ratio, 1.2) * var(--q-font-scale-ratio, 1.2));
+  --q-title-4-size: calc(1em * var(--q-font-scale-ratio, 1.2));
+  --q-note-size: calc(1em / var(--q-font-scale-ratio, 1.2)); }
 
 html {
-  font-size: 12px; }
+  font-size: var(--q-vertical-rhythm, 24px); }
 
 body {
-  font-size: var(--q-base-text-size); }
+  font-size: 14px; }
 
 h1,
 .h1 {
-  line-height: var(--q-base-line-height);
-  font-family: var(--q-font-family);
-  font-size: var(--q-title-1-size);
+  line-height: var(--q-font-base-size, 1em);
+  font-family: var(--q-font-family, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Ubuntu, 'Helvetica Neue', Arial, sans-serif);
+  font-size: calc(1em * var(--q-font-scale-ratio, 1.2) * var(--q-font-scale-ratio, 1.2) * var(--q-font-scale-ratio, 1.2) * var(--q-font-scale-ratio, 1.2));
   font-weight: 600;
-  margin: 48px 0 0 0; }
+  margin: calc(2 * var(--q-vertical-rhythm, 24px)) 0 0 0; }
 
 h2,
 .h2 {
-  line-height: var(--q-base-line-height);
-  font-family: var(--q-font-family);
-  font-size: var(--q-title-2-size);
+  line-height: var(--q-font-base-size, 1em);
+  font-family: var(--q-font-family, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Ubuntu, 'Helvetica Neue', Arial, sans-serif);
+  font-size: calc(1em * var(--q-font-scale-ratio, 1.2) * var(--q-font-scale-ratio, 1.2) * var(--q-font-scale-ratio, 1.2));
   font-weight: 500;
-  margin: 36px 0 0 0; }
+  margin: calc(1.5 * var(--q-vertical-rhythm, 24px)) 0 0 0; }
 
 h3,
 .h3 {
-  line-height: var(--q-base-line-height);
-  font-family: var(--q-font-family);
-  font-size: var(--q-title-3-size);
+  line-height: var(--q-font-base-size, 1em);
+  font-family: var(--q-font-family, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Ubuntu, 'Helvetica Neue', Arial, sans-serif);
+  font-size: calc(1em * var(--q-font-scale-ratio, 1.2) * var(--q-font-scale-ratio, 1.2));
   font-weight: 500;
-  margin: 24px 0 0 0; }
+  margin: var(--q-vertical-rhythm, 24px) 0 0 0; }
 
 h4,
 .h4 {
-  line-height: var(--q-base-line-height);
-  font-family: var(--q-font-family);
-  font-size: var(--q-title-4-size);
+  line-height: var(--q-font-base-size, 1em);
+  font-family: var(--q-font-family, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Ubuntu, 'Helvetica Neue', Arial, sans-serif);
+  font-size: calc(1em * var(--q-font-scale-ratio, 1.2));
   font-weight: 500;
-  margin: 24px 0 0 0; }
+  margin: var(--q-vertical-rhythm, 24px) 0 0 0; }
 
 p {
-  line-height: 24px;
-  font-family: var(--q-font-family);
-  font-size: var(--q-base-text-size);
+  line-height: 1.71429;
+  font-family: var(--q-font-family, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Ubuntu, 'Helvetica Neue', Arial, sans-serif);
+  font-size: var(--q-font-base-size, 1em);
   font-weight: 400;
-  margin: 12px 0 12px 0;
-  overflow-wrap: break-word; }
+  margin: calc(var(--q-vertical-rhythm, 24px) / 2) 0 calc(var(--q-vertical-rhythm, 24px) / 2); }
 
 small,
 .note {
-  line-height: var(--q-base-line-height);
-  font-family: var(--q-font-family);
-  font-size: var(--q-note-size);
+  line-height: var(--q-font-base-size, 1em);
+  font-family: var(--q-font-family, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Ubuntu, 'Helvetica Neue', Arial, sans-serif);
+  font-size: calc(1em / var(--q-font-scale-ratio, 1.2));
   font-weight: 400;
-  margin: 12px 0 12px 0; }
+  margin: calc(var(--q-vertical-rhythm, 24px) / 2) 0 calc(var(--q-vertical-rhythm, 24px) / 2) 0; }
 
 label,
 .label {
-  line-height: var(--q-base-line-height);
-  font-family: var(--q-font-family);
-  font-size: var(--q-base-text-size);
+  line-height: var(--q-font-base-size, 1em);
+  font-family: var(--q-font-family, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Ubuntu, 'Helvetica Neue', Arial, sans-serif);
+  font-size: var(--q-font-base-size, 1em);
   font-weight: 400;
-  margin: 0 0 12px 0; }
+  margin: 0 0 calc(var(--q-vertical-rhythm, 24px) / 2) 0; }

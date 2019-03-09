@@ -1,24 +1,26 @@
 @import "mixins/typography";
+@import "mixins/variables";
 
 :root {
-    --q-font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Ubuntu, 'Helvetica Neue', Arial, sans-serif;
-    --q-base-text-size: 14px;
-    --q-text-scale-ratio: 1.2;
-    --q-base-line-height: 1.5;
+    --q-vertical-rhythm: #{$_vertical-rhythm--def};
+    --q-font-family: #{$_font-family--def};
+    --q-font-base-size: #{$_font-size-base--def};
+    --q-font-scale-ratio: #{$_font-scale-ratio--def};
+    --q-font-base-line-height: #{$_font-line-height--def};
 
-    --q-title-1-size: calc(1em * var(--q-text-scale-ratio) * var(--q-text-scale-ratio) * var(--q-text-scale-ratio) * var(--q-text-scale-ratio));
-    --q-title-2-size: calc(1em * var(--q-text-scale-ratio) * var(--q-text-scale-ratio) * var(--q-text-scale-ratio));
-    --q-title-3-size: calc(1em * var(--q-text-scale-ratio) * var(--q-text-scale-ratio));
-    --q-title-4-size: calc(1em * var(--q-text-scale-ratio));
-    --q-note-size: calc(1em / var(--q-text-scale-ratio))
+    --q-title-1-size: #{$_font-size-title-1};
+    --q-title-2-size: #{$_font-size-title-2};
+    --q-title-3-size: #{$_font-size-title-3};
+    --q-title-4-size: #{$_font-size-title-4};
+    --q-note-size: #{$_font-size-note};
 }
 
 html {
-    font-size: 12px;
+    font-size: $_vertical-rhythm;
 }
 
 body {
-    font-size: var(--q-base-text-size);
+    font-size: $_font-size;
 }
 
 h1, 
