@@ -17,7 +17,8 @@
     @include font(
         #{$_font-size-title-1}, 
         calc(2 * #{$_vertical-rhythm}) 0 0 0, 
-        600
+        600,
+        normal
     );
 }
 
@@ -25,7 +26,8 @@
     @include font(
         #{$_font-size-title-2}, 
         calc(1.5 * #{$_vertical-rhythm}) 0 0 0, 
-        500
+        500,
+        normal
     );
 }
 
@@ -33,7 +35,8 @@
     @include font(
         #{$_font-size-title-3}, 
         #{$_vertical-rhythm} 0 0 0, 
-        500
+        500,
+        normal
     );
 }
 
@@ -41,7 +44,8 @@
     @include font(
         #{$_font-size-title-4}, 
         #{$_vertical-rhythm} 0 0 0, 
-        500
+        500,
+        normal
     );
 }
 
