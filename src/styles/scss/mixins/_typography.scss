@@ -45,7 +45,7 @@
     );
 }
 
-@mixin paregraph() {
+@mixin paragraph() {
     @include font(
         #{$_font-size-base}, 
         calc(#{$_vertical-rhythm} / 2) 0 calc(#{$_vertical-rhythm} / 2), 
