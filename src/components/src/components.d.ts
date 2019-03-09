@@ -12,6 +12,9 @@ import {
   cols,
 } from './components/column/column.cols';
 import {
+  gutter,
+} from './components/grid/grid.gutter';
+import {
   level,
 } from './components/title/title.size';
 
@@ -19,6 +22,14 @@ import {
 export namespace Components {
 
   interface QGridColumn {
+    /**
+    * Defines column pulling
+    */
+    'pull': cols | undefined;
+    /**
+    * Defines column pushing
+    */
+    'push': cols | undefined;
     /**
     * Defines general column size
     */
@@ -42,6 +53,14 @@ export namespace Components {
   }
   interface QGridColumnAttributes extends StencilHTMLAttributes {
     /**
+    * Defines column pulling
+    */
+    'pull'?: cols | undefined;
+    /**
+    * Defines column pushing
+    */
+    'push'?: cols | undefined;
+    /**
     * Defines general column size
     */
     'size'?: cols | undefined;
@@ -63,8 +82,21 @@ export namespace Components {
     'sizeXs'?: cols | undefined;
   }
 
-  interface QGrid {}
-  interface QGridAttributes extends StencilHTMLAttributes {}
+  interface QGrid {
+    'gutter': gutter | undefined;
+  }
+  interface QGridAttributes extends StencilHTMLAttributes {
+    'gutter'?: gutter | undefined;
+  }
+
+  interface QLabel {}
+  interface QLabelAttributes extends StencilHTMLAttributes {}
+
+  interface QNote {}
+  interface QNoteAttributes extends StencilHTMLAttributes {}
+
+  interface QParagraph {}
+  interface QParagraphAttributes extends StencilHTMLAttributes {}
 
   interface QTitle {
     /**
@@ -84,12 +116,18 @@ declare global {
   interface StencilElementInterfaces {
     'QGridColumn': Components.QGridColumn;
     'QGrid': Components.QGrid;
+    'QLabel': Components.QLabel;
+    'QNote': Components.QNote;
+    'QParagraph': Components.QParagraph;
     'QTitle': Components.QTitle;
   }
 
   interface StencilIntrinsicElements {
     'q-grid-column': Components.QGridColumnAttributes;
     'q-grid': Components.QGridAttributes;
+    'q-label': Components.QLabelAttributes;
+    'q-note': Components.QNoteAttributes;
+    'q-paragraph': Components.QParagraphAttributes;
     'q-title': Components.QTitleAttributes;
   }
 
@@ -106,6 +144,24 @@ declare global {
     new (): HTMLQGridElement;
   };
 
+  interface HTMLQLabelElement extends Components.QLabel, HTMLStencilElement {}
+  var HTMLQLabelElement: {
+    prototype: HTMLQLabelElement;
+    new (): HTMLQLabelElement;
+  };
+
+  interface HTMLQNoteElement extends Components.QNote, HTMLStencilElement {}
+  var HTMLQNoteElement: {
+    prototype: HTMLQNoteElement;
+    new (): HTMLQNoteElement;
+  };
+
+  interface HTMLQParagraphElement extends Components.QParagraph, HTMLStencilElement {}
+  var HTMLQParagraphElement: {
+    prototype: HTMLQParagraphElement;
+    new (): HTMLQParagraphElement;
+  };
+
   interface HTMLQTitleElement extends Components.QTitle, HTMLStencilElement {}
   var HTMLQTitleElement: {
     prototype: HTMLQTitleElement;
@@ -115,12 +171,18 @@ declare global {
   interface HTMLElementTagNameMap {
     'q-grid-column': HTMLQGridColumnElement
     'q-grid': HTMLQGridElement
+    'q-label': HTMLQLabelElement
+    'q-note': HTMLQNoteElement
+    'q-paragraph': HTMLQParagraphElement
     'q-title': HTMLQTitleElement
   }
 
   interface ElementTagNameMap {
     'q-grid-column': HTMLQGridColumnElement;
     'q-grid': HTMLQGridElement;
+    'q-label': HTMLQLabelElement;
+    'q-note': HTMLQNoteElement;
+    'q-paragraph': HTMLQParagraphElement;
     'q-title': HTMLQTitleElement;
   }
 

@@ -1,4 +1,5 @@
-import { Component } from '@stencil/core';
+import { Component, Prop } from '@stencil/core';
+import { gutter } from './grid.gutter';
 
 @Component({
   tag: 'q-grid',
@@ -6,6 +7,18 @@ import { Component } from '@stencil/core';
   shadow: true
 })
 export class Grid {
+  @Prop({ reflectToAttr: true, mutable: true }) gutter: gutter | undefined;
+
+  hostData() {
+    if (!this.gutter) {
+      return ({});
+    }
+
+    return ({
+      'class': `gutter-${this.gutter}`,
+    });
+  }
+
   render() {
     return <slot></slot>;
   }

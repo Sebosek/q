@@ -1,6 +1,6 @@
 {
   "name": "@q/components",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Q components",
   "module": "dist/esm/index.js",
   "main": "dist/index.js",
@@ -17,7 +17,7 @@
     "test.watch": "stencil test --spec --e2e --watchAll"
   },
   "dependencies": {
-    "@q/styles": "^0.1.0"
+    "@q/styles": "^0.2.2"
   },
   "devDependencies": {
     "@stencil/core": "~0.16.2",

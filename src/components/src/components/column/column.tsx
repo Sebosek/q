@@ -37,6 +37,18 @@ export class Column {
    */
   @Prop({ reflectToAttr: true, mutable: true }) sizeLg: cols | undefined;
 
+  /**
+   * Defines column pulling
+   * @type {cols}
+   */
+  @Prop({ reflectToAttr: true, mutable: true }) pull: cols | undefined;
+
+  /**
+   * Defines column pushing
+   * @type {cols}
+   */
+  @Prop({ reflectToAttr: true, mutable: true }) push: cols | undefined;
+
   private buildSizes() {
     const result = {};
     const sizes = [
@@ -45,6 +57,8 @@ export class Column {
       { key: `col-sm-${this.sizeSm}`, fnc: () => this.sizeSm },
       { key: `col-md-${this.sizeMd}`, fnc: () => this.sizeMd },
       { key: `col-lg-${this.sizeLg}`, fnc: () => this.sizeLg },
+      { key: `col-pull-${this.pull}`, fnc: () => this.pull },
+      { key: `col-push-${this.push}`, fnc: () => this.push },
     ];
 
     for (let item of sizes) {
