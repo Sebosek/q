@@ -16,7 +16,7 @@ import {
 } from './components/grid/grid.gutter';
 import {
   level,
-} from './components/title/title.size';
+} from './components/title/title.level';
 
 
 export namespace Components {

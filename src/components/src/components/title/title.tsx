@@ -1,5 +1,5 @@
 import { Component, Prop } from '@stencil/core';
-import { level } from './title.size';
+import { level } from './title.level';
 
 @Component({
   tag: 'q-title',
