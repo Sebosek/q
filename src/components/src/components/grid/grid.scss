@@ -6,7 +6,7 @@
 }
 
 @each $gutter in $_gutters {
-    :host(.gutter-#{$gutter}) ::slotted(q-column) {
+    :host(.gutter-#{$gutter}) ::slotted(q-grid-column) {
         padding-left: $gutter * 1px;
         padding-right: $gutter * 1px;
     }

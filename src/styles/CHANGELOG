@@ -1,0 +1,11 @@
+# 九 Components
+
+Keep a changelog. https://keepachangelog.com/en/1.0.0/
+
+## 0.2.0 - 0.2.2
+- Fixed `line-height` in headers. (_sebastian.busek_)
+- Fixed typo in `paragraph` component. (_sebastian.busek_)
+- Added typography. (_sebastian.busek_)
+
+## 0.1.0
+- Added grid system. (_sebastian.busek_)

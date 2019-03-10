@@ -6,8 +6,12 @@
   <title>Stencil Component Starter</title>
   <script src="/build/q-components.js"></script>
   <style type="text/css">
-    .row {
-      margin-bottom: 20px;
+    html {
+      font-size: var(--q-vertical-rhythm, 24px);
+    }
+
+    body {
+      font-size: 14px;
     }
 
     .box {
@@ -21,13 +25,29 @@
   </style>
 </head>
 <body>
+  <q-grid gutter="12">
+      <q-grid-column size="8" push="2">
+          <q-title>Typography</q-title>
+          <q-paragraph>
+              Vestibulum hendrerit habitasse tristique faucibus nisl neque felis proin etiam gravida et parturient dictumst a mi nam at parturient viverra fermentum ullamcorper a ac. Parturient non suspendisse a aliquam vestibulum consectetur a parturient curabitur consectetur tincidunt hendrerit a molestie a ornare habitasse cubilia. A a justo id dictumst massa vestibulum viverra volutpat enim mauris suspendisse donec nisi suspendisse blandit vestibulum dapibus ridiculus elit.
+          </q-paragraph>
+          <q-paragraph>
+              Leo a facilisis sem parturient at scelerisque nam ultricies purus enim arcu a vivamus condimentum ligula netus torquent at class erat consequat justo. At a semper a hendrerit nullam a curae viverra eu.
+          </q-paragraph>
+          <q-title level="2">Subtitle</q-title>
+          <q-paragraph>
+              Consectetur varius facilisi condimentum lacinia a enim consectetur porttitor viverra malesuada volutpat cursus sociosqu vestibulum justo himenaeos ullamcorper senectus a. Tincidunt tristique adipiscing nisl a curae platea condimentum ante hac faucibus dictumst lorem consectetur accumsan parturient commodo habitant iaculis libero curae vestibulum per et condimentum quisque vestibulum dolor ac. Ullamcorper a purus vitae.
+          </q-paragraph>
+          <q-note>Hello out there.</q-note>
+      </q-grid-column>
+  </q-grid>
 
-  <my-component first="Stencil" last="'Don't call me a framework' JS"></my-component>
-  <q-grid class="gutter-8">
-    <q-column size-md="6" size-lg="4"><div class="box">Column</div></q-column>
-    <q-column size-md="6" size-lg="4"><div class="box">Column</div></q-column>
-    <q-column size-md="6" size-lg="4"><div class="box">Column</div></q-column>
-    <q-column size-md="6" size-lg="12"><div class="box">Column</div></q-column>
+  <q-title>Grid system</q-title>
+  <q-grid gutter="12">
+    <q-grid-column size-md="6" size-lg="4"><div class="box">Column</div></q-grid-column>
+    <q-grid-column size-md="6" size-lg="4"><div class="box">Column</div></q-grid-column>
+    <q-grid-column size-md="6" size-lg="4"><div class="box">Column</div></q-grid-column>
+    <q-grid-column size-md="6" size-lg="12"><div class="box">Column</div></q-grid-column>
   </q-grid>
 
 </body>
