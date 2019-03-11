@@ -18,7 +18,8 @@
   margin: 0;
   padding: 0;
   max-width: 1200px;
-  zoom: 1; }
+  zoom: 1;
+  width: 100%; }
 
 .row.row--gutter-4 .col, .row.row--gutter-4 .col-1, .row.row--gutter-4 .col-2, .row.row--gutter-4 .col-3, .row.row--gutter-4 .col-4, .row.row--gutter-4 .col-5, .row.row--gutter-4 .col-6, .row.row--gutter-4 .col-7, .row.row--gutter-4 .col-8, .row.row--gutter-4 .col-9, .row.row--gutter-4 .col-10, .row.row--gutter-4 .col-11, .row.row--gutter-4 .col-12 {
   padding-left: 4px;
@@ -287,7 +288,7 @@ body {
 
 h1,
 .h1 {
-  line-height: var(--q-font-base-size, 1em);
+  line-height: normal;
   font-family: var(--q-font-family, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Ubuntu, 'Helvetica Neue', Arial, sans-serif);
   font-size: calc(1em * var(--q-font-scale-ratio, 1.2) * var(--q-font-scale-ratio, 1.2) * var(--q-font-scale-ratio, 1.2) * var(--q-font-scale-ratio, 1.2));
   font-weight: 600;
@@ -295,7 +296,7 @@ h1,
 
 h2,
 .h2 {
-  line-height: var(--q-font-base-size, 1em);
+  line-height: normal;
   font-family: var(--q-font-family, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Ubuntu, 'Helvetica Neue', Arial, sans-serif);
   font-size: calc(1em * var(--q-font-scale-ratio, 1.2) * var(--q-font-scale-ratio, 1.2) * var(--q-font-scale-ratio, 1.2));
   font-weight: 500;
@@ -303,7 +304,7 @@ h2,
 
 h3,
 .h3 {
-  line-height: var(--q-font-base-size, 1em);
+  line-height: normal;
   font-family: var(--q-font-family, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Ubuntu, 'Helvetica Neue', Arial, sans-serif);
   font-size: calc(1em * var(--q-font-scale-ratio, 1.2) * var(--q-font-scale-ratio, 1.2));
   font-weight: 500;
@@ -311,7 +312,7 @@ h3,
 
 h4,
 .h4 {
-  line-height: var(--q-font-base-size, 1em);
+  line-height: normal;
   font-family: var(--q-font-family, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Ubuntu, 'Helvetica Neue', Arial, sans-serif);
   font-size: calc(1em * var(--q-font-scale-ratio, 1.2));
   font-weight: 500;
@@ -339,3 +340,44 @@ label,
   font-size: var(--q-font-base-size, 1em);
   font-weight: 400;
   margin: 0 0 calc(var(--q-vertical-rhythm, 24px) / 2) 0; }
+
+/**
+ * Grid system
+ */
+/**
+ * Typography
+ */
+/**
+ * Grid system
+ */
+/**
+ * Typography
+ */
+button,
+.button {
+  align-items: center;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer !important;
+  display: inline-flex;
+  height: 40px;
+  max-width: 320px;
+  padding: 0 24px;
+  line-height: 1;
+  font-family: var(--q-font-family, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Ubuntu, 'Helvetica Neue', Arial, sans-serif);
+  font-size: var(--q-font-base-size, 1em);
+  font-weight: 400;
+  margin: 0; }
+  button > span,
+  .button > span {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap; }
+  button--ghost,
+  .button--ghost {
+    background: transparent;
+    border: 1px solid gray; }
+  button--flat,
+  .button--flat {
+    background: transparent;
+    border: none; }

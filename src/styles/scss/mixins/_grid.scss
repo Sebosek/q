@@ -8,6 +8,7 @@
     padding: 0;
     max-width: $grid-width;
     zoom: 1;
+    width: 100%;
 }
 
 @mixin grid-gutter($gutter, $col: ".col", $columns: $_columns) {

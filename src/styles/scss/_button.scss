@@ -1,0 +1,37 @@
+@import "mixins/variables";
+@import "mixins/typography";
+
+$_button-spacing: 24px;
+$_button-height: 40px;
+$_button-border-radius: 4px;
+$_button-max-width: 320px;
+
+button,
+.button {
+    align-items: center;
+    border: none;
+    border-radius: $_button-border-radius;
+    cursor: pointer !important;
+    display: inline-flex;
+    height: $_button-height;
+    max-width: $_button-max-width;
+    padding: 0 $_button-spacing;
+    
+    @include font($_font-size-base, 0, 400, 1);
+
+    & > span {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    &--ghost {
+        background: transparent;
+        border: 1px solid gray;
+    }
+
+    &--flat {
+        background: transparent;
+        border: none;
+    }
+}
