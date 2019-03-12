@@ -1,5 +1,6 @@
 @import "mixins/variables";
 @import "mixins/typography";
+@import "mixins/colors";
 
 $_button-spacing: 24px;
 $_button-height: 40px;
@@ -9,15 +10,21 @@ $_button-max-width: 320px;
 button,
 .button {
     align-items: center;
-    border: none;
+    background: $_color-gray--light;
+    border: 1px solid $_color-gray--light;
     border-radius: $_button-border-radius;
-    cursor: pointer !important;
+    color: $_color-blackish--normal;
     display: inline-flex;
     height: $_button-height;
     max-width: $_button-max-width;
     padding: 0 $_button-spacing;
     
     @include font($_font-size-base, 0, 400, 1);
+
+    &:hover {
+        background: $_color-gray--normal;
+        border: 1px solid $_color-gray--normal;
+    }
 
     & > span {
         overflow: hidden;
@@ -27,11 +34,33 @@ button,
 
     &--ghost {
         background: transparent;
-        border: 1px solid gray;
+        border: 1px solid $_color-gray--light;
+
+        &[disabled] {
+            background: transparent;
+        }
+
+        &:hover:not([disabled]) {
+            background: $_color-gray--lightest;
+            border: 1px solid $_color-gray--light;
+        }
     }
 
     &--flat {
         background: transparent;
-        border: none;
+        border: 1px solid transparent;
+
+        &:hover {
+            background: $_color-gray--lightest;
+            border: 1px solid $_color-gray--lightest;
+        }
+    }
+
+    &[disabled],
+    &.disabled {
+        background: $_color-gray--lighter;
+        border: 1px solid $_color-gray--lighter;
+        color: $_color-blackish--lightest;
+        cursor: not-allowed !important;
     }
 }

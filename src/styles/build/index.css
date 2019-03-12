@@ -356,9 +356,10 @@ label,
 button,
 .button {
   align-items: center;
-  border: none;
+  background: #e3e3e3;
+  border: 1px solid #e3e3e3;
   border-radius: 4px;
-  cursor: pointer !important;
+  color: #121212;
   display: inline-flex;
   height: 40px;
   max-width: 320px;
@@ -368,6 +369,10 @@ button,
   font-size: var(--q-font-base-size, 1em);
   font-weight: 400;
   margin: 0; }
+  button:hover,
+  .button:hover {
+    background: #d6d6d6;
+    border: 1px solid #d6d6d6; }
   button > span,
   .button > span {
     overflow: hidden;
@@ -376,8 +381,26 @@ button,
   button--ghost,
   .button--ghost {
     background: transparent;
-    border: 1px solid gray; }
+    border: 1px solid #e3e3e3; }
+    button--ghost[disabled],
+    .button--ghost[disabled] {
+      background: transparent; }
+    button--ghost:hover:not([disabled]),
+    .button--ghost:hover:not([disabled]) {
+      background: #f7f7f7;
+      border: 1px solid #e3e3e3; }
   button--flat,
   .button--flat {
     background: transparent;
-    border: none; }
+    border: 1px solid transparent; }
+    button--flat:hover,
+    .button--flat:hover {
+      background: #f7f7f7;
+      border: 1px solid #f7f7f7; }
+  button[disabled], button.disabled,
+  .button[disabled],
+  .button.disabled {
+    background: #f0f0f0;
+    border: 1px solid #f0f0f0;
+    color: #666666;
+    cursor: not-allowed !important; }

@@ -1,47 +1,69 @@
 $_color-white: #fff;
 $_color-blackish: #02040F; 
 
-$_color-gray--100: #EFEEEA;
-$_color-gray--200: #EFEEEA;
-$_color-gray--300: #EFEEEA;
-$_color-gray--400: #EFEEEA;
-$_color-gray--500: #EFEEEA;
-$_color-gray--600: #EFEEEA;
-$_color-gray--700: #EFEEEA;
-$_color-gray--800: #EFEEEA;
+$_color-gray: (
+    'lightest': hsl(0, 0, 97),
+    'lighter': hsl(0, 0, 94),
+    'light': hsl(0, 0, 89),
+    'normal': hsl(0, 0, 84),
+    'dark': hsl(0, 0, 78),
+    'darker': hsl(0, 0, 70),
+    'darkest': hsl(0, 0, 60),
+);
+$_color-blackish: (
+    'lightest': hsl(0, 0, 40),
+    'lighter': hsl(0, 0, 25),
+    'light': hsl(0, 0, 15),
+    'normal': hsl(0, 0, 7),
+    'dark': hsl(0, 0, 5),
+    'darker': hsl(0, 0, 3),
+    'darkest': hsl(0, 0, 0),
+);
 
-$_color-primary--100: #EFEEEA;
-$_color-primary--200: #EFEEEA;
-$_color-primary--300: #EFEEEA;
-$_color-primary--400: #EFEEEA;
-$_color-primary--500: #EFEEEA;
-$_color-primary--600: #EFEEEA;
-$_color-primary--700: #EFEEEA;
-$_color-primary--800: #EFEEEA;
+$_color-gray--lightest: map-get($_color-gray, 'lightest');
+$_color-gray--lighter: map-get($_color-gray, 'lighter');
+$_color-gray--light: map-get($_color-gray, 'light');
+$_color-gray--normal: map-get($_color-gray, 'normal');
+$_color-gray--dark: map-get($_color-gray, 'dark');
+$_color-gray--darker: map-get($_color-gray, 'darker');
+$_color-gray--darkest: map-get($_color-gray, 'darkest');
 
-$_color-success--100: #EFEEEA;
-$_color-success--200: #EFEEEA;
-$_color-success--300: #EFEEEA;
-$_color-success--400: #EFEEEA;
-$_color-success--500: #EFEEEA;
-$_color-success--600: #EFEEEA;
-$_color-success--700: #EFEEEA;
-$_color-success--800: #EFEEEA;
+$_color-blackish--lightest: map-get($_color-blackish, 'lightest');
+$_color-blackish--lighter: map-get($_color-blackish, 'lighter');
+$_color-blackish--light: map-get($_color-blackish, 'light');
+$_color-blackish--normal: map-get($_color-blackish, 'normal');
+$_color-blackish--dark: map-get($_color-blackish, 'dark');
+$_color-blackish--darker: map-get($_color-blackish, 'darker');
+$_color-blackish--darkest: map-get($_color-blackish, 'darkest');
 
-$_color-danger--100: #EFEEEA;
-$_color-danger--200: #EFEEEA;
-$_color-danger--300: #EFEEEA;
-$_color-danger--400: #EFEEEA;
-$_color-danger--500: #EFEEEA;
-$_color-danger--600: #EFEEEA;
-$_color-danger--700: #EFEEEA;
-$_color-danger--800: #EFEEEA;
+$_color-primary--lightest: #EFEEEA;
+$_color-primary--lighter: #EFEEEA;
+$_color-primary--light: #EFEEEA;
+$_color-primary--normal: #EFEEEA;
+$_color-primary--dark: #EFEEEA;
+$_color-primary--darker: #EFEEEA;
+$_color-primary--darkest: #EFEEEA;
 
-$_color-warning--100: #EFEEEA;
-$_color-warning--200: #EFEEEA;
-$_color-warning--300: #EFEEEA;
-$_color-warning--400: #EFEEEA;
-$_color-warning--500: #EFEEEA;
-$_color-warning--600: #EFEEEA;
-$_color-warning--700: #EFEEEA;
-$_color-warning--800: #EFEEEA;
+$_color-success--lightest: #EFEEEA;
+$_color-success--lighter: #EFEEEA;
+$_color-success--light: #EFEEEA;
+$_color-success--normal: #EFEEEA;
+$_color-success--dark: #EFEEEA;
+$_color-success--darker: #EFEEEA;
+$_color-success--darkest: #EFEEEA;
+
+$_color-danger--lightest: #EFEEEA;
+$_color-danger--lighter: #EFEEEA;
+$_color-danger--light: #EFEEEA;
+$_color-danger--normal: #EFEEEA;
+$_color-danger--dark: #EFEEEA;
+$_color-danger--darker: #EFEEEA;
+$_color-danger--darkest: #EFEEEA;
+
+$_color-warning--lightest: #EFEEEA;
+$_color-warning--lighter: #EFEEEA;
+$_color-warning--light: #EFEEEA;
+$_color-warning--normal: #EFEEEA;
+$_color-warning--dark: #EFEEEA;
+$_color-warning--darker: #EFEEEA;
+$_color-warning--darkest: #EFEEEA;
