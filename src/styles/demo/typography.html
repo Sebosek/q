@@ -6,23 +6,13 @@
 
     <title>Q styles</title>
     <link rel="stylesheet" href="../build/index.css" />
-    <style type="text/css">
-      .box {
-        align-items: center;
-        background: hsla(320, 100%, 50%, 0.15);
-        border: 1px solid hsla(320, 100%, 50%, 0.15);
-        display: flex;
-        height: 60px;
-        justify-content: center;
-      }
-    </style>
   </head>
   <body>
     <article style="align-items: center; display: flex; flex-direction: column;">
         <div class="row row--gutter-12">
             <div class="col-8 col-push-2">
                 <h1>Buttons</h1>
-                <button>
+                <button class="button">
                     <span>Vestibulum hendrerit habitasse tristique faucibus nisl neque felis proin etiam gravida et parturient.</span>
                 </button>
                 <button disabled>
@@ -41,6 +31,9 @@
                 <button class="button--flat">
                     <span>Vestibulum hendrerit habitasse tristique faucibus nisl neque felis proin etiam gravida et parturient.</span>
                 </button>
+                <button class="button--flat" disabled>
+                  <span>Vestibulum hendrerit habitasse tristique faucibus nisl neque felis proin etiam gravida et parturient.</span>
+              </button>
             </div>
         </div>
         <div class="row row--gutter-12">
@@ -71,4 +64,5 @@
         </div>
     </article>
   </body>
+  <script> </script>
 </html>

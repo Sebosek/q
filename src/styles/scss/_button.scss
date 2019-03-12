@@ -16,14 +16,32 @@ button,
     color: $_color-blackish--normal;
     display: inline-flex;
     height: $_button-height;
+    margin: 0;
     max-width: $_button-max-width;
     padding: 0 $_button-spacing;
+    position: relative;
+    transition: .2s;
+    user-select: none;
+    text-transform: none;
+    //will-change: backgound-color, border, box-shadow;
     
     @include font($_font-size-base, 0, 400, 1);
+    -webkit-appearance: button;
 
-    &:hover {
-        background: $_color-gray--normal;
+    &:hover,
+    &.hovered {
+        background-color: $_color-gray--normal;
         border: 1px solid $_color-gray--normal;
+        
+    }
+
+    &:active {
+        background-color: $_color-gray--dark;
+    }
+
+    &:focus {
+        box-shadow: 0 0 0 2px $_color-gray--light;
+        outline: none;
     }
 
     & > span {
@@ -33,32 +51,41 @@ button,
     }
 
     &--ghost {
-        background: transparent;
+        background-color: transparent;
         border: 1px solid $_color-gray--light;
 
-        &[disabled] {
-            background: transparent;
+        &[disabled],
+        &.disabled {
+            background-color: transparent;
+            color: $_color-gray--darker;
         }
 
         &:hover:not([disabled]) {
-            background: $_color-gray--lightest;
+            background-color: $_color-gray--lightest;
             border: 1px solid $_color-gray--light;
         }
     }
 
     &--flat {
-        background: transparent;
+        background-color: transparent;
         border: 1px solid transparent;
 
-        &:hover {
-            background: $_color-gray--lightest;
+        &[disabled],
+        &.disabled {
+            background-color: transparent;
+            border: 1px solid transparent;
+            color: $_color-gray--darker;
+        }
+
+        &:hover:not([disabled]) {
+            background-color: $_color-gray--lightest;
             border: 1px solid $_color-gray--lightest;
         }
     }
 
     &[disabled],
     &.disabled {
-        background: $_color-gray--lighter;
+        background-color: $_color-gray--lighter;
         border: 1px solid $_color-gray--lighter;
         color: $_color-blackish--lightest;
         cursor: not-allowed !important;
