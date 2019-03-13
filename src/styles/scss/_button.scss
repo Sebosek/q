@@ -8,10 +8,11 @@ $_button-border-radius: 4px;
 $_button-max-width: 320px;
 
 button,
+input[type=button],
 .button {
     align-items: center;
-    background: $_color-gray--light;
-    border: 1px solid $_color-gray--light;
+    background: $_color-gray--normal;
+    border: 1px solid $_color-gray--normal;
     border-radius: $_button-border-radius;
     color: $_color-blackish--normal;
     display: inline-flex;
@@ -23,25 +24,33 @@ button,
     transition: .2s;
     user-select: none;
     text-transform: none;
-    //will-change: backgound-color, border, box-shadow;
+    -webkit-appearance: button;
     
     @include font($_font-size-base, 0, 400, 1);
-    -webkit-appearance: button;
-
-    &:hover,
-    &.hovered {
-        background-color: $_color-gray--normal;
-        border: 1px solid $_color-gray--normal;
-        
-    }
-
-    &:active {
+    
+    &:active,
+    &.active {
         background-color: $_color-gray--dark;
     }
 
-    &:focus {
-        box-shadow: 0 0 0 2px $_color-gray--light;
+    &:hover,
+    &.hovered {
+        background-color: $_color-gray--light;
+        border: 1px solid $_color-gray--light;
+    }
+
+    &:focus,
+    &.focused {
+        box-shadow: 0 0 0 2px $_color-gray--light; // rewrite to shadows
         outline: none;
+    }
+
+    &:disabled,
+    &.disabled {
+        background-color: $_color-gray--lighter;
+        border: 1px solid $_color-gray--lighter;
+        color: $_color-blackish--lightest;
+        cursor: not-allowed !important;
     }
 
     & > span {
@@ -54,15 +63,15 @@ button,
         background-color: transparent;
         border: 1px solid $_color-gray--light;
 
-        &[disabled],
+        &:disabled,
         &.disabled {
             background-color: transparent;
             color: $_color-gray--darker;
         }
 
-        &:hover:not([disabled]) {
-            background-color: $_color-gray--lightest;
-            border: 1px solid $_color-gray--light;
+        &:hover:not(:disabled) {
+            background-color: transparent;
+            border: 1px solid $_color-gray--dark;
         }
     }
 
@@ -82,12 +91,30 @@ button,
             border: 1px solid $_color-gray--lightest;
         }
     }
+}
 
-    &[disabled],
-    &.disabled {
-        background-color: $_color-gray--lighter;
-        border: 1px solid $_color-gray--lighter;
-        color: $_color-blackish--lightest;
-        cursor: not-allowed !important;
+button[type=submit],
+button.primary {
+    background: $_color-primary--normal;
+    border: 1px solid $_color-primary--normal;
+    color: $_color-blackish--normal;
+
+    &:active,
+    &.active {
+        background-color: $_color-primary--dark;
+    }
+
+    &:hover,
+    &.hovered {
+        background-color: $_color-primary--light;
+        border: 1px solid $_color-primary--light;
+    }
+
+    &:focus,
+    &.focused {
+        background-color: $_color-primary--dark;
+        border: 1px solid $_color-primary--dark;
+        box-shadow: 0 0 0 2px $_color-primary--lighter;
+        outline: none;
     }
 }
