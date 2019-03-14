@@ -41,7 +41,7 @@ export class Button {
   private buttonData() {
     return ({
       'class': { ...this.buildRole(), ...this.buildGhost() },
-      'type': this.buildType(),
+      'type': this.buildType.bind(this)(),
     });
   }
 
