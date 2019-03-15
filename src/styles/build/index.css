@@ -333,13 +333,14 @@ small,
   font-weight: 400;
   margin: calc(var(--q-vertical-rhythm, 24px) / 2) 0 calc(var(--q-vertical-rhythm, 24px) / 2) 0; }
 
-label,
-.label {
+label > span,
+.label > span {
+  display: block;
   line-height: var(--q-font-base-size, 1em);
   font-family: var(--q-font-family, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Ubuntu, 'Helvetica Neue', Arial, sans-serif);
   font-size: var(--q-font-base-size, 1em);
-  font-weight: 400;
-  margin: 0 0 calc(var(--q-vertical-rhythm, 24px) / 2) 0; }
+  font-weight: 500;
+  margin: 0 0 4px 0; }
 
 /**
  * Grid system
@@ -586,3 +587,55 @@ button.button--danger {
     button.button--danger.button--ghost.hovered:not(:disabled) {
       background-color: transparent;
       border: 1px solid #bf1d25; }
+
+.input {
+  align-items: center;
+  background: #fff;
+  border: 1px solid #e3e3e3;
+  border-radius: 4px;
+  display: inline-flex;
+  padding: 0;
+  position: relative;
+  transition: .2s;
+  line-height: 1;
+  font-family: var(--q-font-family, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Ubuntu, 'Helvetica Neue', Arial, sans-serif);
+  font-size: 1em;
+  font-weight: 400;
+  margin: 0; }
+  .input__addon {
+    background: #e3e3e3;
+    align-self: stretch;
+    display: inline-flex;
+    align-items: center;
+    padding: 0 8px; }
+  .input__envelope {
+    align-items: baseline;
+    background: #fff;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1; }
+    .input__envelope .input__addon {
+      background: #fff; }
+    .input__envelope > .input__addon:first-child {
+      border-radius: 4px 0 0 4px; }
+    .input__envelope > .input__addon:last-child {
+      border-radius: 0 4px 4px 0; }
+    .input__envelope > input {
+      border: none;
+      background-color: transparent;
+      color: #121212;
+      padding: 12px 8px;
+      line-height: 1;
+      font-family: var(--q-font-family, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Ubuntu, 'Helvetica Neue', Arial, sans-serif);
+      font-size: 1em;
+      font-weight: 400;
+      margin: 0; }
+      .input__envelope > input:focus {
+        outline: none; }
+  .input--focus, .input:focus, .input:focus-within {
+    border-color: #dec9d7; }
+    .input--focus .input__addon, .input:focus .input__addon, .input:focus-within .input__addon {
+      background-color: #dec9d7; }
+    .input--focus .input__envelope .input__addon, .input:focus .input__envelope .input__addon, .input:focus-within .input__envelope .input__addon {
+      background: transparent; }

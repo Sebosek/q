@@ -66,9 +66,12 @@
 }
 
 @mixin label() {
-    @include font(
-        #{$_font-size-base}, 
-        0 0 calc(#{$_vertical-rhythm} / 2) 0, 
-        400
-    );
+    & > span {
+        display: block;
+        @include font(
+            #{$_font-size-base}, 
+            0 0 4px 0, 
+            500
+        );
+    }
 }

@@ -89,6 +89,14 @@ $_color-primary--dark: map-get($_color-primary, 'dark');
 $_color-primary--darker: map-get($_color-primary, 'darker');
 $_color-primary--darkest: map-get($_color-primary, 'darkest');
 
+$_color-secondary--lightest: map-get($_color-secondary, 'lightest');
+$_color-secondary--lighter: map-get($_color-secondary, 'lighter');
+$_color-secondary--light: map-get($_color-secondary, 'light');
+$_color-secondary--normal: map-get($_color-secondary, 'normal');
+$_color-secondary--dark: map-get($_color-secondary, 'dark');
+$_color-secondary--darker: map-get($_color-secondary, 'darker');
+$_color-secondary--darkest: map-get($_color-secondary, 'darkest');
+
 $_color-success--lightest: #EFEEEA;
 $_color-success--lighter: #EFEEEA;
 $_color-success--light: #EFEEEA;
