@@ -3,6 +3,7 @@
 Keep a changelog. https://keepachangelog.com/en/1.0.0/
 
 ## 0.4.0
+- Added shadows definition. (_sebastian.busek_)
 - Added `input` component styles. (_sebastian.busek_)
 
 ## 0.3.0

@@ -1,3 +1,30 @@
 :root {
     --q-baseline: 24px;
+    --q-gap: $gap--def;
+    --q-space: $space--def;
 }
+
+$gap--def: 4px;
+$space--def: 16px;
+
+$gap: val(--q-gap, 4px);
+$space: val(--q-space, 16px);
+
+$spaces: (
+    '0.25': calc(#{$space} * .25), // 4px
+    '0.5': calc(#{$space} * .5),   // 8px
+    '0.75': calc(#{$space} * .75), // 12px
+    '1.0': $space,                 // 16px
+    '1.5': calc(#{$space} * 1.5),  // 24px
+    '2.0': calc(#{$space} * 2),    // 32px
+    '3.0': calc(#{$space} * 3),    // 48px
+    '4.0': calc(#{$space} * 4),    // 64px
+    '6.0': calc(#{$space} * 6),    // 96px
+    '8.0': calc(#{$space} * 8),    // 128px
+    '12.0': calc(#{$space} * 12),  // 192px
+    '16.0': calc(#{$space} * 16),  // 256px
+    '24.0': calc(#{$space} * 24),  // 384px
+    '32.0': calc(#{$space} * 32),  // 512px
+    '40.0': calc(#{$space} * 40),  // 640px
+    '48.0': calc(#{$space} * 48),  // 768px
+);

@@ -1,0 +1,19 @@
+@import "colors";
+
+@mixin shadow-large {
+    $shadow: change-color($_color-blackish--darkest, $alpha: .1);
+
+    box-shadow: 0 10px 30px -7.5px $shadow, 0 5px 50px 0 $shadow;
+}
+
+@mixin shadow-normal {
+    $shadow: change-color($_color-blackish--darkest, $alpha: .07);
+
+    box-shadow: 0 10px 15px -5px $shadow, 0 0 40px 0 $shadow;
+}
+
+@mixin shadow-small() {
+    $shadow: change-color($_color-blackish--darkest, $alpha: .07);
+
+    box-shadow: 0 5px 10px -5px $shadow, 0 5px 20px 0 $shadow;
+}

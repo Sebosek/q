@@ -5,7 +5,7 @@
 
 $_button-spacing: 24px;
 $_button-height: 40px;
-$_button-border-radius: 4px;
+$_button-border-radius: 2px;
 $_button-max-width: 320px;
 $_button-focus-shadow-size: 4px;
 
@@ -13,7 +13,7 @@ button,
 input[type=button],
 .button {
     @include base-button((
-        'border-radius': 4px,
+        'border-radius': $_button-border-radius,
         'horizontal-spacing': 24px,
         'shadow-size': 4px,
     ), (
@@ -39,7 +39,7 @@ button[type=submit],
 input[type=submit],
 button.button--primary {
     @include base-button((
-        'border-radius': 4px,
+        'border-radius': $_button-border-radius,
         'horizontal-spacing': 24px,
         'shadow-size': 4px,
     ), (
@@ -65,7 +65,7 @@ button[type=reset],
 input[type=reset],
 button.button--danger {
     @include base-button((
-        'border-radius': 4px,
+        'border-radius': $_button-border-radius,
         'horizontal-spacing': 24px,
         'shadow-size': 4px,
     ), (

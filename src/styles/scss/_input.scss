@@ -1,12 +1,13 @@
 @import "mixins/colors";
+@import "mixins/shadows";
 
-$border-radius: 4px;
+$border-radius: 2px;
 $background: $_color-white;
-$border-color: $_color-gray--light;
+$border-color: $_color-gray--lighter;
 $color: $_color-blackish--normal;
 $horizontal-spacing: 24px;
 $focus__border: $_color-secondary--lighter;
-$focus__shadow: $_color-secondaty--lighter;
+$focus__shadow: $_color-secondary--lighter;
 
 .input {
     align-items: center;
@@ -17,15 +18,24 @@ $focus__shadow: $_color-secondaty--lighter;
     padding: 0;
     position: relative;
     transition: .2s;
-
     @include font(1em, 0, 400, 1);
+    
+    margin-bottom: $horizontal-spacing;
 
     &__addon {
-        background: $border-color;
+        background: transparent;
         align-self: stretch;
         display: inline-flex;
         align-items: center;
         padding: 0 8px;
+
+        &:first-child {
+            border-right: 1px solid $border-color;
+        }
+
+        &:last-child {
+            border-left: 1px solid $border-color;
+        }
     }
 
     &__envelope {
@@ -42,10 +52,12 @@ $focus__shadow: $_color-secondaty--lighter;
 
         & > .input__addon:first-child {
             border-radius: $border-radius 0 0 $border-radius;
+            border-right: 1px solid transparent;
         }
 
         & > .input__addon:last-child {
             border-radius: 0 $border-radius $border-radius 0;
+            border-left: 1px solid transparent;
         }
 
         & > input {
@@ -65,11 +77,10 @@ $focus__shadow: $_color-secondaty--lighter;
     &--focus,
     &:focus,
     &:focus-within {
-        box-shadow: 0 0 0 4px $focus__shadow;
-        border-color: $focus__border;
+        @include shadow-small();
 
         .input__addon {
-            background-color: $focus__border;
+            // background-color: $focus__border;
         }
 
         .input__envelope {
