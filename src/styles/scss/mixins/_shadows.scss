@@ -1,19 +1,32 @@
 @import "colors";
 
-@mixin shadow-large {
-    $shadow: change-color($_color-blackish--darkest, $alpha: .1);
+@function make-large-shadow($color, $alpha) {
+    @return change-color($color, $alpha: $alpha);
+}
+
+@function make-standard-shadow($color, $alpha) {
+    @return change-color($color, $alpha: $alpha);
+}
+
+@mixin shadow-large($color: $_color-blackish--darkest, $alpha: .1) {
+    $shadow: make-large-shadow($color, $alpha);
 
     box-shadow: 0 10px 30px -7.5px $shadow, 0 5px 50px 0 $shadow;
 }
 
-@mixin shadow-normal {
-    $shadow: change-color($_color-blackish--darkest, $alpha: .07);
+@mixin shadow-normal(
+    $throw-color: $_color-blackish--darkest, 
+    $throw-alpha: .07,
+    $spread-color: $_color-blackish--darkest,
+    $spread-alpha: .07) {
+    $throw-shadow: make-standard-shadow($throw-color, $throw-alpha);
+    $spread-shadow: make-standard-shadow($spread-color, $spread-alpha);
 
-    box-shadow: 0 10px 15px -5px $shadow, 0 0 40px 0 $shadow;
+    box-shadow: 0 10px 15px -5px $throw-shadow, 0 0 40px 0 $spread-shadow;
 }
 
-@mixin shadow-small() {
-    $shadow: change-color($_color-blackish--darkest, $alpha: .07);
+@mixin shadow-small($color: $_color-blackish--darkest, $alpha: .07) {
+    $shadow: make-standard-shadow($color, $alpha);
 
     box-shadow: 0 5px 10px -5px $shadow, 0 5px 20px 0 $shadow;
 }

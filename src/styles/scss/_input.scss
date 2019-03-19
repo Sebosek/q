@@ -1,5 +1,6 @@
 @import "mixins/colors";
 @import "mixins/shadows";
+@import "spacing";
 
 $border-radius: 2px;
 $background: $_color-white;
@@ -21,6 +22,7 @@ $focus__shadow: $_color-secondary--lighter;
     @include font(1em, 0, 400, 1);
     
     margin-bottom: $horizontal-spacing;
+    width: map-get($spaces, '32.0');
 
     &__addon {
         background: transparent;
@@ -65,6 +67,7 @@ $focus__shadow: $_color-secondary--lighter;
             background-color: transparent;
             color: $color;
             padding: 12px 8px;
+            width: 100%;
 
             @include font(1em, 0, 400, 1);
     
@@ -77,11 +80,7 @@ $focus__shadow: $_color-secondary--lighter;
     &--focus,
     &:focus,
     &:focus-within {
-        @include shadow-small();
-
-        .input__addon {
-            // background-color: $focus__border;
-        }
+        @include shadow-small($_color-gray--darkest);
 
         .input__envelope {
             .input__addon {

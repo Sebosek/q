@@ -1,38 +1,140 @@
-@mixin base-button($button, $button--def, $ghost--def) {
+@import "shadows";
+@import "colors";
+@import "variables";
+
+
+//
+// BUTTON
+$button: (
+    'background': transparent,
+    'border-radius': 2px,
+    'color': $_color-blackish--normal,
+    'throw-shadow-color': transparent,
+    'throw-shadow-alpha': 0,
+    'spread-shadow-color': transparent,
+    'spread-shadow-alpha': 0,
+    'border': 1px solid transparent,
+);
+
+$button-disabled: map-merge($button, (
+    'color': $_color-gray--normal,
+));
+
+$button-focus: map-merge($button, (
+    'throw-shadow-color': $_color-gray--darkest,
+    'throw-shadow-alpha': .07,
+    'spread-shadow-color': $_color-gray--darkest,
+    'spread-shadow-alpha': .07,
+));
+
+$button-hover: map-merge($button, (
+    'background': $_color-gray--lightest,
+    'border': 1px solid $_color-gray--lightest,
+));
+
+//
+// PRIMARY BUTTON
+$primary: map-merge($button, (
+    'background': $_color-primary--normal,
+    'color': $_color-white,
+    'border': 1px solid $_color-primary--normal,
+));
+
+$primary-disabled: map-merge($primary, (
+    'color': $_color-gray--normal,
+));
+
+$primary-focus: map-merge($primary, (
+    'background': $_color-primary--dark,
+    'throw-shadow-color': $_color-primary--darkest,
+    'throw-shadow-alpha': .4,
+    'spread-shadow-color': $_color-primary--darkest,
+    'spread-shadow-alpha': .1,
+));
+
+$primary-hover: map-merge($primary, (
+    'background': $_color-primary--light,
+    'border': 1px solid $_color-primary--light,
+));
+
+//
+// DANGER BUTTON
+$danger: map-merge($button, (
+    'background': $_color-danger--normal,
+    'color': $_color-white,
+    'border': 1px solid $_color-danger--normal,
+));
+
+$danger-disabled: map-merge($danger, (
+    'color': $_color-gray--normal,
+));
+
+$danger-focus: map-merge($danger, (
+    'background': $_color-danger--dark,
+    'throw-shadow-color': $_color-danger--darkest,
+    'throw-shadow-alpha': .2,
+    'spread-shadow-color': $_color-danger--darkest,
+    'spread-shadow-alpha': .07,
+));
+
+$danger-hover: map-merge($danger, (
+    'background': $_color-danger--light,
+    'border': 1px solid $_color-danger--light,
+));
+
+$_button--background: var(--q-button--background, map-get($button, 'background'));
+$_button--border-radius: var(--q-button--border-radius, map-get($button, 'border-radius'));
+$_button--color: var(--q-button--color, map-get($button, 'color'));
+$_button--throw-shadow-color: var(--q-button--throw-shadow-color, map-get($button, 'throw-shadow-color'));
+$_button--throw-shadow-alpha: var(--q-button--throw-shadow-alpha, map-get($button, 'throw-shadow-alpha'));
+$_button--spread-shadow-color: var(--q-button--spread-shadow-color, map-get($button, 'spread-shadow-color'));
+$_button--spread-shadow-alpha: var(--q-button--spread-shadow-alpha, map-get($button, 'spread-shadow-alpha'));
+
+
+@mixin button-configuration($config) {
+    background: map-get($config, 'background');
+    border: 1px solid map-get($config, 'background');
+    border-radius: map-get($config, 'border-radius');
+    color: map-get($config, 'color');
+
+    @include shadow-normal(
+        map-get($config, 'throw-shadow-color'),
+        map-get($config, 'throw-shadow-alpha'),
+        map-get($config, 'spread-shadow-color'),
+        map-get($config, 'spread-shadow-alpha'),
+    );
+}
+
+@mixin base-button($config, $disabled, $focus, $hover) {
     align-items: center;
-    background: map-get($button--def, 'background');
-    border: 1px solid map-get($button--def, 'background');
-    border-radius: map-get($button, 'border-radius');
-    color: map-get($button--def, 'color');
     display: inline-flex;
     margin: 0;
     max-width: 320px;
-    padding: 1em map-get($button, 'horizontal-spacing');
+    padding: 1em #{$_vertical-rhythm};
     position: relative;
     transition: .2s;
     user-select: none;
     text-transform: none;
     -webkit-appearance: button;
-    
+
+    @include button-configuration($config);
     @include font(1em, 0, 500, 1);
     
     &:disabled,
     &.disabled {
-        color: map-get($button--def, 'disabled__color');
         cursor: not-allowed !important;
+        @include button-configuration($disabled);
     }
 
     &:focus,
     &.focused {
-        background-color: map-get($button--def, 'focus__background');
-        box-shadow: 0 0 0 map-get($button, 'shadow-size') map-get($button--def, 'focus__shadow-color'); // rewrite to shadows
         outline: none;
+        @include button-configuration($focus);
     }
 
     &:hover:not(:disabled),
     &.hovered:not(:disabled) {
-        background-color: map-get($button--def, 'hover__background');
-        border: 1px solid map-get($button--def, 'hover__background');
+        @include button-configuration($hover);
     }
 
     & > span {
@@ -41,27 +143,27 @@
         white-space: nowrap;
     }
 
-    &.button--ghost {
-        background-color: map-get($ghost--def, 'background');
-        border: 1px solid map-get($ghost--def, 'border');
-        color: map-get($ghost--def, 'color');
+    // &.button--ghost {
+    //     background-color: map-get($ghost--def, 'background');
+    //     border: 1px solid map-get($ghost--def, 'border');
+    //     color: map-get($ghost--def, 'color');
 
-        &:disabled,
-        &.disabled {
-            background-color: map-get($ghost--def, 'disabled__background');
-            color: map-get($ghost--def, 'disabled__color');
-        }
+    //     &:disabled,
+    //     &.disabled {
+    //         background-color: map-get($ghost--def, 'disabled__background');
+    //         color: map-get($ghost--def, 'disabled__color');
+    //     }
 
-        &:focus,
-        &.focused {
-            box-shadow: 0 0 0 map-get($button, 'shadow-size') map-get($ghost--def, 'focus__shadow-color');
-            outline: none;
-        }
+    //     &:focus,
+    //     &.focused {
+    //         box-shadow: 0 0 0 map-get($button, 'shadow-size') map-get($ghost--def, 'focus__shadow-color');
+    //         outline: none;
+    //     }
 
-        &:hover:not(:disabled),
-        &.hovered:not(:disabled) {
-            background-color: map-get($ghost--def, 'hover__background');
-            border: 1px solid map-get($ghost--def, 'hover__border-color');
-        }
-    }
+    //     &:hover:not(:disabled),
+    //     &.hovered:not(:disabled) {
+    //         background-color: map-get($ghost--def, 'hover__background');
+    //         border: 1px solid map-get($ghost--def, 'hover__border-color');
+    //     }
+    // }
 }

@@ -1,15 +1,14 @@
-:root {
-    --q-baseline: 24px;
-    --q-gap: $gap--def;
-    --q-space: $space--def;
-}
-
 $gap--def: 4px;
 $space--def: 16px;
 
-$gap: val(--q-gap, 4px);
-$space: val(--q-space, 16px);
+:root {
+    --q-baseline: 24px;
+    --q-gap: #{$gap--def};
+    --q-space: #{$space--def};
+}
 
+$gap: var(--q-gap, 4px);
+$space: var(--q-space, 16px);
 $spaces: (
     '0.25': calc(#{$space} * .25), // 4px
     '0.5': calc(#{$space} * .5),   // 8px

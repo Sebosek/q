@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+
+    <title>Q styles</title>
+    <link rel="stylesheet" href="../build/index.css" />
+    <style type="text/css">
+        .row {
+          margin-bottom: 20px;
+        }
+  
+        .box {
+          display: block;
+          height: 60px;
+          width: 60px;
+          margin: 20px 0 40px;
+        }
+    </style>
+  </head>
+  <body>
+    <article style="align-items: center; display: flex; flex-direction: column;">
+        <div class="row row--gutter-12">
+            <div class="col-8 col-push-2">
+                <h1>A form</h1>
+                <label>
+                    <span>E-mail</span>
+                    <div class="input">
+                        <div class="input__envelope">
+                            <input type="text" placeholder="Your domain specific name">
+                        </div>
+                        <div class="input__addon">@sebastianbusek.cz</div>
+                    </div>
+                </label>
+                <label>
+                    <span>Password</span>
+                    <div class="input">
+                        <div class="input__envelope">
+                            <input type="password" placeholder="Secret password">
+                            <div class="input__addon">show</div>
+                        </div>
+                    </div>
+                </label>
+                <label>
+                    <span>Your full name</span>
+                    <div class="input">
+                        <div class="input__envelope">
+                            <input type="text" placeholder="Your bird name">
+                        </div>
+                    </div>
+                </label>
+                <label>
+                    <span>Job position</span>
+                    <div class="input">
+                        <div class="input__envelope">
+                            <input type="text">
+                        </div>
+                    </div>
+                </label>
+
+                <div>
+                    <button>
+                        <span>Back to the list.</span>
+                    </button>
+                    <button class="button--primary">
+                        <span>Submit the form</span>
+                    </button>
+                    <button class="button--danger">
+                        <span>Submit the form</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </article>
+  </body>
+  <script> </script>
+</html>
