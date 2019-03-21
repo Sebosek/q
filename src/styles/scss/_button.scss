@@ -3,32 +3,85 @@
 @import "mixins/colors";
 @import "mixins/button";
 
-// $_button-spacing: 24px;
-// $_button-height: 40px;
-// $_button-border-radius: 2px;
-// $_button-max-width: 320px;
-// $_button-focus-shadow-size: 4px;
+$button-configuration: (
+    '': $button,
+    'disabled': $button-disabled,
+    'focus': $button-focus,
+    'hover': $button-hover,
+);
+$ghost-configuration: (
+    '': $ghost,
+    'disabled': $ghost-disabled,
+    'focus': $ghost-focus,
+    'hover': $ghost-hover,
+);
+$primary-configuration: (
+    '': $primary,
+    'disabled': $primary-disabled,
+    'focus': $primary-focus,
+    'hover': $primary-hover,
+);
+$primary-ghost-configuration: (
+    '': $primary-ghost,
+    'disabled': $primary-ghost-disabled,
+    'focus': $primary-ghost-focus,
+    'hover': $primary-ghost-hover,
+);
+$danger-configuration: (
+    '': $danger,
+    'disabled': $danger-disabled,
+    'focus': $danger-focus,
+    'hover': $danger-hover,
+);
+$danger-ghost-configuration: (
+    '': $danger-ghost,
+    'disabled': $danger-ghost-disabled,
+    'focus': $danger-ghost-focus,
+    'hover': $danger-ghost-hover,
+);
+
+@mixin generate($map) {
+    @each $variant, $def in $map {
+        $type: "";
+        @if $variant != '' {
+            $type: ('-' + $variant);
+        }
+
+        @each $prop, $value in $def {
+            --q-button#{$type}--#{$prop}: #{$value};
+        }
+    }
+}
 
 :root {
-    @each $prop, $value in $button {
-        --q-button--#{$prop}: #{$value};
-    }
+    @include generate($button-configuration);
+    @include generate($ghost-configuration);
+    @include generate($primary-configuration);
+    @include generate($primary-ghost-configuration);
+    @include generate($danger-configuration);
+    @include generate($danger-ghost-configuration);
 }
 
 button,
 input[type=button],
 .button {
-    @include base-button($button, $button-disabled, $button-focus, $button-hover);
+    @include base-button($button, $button-disabled, $button-focus, $button-hover) {
+        @include ghost-button($ghost, $ghost-disabled, $ghost-focus, $ghost-hover);
+    }
 }
 
 button[type=submit],
 input[type=submit],
 button.button--primary {
-    @include base-button($primary, $primary-disabled, $primary-focus, $primary-hover);
+    @include base-button($primary, $primary-disabled, $primary-focus, $primary-hover) {
+        @include ghost-button($primary-ghost, $primary-ghost-disabled, $primary-ghost-focus, $primary-ghost-hover);
+    }
 }
 
 button[type=reset],
 input[type=reset],
 button.button--danger {
-    @include base-button($danger, $danger-disabled, $danger-focus, $danger-hover);
+    @include base-button($danger, $danger-disabled, $danger-focus, $danger-hover) {
+        @include ghost-button($danger-ghost, $danger-ghost-disabled, $danger-ghost-focus, $danger-ghost-hover);
+    }
 }
