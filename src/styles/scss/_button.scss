@@ -40,26 +40,34 @@ $danger-ghost-configuration: (
     'hover': $danger-ghost-hover,
 );
 
-@mixin generate($map) {
+@mixin generate($map, $type: "") {
+    @if $type != '' {
+        $type: ('-' + $type);
+    }
+
     @each $variant, $def in $map {
-        $type: "";
+        $modifier: "";
         @if $variant != '' {
-            $type: ('-' + $variant);
+            $modifier: ('-' + $variant);
         }
 
         @each $prop, $value in $def {
-            --q-button#{$type}--#{$prop}: #{$value};
+            --q-button#{$type}#{$modifier}--#{$prop}: #{$value};
         }
     }
 }
 
 :root {
-    @include generate($button-configuration);
-    @include generate($ghost-configuration);
-    @include generate($primary-configuration);
-    @include generate($primary-ghost-configuration);
-    @include generate($danger-configuration);
-    @include generate($danger-ghost-configuration);
+    // Following generates huge number of design tokens
+    // Do I need them all? Isn't --q-primary--normal instead --q-button-primary--background for primary button background enought?
+    // Commented till desicion will be made.
+
+    // @include generate($button-configuration);
+    // @include generate($ghost-configuration);
+    // @include generate($primary-configuration, 'primary');
+    // @include generate($primary-ghost-configuration, 'primary');
+    // @include generate($danger-configuration, 'danger');
+    // @include generate($danger-ghost-configuration, 'danger');
 }
 
 button,
