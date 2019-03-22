@@ -2,7 +2,8 @@
 
 Keep a changelog. https://keepachangelog.com/en/1.0.0/
 
-## 0.3.0
+## 0.3.0 - 0.3.1
+- Modified `ghost` property of `q-button` component. (_sebastian.busek_)
 - Added `q-button` component. (_sebastian.busek_)
 
 ## 0.2.0

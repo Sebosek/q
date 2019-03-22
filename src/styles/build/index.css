@@ -335,12 +335,31 @@ small,
 
 label,
 .label {
+  display: block;
   line-height: var(--q-font-base-size, 1em);
   font-family: var(--q-font-family, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Ubuntu, 'Helvetica Neue', Arial, sans-serif);
   font-size: var(--q-font-base-size, 1em);
-  font-weight: 400;
-  margin: 0 0 calc(var(--q-vertical-rhythm, 24px) / 2) 0; }
+  font-weight: 500;
+  margin: 0 0 4px 0; }
 
+.shadow-large {
+  transition: box-shadow .5s;
+  box-shadow: 0 10px 30px -7.5px rgba(0, 0, 0, 0.1), 0 5px 50px 0 rgba(0, 0, 0, 0.1); }
+
+.shadow-normal {
+  transition: box-shadow .5s;
+  box-shadow: 0 10px 15px -5px rgba(0, 0, 0, 0.07), 0 0 40px 0 rgba(0, 0, 0, 0.07); }
+
+.shadow-small {
+  transition: box-shadow .5s;
+  box-shadow: 0 5px 10px -5px rgba(0, 0, 0, 0.07), 0 5px 20px 0 rgba(0, 0, 0, 0.07); }
+
+/**
+ * Grid system
+ */
+/**
+ * Typography
+ */
 /**
  * Grid system
  */
@@ -357,19 +376,20 @@ button,
 input[type=button],
 .button {
   align-items: center;
-  background: transparent;
-  border: 1px solid transparent;
-  border-radius: 4px;
-  color: #121212;
   display: inline-flex;
   margin: 0;
   max-width: 320px;
-  padding: 1em 24px;
+  padding: 1em var(--q-vertical-rhythm, 24px);
   position: relative;
   transition: .2s;
   user-select: none;
   text-transform: none;
   -webkit-appearance: button;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 2px;
+  color: #121212;
+  box-shadow: 0 10px 15px -5px rgba(0, 0, 0, 0), 0 0 40px 0 rgba(0, 0, 0, 0);
   line-height: 1;
   font-family: var(--q-font-family, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Ubuntu, 'Helvetica Neue', Arial, sans-serif);
   font-size: 1em;
@@ -380,23 +400,33 @@ input[type=button],
   input[type=button].disabled,
   .button:disabled,
   .button.disabled {
+    cursor: not-allowed !important;
+    background: transparent;
+    border: 1px solid transparent;
+    border-radius: 2px;
     color: #d6d6d6;
-    cursor: not-allowed !important; }
+    box-shadow: 0 10px 15px -5px rgba(0, 0, 0, 0), 0 0 40px 0 rgba(0, 0, 0, 0); }
   button:focus, button.focused,
   input[type=button]:focus,
   input[type=button].focused,
   .button:focus,
   .button.focused {
-    background-color: transparent;
-    box-shadow: 0 0 0 4px #e3e3e3;
-    outline: none; }
+    outline: none;
+    background: transparent;
+    border: 1px solid transparent;
+    border-radius: 2px;
+    color: #121212;
+    box-shadow: 0 10px 15px -5px rgba(153, 153, 153, 0.07), 0 0 40px 0 rgba(153, 153, 153, 0.07); }
   button:hover:not(:disabled), button.hovered:not(:disabled),
   input[type=button]:hover:not(:disabled),
   input[type=button].hovered:not(:disabled),
   .button:hover:not(:disabled),
   .button.hovered:not(:disabled) {
-    background-color: #f7f7f7;
-    border: 1px solid #f7f7f7; }
+    background: #f7f7f7;
+    border: 1px solid #f7f7f7;
+    border-radius: 2px;
+    color: #121212;
+    box-shadow: 0 10px 15px -5px rgba(0, 0, 0, 0), 0 0 40px 0 rgba(0, 0, 0, 0); }
   button > span,
   input[type=button] > span,
   .button > span {
@@ -415,39 +445,44 @@ input[type=button],
     .button.button--ghost:disabled,
     .button.button--ghost.disabled {
       background-color: transparent;
+      border: 1px solid #e3e3e3;
       color: #b3b3b3; }
     button.button--ghost:focus, button.button--ghost.focused,
     input[type=button].button--ghost:focus,
     input[type=button].button--ghost.focused,
     .button.button--ghost:focus,
     .button.button--ghost.focused {
-      box-shadow: 0 0 0 4px #e3e3e3;
-      outline: none; }
+      outline: none;
+      background-color: transparent;
+      border: 1px solid #e3e3e3;
+      color: #121212; }
     button.button--ghost:hover:not(:disabled), button.button--ghost.hovered:not(:disabled),
     input[type=button].button--ghost:hover:not(:disabled),
     input[type=button].button--ghost.hovered:not(:disabled),
     .button.button--ghost:hover:not(:disabled),
     .button.button--ghost.hovered:not(:disabled) {
       background-color: transparent;
-      border: 1px solid #999999; }
+      border: 1px solid #e3e3e3;
+      color: #999999; }
 
 button[type=submit],
 input[type=submit],
 button.button--primary {
   align-items: center;
-  background: #3f95a6;
-  border: 1px solid #3f95a6;
-  border-radius: 4px;
-  color: #fff;
   display: inline-flex;
   margin: 0;
   max-width: 320px;
-  padding: 1em 24px;
+  padding: 1em var(--q-vertical-rhythm, 24px);
   position: relative;
   transition: .2s;
   user-select: none;
   text-transform: none;
   -webkit-appearance: button;
+  background: #3f95a6;
+  border: 1px solid #3f95a6;
+  border-radius: 2px;
+  color: #fff;
+  box-shadow: 0 10px 15px -5px rgba(0, 0, 0, 0), 0 0 40px 0 rgba(0, 0, 0, 0);
   line-height: 1;
   font-family: var(--q-font-family, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Ubuntu, 'Helvetica Neue', Arial, sans-serif);
   font-size: 1em;
@@ -458,23 +493,33 @@ button.button--primary {
   input[type=submit].disabled,
   button.button--primary:disabled,
   button.button--primary.disabled {
+    cursor: not-allowed !important;
+    background: #3f95a6;
+    border: 1px solid #3f95a6;
+    border-radius: 2px;
     color: #d6d6d6;
-    cursor: not-allowed !important; }
+    box-shadow: 0 10px 15px -5px rgba(0, 0, 0, 0), 0 0 40px 0 rgba(0, 0, 0, 0); }
   button[type=submit]:focus, button[type=submit].focused,
   input[type=submit]:focus,
   input[type=submit].focused,
   button.button--primary:focus,
   button.button--primary.focused {
-    background-color: #328595;
-    box-shadow: 0 0 0 4px #b7d6dc;
-    outline: none; }
+    outline: none;
+    background: #328595;
+    border: 1px solid #328595;
+    border-radius: 2px;
+    color: #fff;
+    box-shadow: 0 10px 15px -5px rgba(24, 73, 83, 0.4), 0 0 40px 0 rgba(24, 73, 83, 0.1); }
   button[type=submit]:hover:not(:disabled), button[type=submit].hovered:not(:disabled),
   input[type=submit]:hover:not(:disabled),
   input[type=submit].hovered:not(:disabled),
   button.button--primary:hover:not(:disabled),
   button.button--primary.hovered:not(:disabled) {
-    background-color: #51a7b8;
-    border: 1px solid #51a7b8; }
+    background: #51a7b8;
+    border: 1px solid #51a7b8;
+    border-radius: 2px;
+    color: #fff;
+    box-shadow: 0 10px 15px -5px rgba(0, 0, 0, 0), 0 0 40px 0 rgba(0, 0, 0, 0); }
   button[type=submit] > span,
   input[type=submit] > span,
   button.button--primary > span {
@@ -493,39 +538,44 @@ button.button--primary {
     button.button--primary.button--ghost:disabled,
     button.button--primary.button--ghost.disabled {
       background-color: transparent;
+      border: 1px solid #51a7b8;
       color: #b3b3b3; }
     button[type=submit].button--ghost:focus, button[type=submit].button--ghost.focused,
     input[type=submit].button--ghost:focus,
     input[type=submit].button--ghost.focused,
     button.button--primary.button--ghost:focus,
     button.button--primary.button--ghost.focused {
-      box-shadow: 0 0 0 4px #b7d6dc;
-      outline: none; }
+      outline: none;
+      background-color: transparent;
+      border: 1px solid #51a7b8;
+      color: #3f95a6; }
     button[type=submit].button--ghost:hover:not(:disabled), button[type=submit].button--ghost.hovered:not(:disabled),
     input[type=submit].button--ghost:hover:not(:disabled),
     input[type=submit].button--ghost.hovered:not(:disabled),
     button.button--primary.button--ghost:hover:not(:disabled),
     button.button--primary.button--ghost.hovered:not(:disabled) {
       background-color: transparent;
-      border: 1px solid #328595; }
+      border: 1px solid #51a7b8;
+      color: #328595; }
 
 button[type=reset],
 input[type=reset],
 button.button--danger {
   align-items: center;
-  background: #d62931;
-  border: 1px solid #d62931;
-  border-radius: 4px;
-  color: #fff;
   display: inline-flex;
   margin: 0;
   max-width: 320px;
-  padding: 1em 24px;
+  padding: 1em var(--q-vertical-rhythm, 24px);
   position: relative;
   transition: .2s;
   user-select: none;
   text-transform: none;
   -webkit-appearance: button;
+  background: #d62931;
+  border: 1px solid #d62931;
+  border-radius: 2px;
+  color: #fff;
+  box-shadow: 0 10px 15px -5px rgba(0, 0, 0, 0), 0 0 40px 0 rgba(0, 0, 0, 0);
   line-height: 1;
   font-family: var(--q-font-family, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Ubuntu, 'Helvetica Neue', Arial, sans-serif);
   font-size: 1em;
@@ -536,23 +586,33 @@ button.button--danger {
   input[type=reset].disabled,
   button.button--danger:disabled,
   button.button--danger.disabled {
+    cursor: not-allowed !important;
+    background: #d62931;
+    border: 1px solid #d62931;
+    border-radius: 2px;
     color: #d6d6d6;
-    cursor: not-allowed !important; }
+    box-shadow: 0 10px 15px -5px rgba(0, 0, 0, 0), 0 0 40px 0 rgba(0, 0, 0, 0); }
   button[type=reset]:focus, button[type=reset].focused,
   input[type=reset]:focus,
   input[type=reset].focused,
   button.button--danger:focus,
   button.button--danger.focused {
-    background-color: #bf1d25;
-    box-shadow: 0 0 0 4px #f3aaae;
-    outline: none; }
+    outline: none;
+    background: #bf1d25;
+    border: 1px solid #bf1d25;
+    border-radius: 2px;
+    color: #fff;
+    box-shadow: 0 10px 15px -5px rgba(117, 0, 6, 0.2), 0 0 40px 0 rgba(117, 0, 6, 0.07); }
   button[type=reset]:hover:not(:disabled), button[type=reset].hovered:not(:disabled),
   input[type=reset]:hover:not(:disabled),
   input[type=reset].hovered:not(:disabled),
   button.button--danger:hover:not(:disabled),
   button.button--danger.hovered:not(:disabled) {
-    background-color: #f07076;
-    border: 1px solid #f07076; }
+    background: #f07076;
+    border: 1px solid #f07076;
+    border-radius: 2px;
+    color: #fff;
+    box-shadow: 0 10px 15px -5px rgba(0, 0, 0, 0), 0 0 40px 0 rgba(0, 0, 0, 0); }
   button[type=reset] > span,
   input[type=reset] > span,
   button.button--danger > span {
@@ -571,18 +631,86 @@ button.button--danger {
     button.button--danger.button--ghost:disabled,
     button.button--danger.button--ghost.disabled {
       background-color: transparent;
+      border: 1px solid #f07076;
       color: #b3b3b3; }
     button[type=reset].button--ghost:focus, button[type=reset].button--ghost.focused,
     input[type=reset].button--ghost:focus,
     input[type=reset].button--ghost.focused,
     button.button--danger.button--ghost:focus,
     button.button--danger.button--ghost.focused {
-      box-shadow: 0 0 0 4px #f3aaae;
-      outline: none; }
+      outline: none;
+      background-color: transparent;
+      border: 1px solid #f07076;
+      color: #d62931; }
     button[type=reset].button--ghost:hover:not(:disabled), button[type=reset].button--ghost.hovered:not(:disabled),
     input[type=reset].button--ghost:hover:not(:disabled),
     input[type=reset].button--ghost.hovered:not(:disabled),
     button.button--danger.button--ghost:hover:not(:disabled),
     button.button--danger.button--ghost.hovered:not(:disabled) {
       background-color: transparent;
-      border: 1px solid #bf1d25; }
+      border: 1px solid #f07076;
+      color: #bf1d25; }
+
+:root {
+  --q-baseline: 24px;
+  --q-gap: 4px;
+  --q-space: 16px; }
+
+.input {
+  align-items: center;
+  background: #fff;
+  border: 1px solid #f0f0f0;
+  border-radius: 2px;
+  display: inline-flex;
+  padding: 0;
+  position: relative;
+  transition: .2s;
+  line-height: 1;
+  font-family: var(--q-font-family, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Ubuntu, 'Helvetica Neue', Arial, sans-serif);
+  font-size: 1em;
+  font-weight: 400;
+  margin: 0;
+  margin-bottom: 24px;
+  width: calc(var(--q-space, 16px) * 32); }
+  .input__addon {
+    background: transparent;
+    align-self: stretch;
+    display: inline-flex;
+    align-items: center;
+    padding: 0 8px; }
+    .input__addon:first-child {
+      border-right: 1px solid #f0f0f0; }
+    .input__addon:last-child {
+      border-left: 1px solid #f0f0f0; }
+  .input__envelope {
+    align-items: baseline;
+    background: #fff;
+    border-radius: 2px;
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1; }
+    .input__envelope .input__addon {
+      background: #fff; }
+    .input__envelope > .input__addon:first-child {
+      border-radius: 2px 0 0 2px;
+      border-right: 1px solid transparent; }
+    .input__envelope > .input__addon:last-child {
+      border-radius: 0 2px 2px 0;
+      border-left: 1px solid transparent; }
+    .input__envelope > input {
+      border: none;
+      background-color: transparent;
+      color: #121212;
+      padding: 12px 8px;
+      width: 100%;
+      line-height: 1;
+      font-family: var(--q-font-family, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Ubuntu, 'Helvetica Neue', Arial, sans-serif);
+      font-size: 1em;
+      font-weight: 400;
+      margin: 0; }
+      .input__envelope > input:focus {
+        outline: none; }
+  .input--focus, .input:focus, .input:focus-within {
+    box-shadow: 0 5px 10px -5px rgba(153, 153, 153, 0.07), 0 5px 20px 0 rgba(153, 153, 153, 0.07); }
+    .input--focus .input__envelope .input__addon, .input:focus .input__envelope .input__addon, .input:focus-within .input__envelope .input__addon {
+      background: transparent; }

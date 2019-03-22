@@ -40,7 +40,7 @@ export class Button {
 
   private buttonData() {
     return ({
-      'class': { ...this.buildRole(), ...this.buildGhost() },
+      'class': { ...this.buildRole(), ...this.buildGhost.bind(this)() },
       'type': this.buildType.bind(this)(),
     });
   }

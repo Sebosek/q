@@ -1,0 +1,91 @@
+@import "mixins/colors";
+@import "mixins/shadows";
+@import "spacing";
+
+$border-radius: 2px;
+$background: $_color-white;
+$border-color: $_color-gray--lighter;
+$color: $_color-blackish--normal;
+$horizontal-spacing: 24px;
+$focus__border: $_color-secondary--lighter;
+$focus__shadow: $_color-secondary--lighter;
+
+.input {
+    align-items: center;
+    background: $background;
+    border: 1px solid $border-color;
+    border-radius: $border-radius;
+    display: inline-flex;
+    padding: 0;
+    position: relative;
+    transition: .2s;
+    @include font(1em, 0, 400, 1);
+    
+    margin-bottom: $horizontal-spacing;
+    width: map-get($spaces, '32.0');
+
+    &__addon {
+        background: transparent;
+        align-self: stretch;
+        display: inline-flex;
+        align-items: center;
+        padding: 0 8px;
+
+        &:first-child {
+            border-right: 1px solid $border-color;
+        }
+
+        &:last-child {
+            border-left: 1px solid $border-color;
+        }
+    }
+
+    &__envelope {
+        align-items: baseline;
+        background: $background;
+        border-radius: $border-radius;
+        display: flex;
+        flex-direction: row;
+        flex-grow: 1;
+
+        .input__addon {
+            background: $background;
+        }
+
+        & > .input__addon:first-child {
+            border-radius: $border-radius 0 0 $border-radius;
+            border-right: 1px solid transparent;
+        }
+
+        & > .input__addon:last-child {
+            border-radius: 0 $border-radius $border-radius 0;
+            border-left: 1px solid transparent;
+        }
+
+        & > input {
+            border: none;
+            background-color: transparent;
+            color: $color;
+            padding: 12px 8px;
+            width: 100%;
+
+            @include font(1em, 0, 400, 1);
+    
+            &:focus {
+                outline: none;
+            }
+        }
+    }
+
+    &--focus,
+    &:focus,
+    &:focus-within {
+        @include shadow-small($_color-gray--darkest);
+
+        .input__envelope {
+            .input__addon {
+                background: transparent;
+            }
+        }
+    }
+}

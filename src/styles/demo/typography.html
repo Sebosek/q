@@ -6,11 +6,52 @@
 
     <title>Q styles</title>
     <link rel="stylesheet" href="../build/index.css" />
+    <style type="text/css">
+        .row {
+          margin-bottom: 20px;
+        }
+  
+        .box {
+          display: block;
+          height: 60px;
+          width: 60px;
+          margin: 20px 0 40px;
+        }
+    </style>
   </head>
   <body>
     <article style="align-items: center; display: flex; flex-direction: column;">
         <div class="row row--gutter-12">
             <div class="col-8 col-push-2">
+                <h1>Shadows</h1>
+                <div class="box shadow-large"></div>
+                <div class="box shadow-normal"></div>
+                <div class="box shadow-small"></div>
+                <h1>Inputs</h1>
+                <label>
+                    <span class="label">Label</span>
+                    <div class="input">
+                        <div class="input__addon">
+                            <span>Prefix</span>
+                        </div>
+                        <div class="input__envelope">
+                            <div class="input__addon">Prefix</div>
+                            <input type="text" placeholder="Placeholder" value="Prefix">
+                            <div class="input__addon">Sufix</div>
+                        </div>
+                        <div class="input__addon">Sufix</div>
+                    </div>
+                </label>
+                <label>
+                    <span class="label">Label</span>
+                    <div class="input">
+                        <div class="input__envelope">
+                            <input type="text" placeholder="Placeholder" value="Prefix">
+                            <div class="input__addon">Sufix</div>
+                        </div>
+                    </div>
+                </label>
+
                 <h1>Buttons</h1>
                 <button>
                     <span>Vestibulum hendrerit habitasse tristique faucibus nisl neque felis proin etiam gravida et parturient.</span>
