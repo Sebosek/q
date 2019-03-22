@@ -66,12 +66,10 @@
 }
 
 @mixin label() {
-    & > span {
-        display: block;
-        @include font(
-            #{$_font-size-base}, 
-            0 0 4px 0, 
-            500
-        );
-    }
+    display: block;
+    @include font(
+        #{$_font-size-base}, 
+        0 0 4px 0, 
+        500
+    );
 }
