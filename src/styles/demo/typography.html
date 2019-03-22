@@ -6,20 +6,41 @@
 
     <title>Q styles</title>
     <link rel="stylesheet" href="../build/index.css" />
-    <style type="text/css">
-      .box {
-        align-items: center;
-        background: hsla(320, 100%, 50%, 0.15);
-        border: 1px solid hsla(320, 100%, 50%, 0.15);
-        display: flex;
-        height: 60px;
-        justify-content: center;
-      }
-    </style>
   </head>
   <body>
-    <article style="display: flex; justify-content: center;">
-        <div class="row row--gutter-12" style="margin: auto 0;">
+    <article style="align-items: center; display: flex; flex-direction: column;">
+        <div class="row row--gutter-12">
+            <div class="col-8 col-push-2">
+                <h1>Buttons</h1>
+                <button>
+                    <span>Vestibulum hendrerit habitasse tristique faucibus nisl neque felis proin etiam gravida et parturient.</span>
+                </button>
+                <button class="button--primary">
+                    <span>Vestibulum hendrerit habitasse tristique faucibus nisl neque felis proin etiam gravida et parturient.</span>
+                </button>
+                <button type="reset">
+                    <span>Vestibulum hendrerit habitasse tristique faucibus nisl neque felis proin etiam gravida et parturient.</span>
+                </button>
+                <button disabled>
+                    <span>Vestibulum hendrerit habitasse tristique faucibus nisl neque felis proin etiam gravida et parturient.</span>
+                </button>
+
+                <h2>Ghost</h2>
+                <button class="button--ghost">
+                    <span>Vestibulum hendrerit habitasse tristique faucibus nisl neque felis proin etiam gravida et parturient.</span>
+                </button>
+                <button class="button--ghost button--primary">
+                    <span>Vestibulum hendrerit habitasse tristique faucibus nisl neque felis proin etiam gravida et parturient.</span>
+                </button>
+                <button type="reset" class="button--ghost">
+                    <span>Vestibulum hendrerit habitasse tristique faucibus nisl neque felis proin etiam gravida et parturient.</span>
+                </button>
+                <button class="button--ghost" disabled>
+                    <span>Vestibulum hendrerit habitasse tristique faucibus nisl neque felis proin etiam gravida et parturient.</span>
+                </button>
+            </div>
+        </div>
+        <div class="row row--gutter-12">
             <div class="col-8 col-push-2">
                 <h1>Title 1</h1>
                 <p>Vestibulum hendrerit habitasse tristique faucibus nisl neque felis proin etiam gravida et parturient dictumst a mi nam at parturient viverra fermentum ullamcorper a ac. Parturient non suspendisse a aliquam vestibulum consectetur a parturient curabitur consectetur tincidunt hendrerit a molestie a ornare habitasse cubilia. A a justo id dictumst massa vestibulum viverra volutpat enim mauris suspendisse donec nisi suspendisse blandit vestibulum dapibus ridiculus elit.</p>
@@ -47,4 +68,5 @@
         </div>
     </article>
   </body>
+  <script> </script>
 </html>

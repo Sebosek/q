@@ -9,6 +9,9 @@ import '@stencil/core';
 
 
 import {
+  role,
+} from './components/button/button.role';
+import {
   cols,
 } from './components/column/column.cols';
 import {
@@ -20,6 +23,17 @@ import {
 
 
 export namespace Components {
+
+  interface QButton {
+    'ghost': boolean;
+    'htmlType': boolean;
+    'role': role;
+  }
+  interface QButtonAttributes extends StencilHTMLAttributes {
+    'ghost'?: boolean;
+    'htmlType'?: boolean;
+    'role'?: role;
+  }
 
   interface QGridColumn {
     /**
@@ -114,6 +128,7 @@ export namespace Components {
 
 declare global {
   interface StencilElementInterfaces {
+    'QButton': Components.QButton;
     'QGridColumn': Components.QGridColumn;
     'QGrid': Components.QGrid;
     'QLabel': Components.QLabel;
@@ -123,6 +138,7 @@ declare global {
   }
 
   interface StencilIntrinsicElements {
+    'q-button': Components.QButtonAttributes;
     'q-grid-column': Components.QGridColumnAttributes;
     'q-grid': Components.QGridAttributes;
     'q-label': Components.QLabelAttributes;
@@ -131,6 +147,12 @@ declare global {
     'q-title': Components.QTitleAttributes;
   }
 
+
+  interface HTMLQButtonElement extends Components.QButton, HTMLStencilElement {}
+  var HTMLQButtonElement: {
+    prototype: HTMLQButtonElement;
+    new (): HTMLQButtonElement;
+  };
 
   interface HTMLQGridColumnElement extends Components.QGridColumn, HTMLStencilElement {}
   var HTMLQGridColumnElement: {
@@ -169,6 +191,7 @@ declare global {
   };
 
   interface HTMLElementTagNameMap {
+    'q-button': HTMLQButtonElement
     'q-grid-column': HTMLQGridColumnElement
     'q-grid': HTMLQGridElement
     'q-label': HTMLQLabelElement
@@ -178,6 +201,7 @@ declare global {
   }
 
   interface ElementTagNameMap {
+    'q-button': HTMLQButtonElement;
     'q-grid-column': HTMLQGridColumnElement;
     'q-grid': HTMLQGridElement;
     'q-label': HTMLQLabelElement;

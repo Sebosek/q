@@ -18,7 +18,8 @@
   margin: 0;
   padding: 0;
   max-width: 1200px;
-  zoom: 1; }
+  zoom: 1;
+  width: 100%; }
 
 .row.row--gutter-4 .col, .row.row--gutter-4 .col-1, .row.row--gutter-4 .col-2, .row.row--gutter-4 .col-3, .row.row--gutter-4 .col-4, .row.row--gutter-4 .col-5, .row.row--gutter-4 .col-6, .row.row--gutter-4 .col-7, .row.row--gutter-4 .col-8, .row.row--gutter-4 .col-9, .row.row--gutter-4 .col-10, .row.row--gutter-4 .col-11, .row.row--gutter-4 .col-12 {
   padding-left: 4px;
@@ -287,7 +288,7 @@ body {
 
 h1,
 .h1 {
-  line-height: var(--q-font-base-size, 1em);
+  line-height: normal;
   font-family: var(--q-font-family, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Ubuntu, 'Helvetica Neue', Arial, sans-serif);
   font-size: calc(1em * var(--q-font-scale-ratio, 1.2) * var(--q-font-scale-ratio, 1.2) * var(--q-font-scale-ratio, 1.2) * var(--q-font-scale-ratio, 1.2));
   font-weight: 600;
@@ -295,7 +296,7 @@ h1,
 
 h2,
 .h2 {
-  line-height: var(--q-font-base-size, 1em);
+  line-height: normal;
   font-family: var(--q-font-family, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Ubuntu, 'Helvetica Neue', Arial, sans-serif);
   font-size: calc(1em * var(--q-font-scale-ratio, 1.2) * var(--q-font-scale-ratio, 1.2) * var(--q-font-scale-ratio, 1.2));
   font-weight: 500;
@@ -303,7 +304,7 @@ h2,
 
 h3,
 .h3 {
-  line-height: var(--q-font-base-size, 1em);
+  line-height: normal;
   font-family: var(--q-font-family, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Ubuntu, 'Helvetica Neue', Arial, sans-serif);
   font-size: calc(1em * var(--q-font-scale-ratio, 1.2) * var(--q-font-scale-ratio, 1.2));
   font-weight: 500;
@@ -311,7 +312,7 @@ h3,
 
 h4,
 .h4 {
-  line-height: var(--q-font-base-size, 1em);
+  line-height: normal;
   font-family: var(--q-font-family, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Ubuntu, 'Helvetica Neue', Arial, sans-serif);
   font-size: calc(1em * var(--q-font-scale-ratio, 1.2));
   font-weight: 500;
@@ -339,3 +340,249 @@ label,
   font-size: var(--q-font-base-size, 1em);
   font-weight: 400;
   margin: 0 0 calc(var(--q-vertical-rhythm, 24px) / 2) 0; }
+
+/**
+ * Grid system
+ */
+/**
+ * Typography
+ */
+/**
+ * Grid system
+ */
+/**
+ * Typography
+ */
+button,
+input[type=button],
+.button {
+  align-items: center;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  color: #121212;
+  display: inline-flex;
+  margin: 0;
+  max-width: 320px;
+  padding: 1em 24px;
+  position: relative;
+  transition: .2s;
+  user-select: none;
+  text-transform: none;
+  -webkit-appearance: button;
+  line-height: 1;
+  font-family: var(--q-font-family, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Ubuntu, 'Helvetica Neue', Arial, sans-serif);
+  font-size: 1em;
+  font-weight: 500;
+  margin: 0; }
+  button:disabled, button.disabled,
+  input[type=button]:disabled,
+  input[type=button].disabled,
+  .button:disabled,
+  .button.disabled {
+    color: #d6d6d6;
+    cursor: not-allowed !important; }
+  button:focus, button.focused,
+  input[type=button]:focus,
+  input[type=button].focused,
+  .button:focus,
+  .button.focused {
+    background-color: transparent;
+    box-shadow: 0 0 0 4px #e3e3e3;
+    outline: none; }
+  button:hover:not(:disabled), button.hovered:not(:disabled),
+  input[type=button]:hover:not(:disabled),
+  input[type=button].hovered:not(:disabled),
+  .button:hover:not(:disabled),
+  .button.hovered:not(:disabled) {
+    background-color: #f7f7f7;
+    border: 1px solid #f7f7f7; }
+  button > span,
+  input[type=button] > span,
+  .button > span {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap; }
+  button.button--ghost,
+  input[type=button].button--ghost,
+  .button.button--ghost {
+    background-color: transparent;
+    border: 1px solid #e3e3e3;
+    color: #121212; }
+    button.button--ghost:disabled, button.button--ghost.disabled,
+    input[type=button].button--ghost:disabled,
+    input[type=button].button--ghost.disabled,
+    .button.button--ghost:disabled,
+    .button.button--ghost.disabled {
+      background-color: transparent;
+      color: #b3b3b3; }
+    button.button--ghost:focus, button.button--ghost.focused,
+    input[type=button].button--ghost:focus,
+    input[type=button].button--ghost.focused,
+    .button.button--ghost:focus,
+    .button.button--ghost.focused {
+      box-shadow: 0 0 0 4px #e3e3e3;
+      outline: none; }
+    button.button--ghost:hover:not(:disabled), button.button--ghost.hovered:not(:disabled),
+    input[type=button].button--ghost:hover:not(:disabled),
+    input[type=button].button--ghost.hovered:not(:disabled),
+    .button.button--ghost:hover:not(:disabled),
+    .button.button--ghost.hovered:not(:disabled) {
+      background-color: transparent;
+      border: 1px solid #999999; }
+
+button[type=submit],
+input[type=submit],
+button.button--primary {
+  align-items: center;
+  background: #3f95a6;
+  border: 1px solid #3f95a6;
+  border-radius: 4px;
+  color: #fff;
+  display: inline-flex;
+  margin: 0;
+  max-width: 320px;
+  padding: 1em 24px;
+  position: relative;
+  transition: .2s;
+  user-select: none;
+  text-transform: none;
+  -webkit-appearance: button;
+  line-height: 1;
+  font-family: var(--q-font-family, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Ubuntu, 'Helvetica Neue', Arial, sans-serif);
+  font-size: 1em;
+  font-weight: 500;
+  margin: 0; }
+  button[type=submit]:disabled, button[type=submit].disabled,
+  input[type=submit]:disabled,
+  input[type=submit].disabled,
+  button.button--primary:disabled,
+  button.button--primary.disabled {
+    color: #d6d6d6;
+    cursor: not-allowed !important; }
+  button[type=submit]:focus, button[type=submit].focused,
+  input[type=submit]:focus,
+  input[type=submit].focused,
+  button.button--primary:focus,
+  button.button--primary.focused {
+    background-color: #328595;
+    box-shadow: 0 0 0 4px #b7d6dc;
+    outline: none; }
+  button[type=submit]:hover:not(:disabled), button[type=submit].hovered:not(:disabled),
+  input[type=submit]:hover:not(:disabled),
+  input[type=submit].hovered:not(:disabled),
+  button.button--primary:hover:not(:disabled),
+  button.button--primary.hovered:not(:disabled) {
+    background-color: #51a7b8;
+    border: 1px solid #51a7b8; }
+  button[type=submit] > span,
+  input[type=submit] > span,
+  button.button--primary > span {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap; }
+  button[type=submit].button--ghost,
+  input[type=submit].button--ghost,
+  button.button--primary.button--ghost {
+    background-color: transparent;
+    border: 1px solid #51a7b8;
+    color: #3f95a6; }
+    button[type=submit].button--ghost:disabled, button[type=submit].button--ghost.disabled,
+    input[type=submit].button--ghost:disabled,
+    input[type=submit].button--ghost.disabled,
+    button.button--primary.button--ghost:disabled,
+    button.button--primary.button--ghost.disabled {
+      background-color: transparent;
+      color: #b3b3b3; }
+    button[type=submit].button--ghost:focus, button[type=submit].button--ghost.focused,
+    input[type=submit].button--ghost:focus,
+    input[type=submit].button--ghost.focused,
+    button.button--primary.button--ghost:focus,
+    button.button--primary.button--ghost.focused {
+      box-shadow: 0 0 0 4px #b7d6dc;
+      outline: none; }
+    button[type=submit].button--ghost:hover:not(:disabled), button[type=submit].button--ghost.hovered:not(:disabled),
+    input[type=submit].button--ghost:hover:not(:disabled),
+    input[type=submit].button--ghost.hovered:not(:disabled),
+    button.button--primary.button--ghost:hover:not(:disabled),
+    button.button--primary.button--ghost.hovered:not(:disabled) {
+      background-color: transparent;
+      border: 1px solid #328595; }
+
+button[type=reset],
+input[type=reset],
+button.button--danger {
+  align-items: center;
+  background: #d62931;
+  border: 1px solid #d62931;
+  border-radius: 4px;
+  color: #fff;
+  display: inline-flex;
+  margin: 0;
+  max-width: 320px;
+  padding: 1em 24px;
+  position: relative;
+  transition: .2s;
+  user-select: none;
+  text-transform: none;
+  -webkit-appearance: button;
+  line-height: 1;
+  font-family: var(--q-font-family, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Ubuntu, 'Helvetica Neue', Arial, sans-serif);
+  font-size: 1em;
+  font-weight: 500;
+  margin: 0; }
+  button[type=reset]:disabled, button[type=reset].disabled,
+  input[type=reset]:disabled,
+  input[type=reset].disabled,
+  button.button--danger:disabled,
+  button.button--danger.disabled {
+    color: #d6d6d6;
+    cursor: not-allowed !important; }
+  button[type=reset]:focus, button[type=reset].focused,
+  input[type=reset]:focus,
+  input[type=reset].focused,
+  button.button--danger:focus,
+  button.button--danger.focused {
+    background-color: #bf1d25;
+    box-shadow: 0 0 0 4px #f3aaae;
+    outline: none; }
+  button[type=reset]:hover:not(:disabled), button[type=reset].hovered:not(:disabled),
+  input[type=reset]:hover:not(:disabled),
+  input[type=reset].hovered:not(:disabled),
+  button.button--danger:hover:not(:disabled),
+  button.button--danger.hovered:not(:disabled) {
+    background-color: #f07076;
+    border: 1px solid #f07076; }
+  button[type=reset] > span,
+  input[type=reset] > span,
+  button.button--danger > span {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap; }
+  button[type=reset].button--ghost,
+  input[type=reset].button--ghost,
+  button.button--danger.button--ghost {
+    background-color: transparent;
+    border: 1px solid #f07076;
+    color: #d62931; }
+    button[type=reset].button--ghost:disabled, button[type=reset].button--ghost.disabled,
+    input[type=reset].button--ghost:disabled,
+    input[type=reset].button--ghost.disabled,
+    button.button--danger.button--ghost:disabled,
+    button.button--danger.button--ghost.disabled {
+      background-color: transparent;
+      color: #b3b3b3; }
+    button[type=reset].button--ghost:focus, button[type=reset].button--ghost.focused,
+    input[type=reset].button--ghost:focus,
+    input[type=reset].button--ghost.focused,
+    button.button--danger.button--ghost:focus,
+    button.button--danger.button--ghost.focused {
+      box-shadow: 0 0 0 4px #f3aaae;
+      outline: none; }
+    button[type=reset].button--ghost:hover:not(:disabled), button[type=reset].button--ghost.hovered:not(:disabled),
+    input[type=reset].button--ghost:hover:not(:disabled),
+    input[type=reset].button--ghost.hovered:not(:disabled),
+    button.button--danger.button--ghost:hover:not(:disabled),
+    button.button--danger.button--ghost.hovered:not(:disabled) {
+      background-color: transparent;
+      border: 1px solid #bf1d25; }

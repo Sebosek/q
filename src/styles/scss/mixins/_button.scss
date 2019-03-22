@@ -1,0 +1,67 @@
+@mixin base-button($button, $button--def, $ghost--def) {
+    align-items: center;
+    background: map-get($button--def, 'background');
+    border: 1px solid map-get($button--def, 'background');
+    border-radius: map-get($button, 'border-radius');
+    color: map-get($button--def, 'color');
+    display: inline-flex;
+    margin: 0;
+    max-width: 320px;
+    padding: 1em map-get($button, 'horizontal-spacing');
+    position: relative;
+    transition: .2s;
+    user-select: none;
+    text-transform: none;
+    -webkit-appearance: button;
+    
+    @include font(1em, 0, 500, 1);
+    
+    &:disabled,
+    &.disabled {
+        color: map-get($button--def, 'disabled__color');
+        cursor: not-allowed !important;
+    }
+
+    &:focus,
+    &.focused {
+        background-color: map-get($button--def, 'focus__background');
+        box-shadow: 0 0 0 map-get($button, 'shadow-size') map-get($button--def, 'focus__shadow-color'); // rewrite to shadows
+        outline: none;
+    }
+
+    &:hover:not(:disabled),
+    &.hovered:not(:disabled) {
+        background-color: map-get($button--def, 'hover__background');
+        border: 1px solid map-get($button--def, 'hover__background');
+    }
+
+    & > span {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    &.button--ghost {
+        background-color: map-get($ghost--def, 'background');
+        border: 1px solid map-get($ghost--def, 'border');
+        color: map-get($ghost--def, 'color');
+
+        &:disabled,
+        &.disabled {
+            background-color: map-get($ghost--def, 'disabled__background');
+            color: map-get($ghost--def, 'disabled__color');
+        }
+
+        &:focus,
+        &.focused {
+            box-shadow: 0 0 0 map-get($button, 'shadow-size') map-get($ghost--def, 'focus__shadow-color');
+            outline: none;
+        }
+
+        &:hover:not(:disabled),
+        &.hovered:not(:disabled) {
+            background-color: map-get($ghost--def, 'hover__background');
+            border: 1px solid map-get($ghost--def, 'hover__border-color');
+        }
+    }
+}

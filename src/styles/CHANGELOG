@@ -2,6 +2,9 @@
 
 Keep a changelog. https://keepachangelog.com/en/1.0.0/
 
+## 0.3.3
+- Added button styles. (_sebastian.busek_)
+
 ## 0.2.0 - 0.2.2
 - Fixed `line-height` in headers. (_sebastian.busek_)
 - Fixed typo in `paragraph` component. (_sebastian.busek_)

@@ -1,0 +1,88 @@
+@import "mixins/variables";
+@import "mixins/typography";
+@import "mixins/colors";
+@import "mixins/button";
+
+$_button-spacing: 24px;
+$_button-height: 40px;
+$_button-border-radius: 4px;
+$_button-max-width: 320px;
+$_button-focus-shadow-size: 4px;
+
+button,
+input[type=button],
+.button {
+    @include base-button((
+        'border-radius': 4px,
+        'horizontal-spacing': 24px,
+        'shadow-size': 4px,
+    ), (
+        'background': transparent,
+        'color': $_color-blackish--normal,
+        'disabled__color': $_color-gray--normal,
+        'hover__background': $_color-gray--lightest,
+        'focus__background': transparent,
+        'focus__shadow-color': $_color-gray--light
+    ), (
+        'background': transparent,
+        'border': $_color-gray--light,
+        'color': $_color-blackish--normal,
+        'disabled__background': transparent,
+        'disabled__color': $_color-gray--darker,
+        'focus__shadow-color': $_color-gray--light,
+        'hover__background': transparent,
+        'hover__border-color': $_color-gray--darkest
+    ));
+}
+
+button[type=submit],
+input[type=submit],
+button.button--primary {
+    @include base-button((
+        'border-radius': 4px,
+        'horizontal-spacing': 24px,
+        'shadow-size': 4px,
+    ), (
+        'background': $_color-primary--normal,
+        'color': $_color-white,
+        'disabled__color': $_color-gray--normal,
+        'hover__background': $_color-primary--light,
+        'focus__background': $_color-primary--dark,
+        'focus__shadow-color': $_color-primary--lighter
+    ), (
+        'background': transparent,
+        'border': $_color-primary--light,
+        'color': $_color-primary--normal,
+        'disabled__background': transparent,
+        'disabled__color': $_color-gray--darker,
+        'focus__shadow-color': $_color-primary--lighter,
+        'hover__background': transparent,
+        'hover__border-color': $_color-primary--dark
+    ));
+}
+
+button[type=reset],
+input[type=reset],
+button.button--danger {
+    @include base-button((
+        'border-radius': 4px,
+        'horizontal-spacing': 24px,
+        'shadow-size': 4px,
+    ), (
+        'background': $_color-danger--normal,
+        'color': $_color-white,
+        'disabled__color': $_color-gray--normal,
+        'hover__background': $_color-danger--light,
+        'focus__background': $_color-danger--dark,
+        'focus__shadow-color': $_color-danger--lighter
+    ), (
+        'background': transparent,
+        'border': $_color-danger--light,
+        'color': $_color-danger--normal,
+        'disabled__background': transparent,
+        'disabled__color': $_color-gray--darker,
+        'focus__shadow-color': $_color-danger--lighter,
+        'hover__background': transparent,
+        'hover__border-color': $_color-danger--dark
+    ));
+}

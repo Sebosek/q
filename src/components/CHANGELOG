@@ -2,6 +2,9 @@
 
 Keep a changelog. https://keepachangelog.com/en/1.0.0/
 
+## 0.3.0
+- Added `q-button` component. (_sebastian.busek_)
+
 ## 0.2.0
 - Added typography components `q-title`, `q-paragraph`, `q-note` and `q-label`. (_sebastian.busek_)
 
