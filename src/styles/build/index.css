@@ -348,7 +348,7 @@ label,
 
 .shadow-normal {
   transition: box-shadow .5s;
-  box-shadow: 0 10px 15px -5px rgba(0, 0, 0, 0.07), 0 0 40px 0 rgba(0, 0, 0, 0.07); }
+  box-shadow: 0 10px 15px -5px rgba(0, 0, 0, 0.4), 0 0 40px 0 rgba(0, 0, 0, 0.1); }
 
 .shadow-small {
   transition: box-shadow .5s;
@@ -416,7 +416,7 @@ input[type=button],
     border: 1px solid transparent;
     border-radius: 2px;
     color: #121212;
-    box-shadow: 0 10px 15px -5px rgba(153, 153, 153, 0.07), 0 0 40px 0 rgba(153, 153, 153, 0.07); }
+    box-shadow: 0 10px 15px -5px rgba(153, 153, 153, 0.4), 0 0 40px 0 rgba(153, 153, 153, 0.1); }
   button:hover:not(:disabled), button.hovered:not(:disabled),
   input[type=button]:hover:not(:disabled),
   input[type=button].hovered:not(:disabled),
@@ -602,7 +602,7 @@ button.button--danger {
     border: 1px solid #bf1d25;
     border-radius: 2px;
     color: #fff;
-    box-shadow: 0 10px 15px -5px rgba(117, 0, 6, 0.2), 0 0 40px 0 rgba(117, 0, 6, 0.07); }
+    box-shadow: 0 10px 15px -5px rgba(117, 0, 6, 0.4), 0 0 40px 0 rgba(117, 0, 6, 0.1); }
   button[type=reset]:hover:not(:disabled), button[type=reset].hovered:not(:disabled),
   input[type=reset]:hover:not(:disabled),
   input[type=reset].hovered:not(:disabled),
@@ -657,7 +657,7 @@ button.button--danger {
   --q-space: 16px; }
 
 .input {
-  align-items: center;
+  align-items: baseline;
   background: #fff;
   border: 1px solid #f0f0f0;
   border-radius: 2px;
@@ -677,40 +677,34 @@ button.button--danger {
     align-self: stretch;
     display: inline-flex;
     align-items: center;
-    padding: 0 8px; }
-    .input__addon:first-child {
-      border-right: 1px solid #f0f0f0; }
-    .input__addon:last-child {
-      border-left: 1px solid #f0f0f0; }
-  .input__envelope {
-    align-items: baseline;
-    background: #fff;
-    border-radius: 2px;
-    display: flex;
-    flex-direction: row;
-    flex-grow: 1; }
-    .input__envelope .input__addon {
-      background: #fff; }
-    .input__envelope > .input__addon:first-child {
-      border-radius: 2px 0 0 2px;
-      border-right: 1px solid transparent; }
-    .input__envelope > .input__addon:last-child {
-      border-radius: 0 2px 2px 0;
-      border-left: 1px solid transparent; }
-    .input__envelope > input {
-      border: none;
-      background-color: transparent;
-      color: #121212;
-      padding: 12px 8px;
-      width: 100%;
-      line-height: 1;
-      font-family: var(--q-font-family, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Ubuntu, 'Helvetica Neue', Arial, sans-serif);
-      font-size: 1em;
-      font-weight: 400;
-      margin: 0; }
-      .input__envelope > input:focus {
-        outline: none; }
+    padding: 0 12px; }
+    .input__addon__control {
+      height: 60%;
+      display: inline-flex;
+      align-items: center;
+      margin-left: -12px;
+      margin-right: -12px;
+      padding: 0 12px; }
+    .input__addon:first-child > .input__addon__control:last-child {
+      border-right: 1px solid #f0f0f0;
+      margin-left: -12px; }
+    .input__addon:last-child > .input__addon__control:first-child {
+      border-left: 1px solid #f0f0f0;
+      margin-right: -12px; }
+  .input > input {
+    border: none;
+    background-color: transparent;
+    color: #121212;
+    padding: 12px;
+    width: 100%;
+    line-height: 1;
+    font-family: var(--q-font-family, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Ubuntu, 'Helvetica Neue', Arial, sans-serif);
+    font-size: 1em;
+    font-weight: 400;
+    margin: 0; }
+    .input > input:focus {
+      outline: none; }
   .input--focus, .input:focus, .input:focus-within {
-    box-shadow: 0 5px 10px -5px rgba(153, 153, 153, 0.07), 0 5px 20px 0 rgba(153, 153, 153, 0.07); }
+    box-shadow: 0 10px 15px -5px rgba(199, 199, 199, 0.4), 0 0 40px 0 rgba(199, 199, 199, 0.1); }
     .input--focus .input__envelope .input__addon, .input:focus .input__envelope .input__addon, .input:focus-within .input__envelope .input__addon {
       background: transparent; }

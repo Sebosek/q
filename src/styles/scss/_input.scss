@@ -11,7 +11,7 @@ $focus__border: $_color-secondary--lighter;
 $focus__shadow: $_color-secondary--lighter;
 
 .input {
-    align-items: center;
+    align-items: baseline;
     background: $background;
     border: 1px solid $border-color;
     border-radius: $border-radius;
@@ -29,58 +29,46 @@ $focus__shadow: $_color-secondary--lighter;
         align-self: stretch;
         display: inline-flex;
         align-items: center;
-        padding: 0 8px;
+        padding: 0 12px;
 
-        &:first-child {
-            border-right: 1px solid $border-color;
+        &__control {
+            height: 60%;
+            display: inline-flex;
+            align-items: center;
+            margin-left: -12px;
+            margin-right: -12px;
+            padding: 0 12px;
         }
 
-        &:last-child {
+        &:first-child > .input__addon__control:last-child {
+            border-right: 1px solid $border-color;
+            margin-left: -12px;
+        }
+
+        &:last-child > .input__addon__control:first-child {
             border-left: 1px solid $border-color;
+            margin-right: -12px;
         }
     }
 
-    &__envelope {
-        align-items: baseline;
-        background: $background;
-        border-radius: $border-radius;
-        display: flex;
-        flex-direction: row;
-        flex-grow: 1;
+    & > input {
+        border: none;
+        background-color: transparent;
+        color: $color;
+        padding: 12px;
+        width: 100%;
 
-        .input__addon {
-            background: $background;
-        }
+        @include font(1em, 0, 400, 1);
 
-        & > .input__addon:first-child {
-            border-radius: $border-radius 0 0 $border-radius;
-            border-right: 1px solid transparent;
-        }
-
-        & > .input__addon:last-child {
-            border-radius: 0 $border-radius $border-radius 0;
-            border-left: 1px solid transparent;
-        }
-
-        & > input {
-            border: none;
-            background-color: transparent;
-            color: $color;
-            padding: 12px 8px;
-            width: 100%;
-
-            @include font(1em, 0, 400, 1);
-    
-            &:focus {
-                outline: none;
-            }
+        &:focus {
+            outline: none;
         }
     }
 
     &--focus,
     &:focus,
     &:focus-within {
-        @include shadow-small($_color-gray--darkest);
+        @include shadow-normal($_color-gray--dark);
 
         .input__envelope {
             .input__addon {

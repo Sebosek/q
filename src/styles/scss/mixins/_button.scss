@@ -9,9 +9,8 @@ $button: (
     'background': transparent,
     'border-radius': 2px,
     'color': $_color-blackish--normal,
-    'throw-shadow-color': transparent,
+    'shadow-color': transparent,
     'throw-shadow-alpha': 0,
-    'spread-shadow-color': transparent,
     'spread-shadow-alpha': 0,
     'border': 1px solid transparent,
 );
@@ -19,10 +18,9 @@ $button-disabled: map-merge($button, (
     'color': $_color-gray--normal,
 ));
 $button-focus: map-merge($button, (
-    'throw-shadow-color': $_color-gray--darkest,
-    'throw-shadow-alpha': .07,
-    'spread-shadow-color': $_color-gray--darkest,
-    'spread-shadow-alpha': .07,
+    'shadow-color': $_color-gray--darkest,
+    'throw-shadow-alpha': .4,
+    'spread-shadow-alpha': .1,
 ));
 $button-hover: map-merge($button, (
     'background': $_color-gray--lightest,
@@ -54,9 +52,8 @@ $primary-disabled: map-merge($primary, (
 ));
 $primary-focus: map-merge($primary, (
     'background': $_color-primary--dark,
-    'throw-shadow-color': $_color-primary--darkest,
+    'shadow-color': $_color-primary--darkest,
     'throw-shadow-alpha': .4,
-    'spread-shadow-color': $_color-primary--darkest,
     'spread-shadow-alpha': .1,
 ));
 $primary-hover: map-merge($primary, (
@@ -89,10 +86,9 @@ $danger-disabled: map-merge($danger, (
 ));
 $danger-focus: map-merge($danger, (
     'background': $_color-danger--dark,
-    'throw-shadow-color': $_color-danger--darkest,
-    'throw-shadow-alpha': .2,
-    'spread-shadow-color': $_color-danger--darkest,
-    'spread-shadow-alpha': .07,
+    'shadow-color': $_color-danger--darkest,
+    'throw-shadow-alpha': .4,
+    'spread-shadow-alpha': .1,
 ));
 $danger-hover: map-merge($danger, (
     'background': $_color-danger--light,
@@ -127,9 +123,8 @@ $danger-ghost-hover: map-merge($danger-ghost, (
     color: map-get($config, 'color');
 
     @include shadow-normal(
-        map-get($config, 'throw-shadow-color'),
+        map-get($config, 'shadow-color'),
         map-get($config, 'throw-shadow-alpha'),
-        map-get($config, 'spread-shadow-color'),
         map-get($config, 'spread-shadow-alpha'),
     );
 }
