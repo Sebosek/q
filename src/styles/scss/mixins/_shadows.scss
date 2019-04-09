@@ -15,18 +15,21 @@
 }
 
 @mixin shadow-normal(
-    $throw-color: $_color-blackish--darkest, 
-    $throw-alpha: .07,
-    $spread-color: $_color-blackish--darkest,
-    $spread-alpha: .07) {
-    $throw-shadow: make-standard-shadow($throw-color, $throw-alpha);
-    $spread-shadow: make-standard-shadow($spread-color, $spread-alpha);
+    $color: $_color-blackish--darkest, 
+    $throw-alpha: .4,
+    $spread-alpha: .1) {
+    $throw-shadow: make-standard-shadow($color, $throw-alpha);
+    $spread-shadow: make-standard-shadow($color, $spread-alpha);
 
     box-shadow: 0 10px 15px -5px $throw-shadow, 0 0 40px 0 $spread-shadow;
 }
 
-@mixin shadow-small($color: $_color-blackish--darkest, $alpha: .07) {
-    $shadow: make-standard-shadow($color, $alpha);
+@mixin shadow-small(
+    $color: $_color-blackish--darkest, 
+    $alpha-throw: .07,
+    $alpha-spread: .07) {
+    $shadow-throw: make-standard-shadow($color, $alpha-throw);
+    $shadow-spread: make-standard-shadow($color, $alpha-spread);
 
-    box-shadow: 0 5px 10px -5px $shadow, 0 5px 20px 0 $shadow;
+    box-shadow: 0 5px 10px -5px $shadow-throw, 0 5px 20px 0 $shadow-spread;
 }
