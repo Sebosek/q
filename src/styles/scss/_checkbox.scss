@@ -76,17 +76,20 @@
         }
     }
 
-    // &[disabled],
-    // &--disabled {
-    //     cursor: not-allowed;
-    //     pointer-events: none;
-    //     input[type=checkbox] + .checkbox__control {
-    //         background: $color__gray--light;
-    //         border: 1px solid $color__gray;
-    //         box-shadow: none;
-    //     }
-    //     .checkbox__label {
-    //         color: $color__gray--dark;
-    //     }
-    // }
+    &[disabled],
+    &--disabled {
+        cursor: not-allowed;
+        pointer-events: none;
+
+        input[type=checkbox] + .checkbox__control {
+            background: $_color-gray--lightest;
+            border: 1px solid $_color-gray--normal !important;
+            box-shadow: none;
+        }
+
+        input[type=checkbox]:checked + &__control {
+            background: $_color-gray--normal;
+            border: 1px solid $_color-gray--dark !important;
+        }
+    }
 }
