@@ -711,7 +711,7 @@ button.button--danger {
       background: transparent; }
 
 .checkbox {
-  display: flex;
+  display: inline-flex;
   position: relative;
   margin-bottom: 0;
   user-select: none; }
@@ -723,7 +723,6 @@ button.button--danger {
     display: inline-flex;
     height: 16px;
     justify-content: center;
-    margin-right: 8px;
     position: relative;
     width: 16px; }
     input[type=checkbox] + .checkbox__control > .checkbox__control__icon {
@@ -741,9 +740,11 @@ button.button--danger {
     border: 1px solid #3f95a6; }
   .checkbox:hover .checkbox__control, .checkbox--hovered .checkbox__control {
     border: 1px solid #3f95a6; }
-  .checkbox:focus .checkbox__control, .checkbox--focused .checkbox__control {
-    border: 1px solid #3f95a6 !important;
-    box-shadow: 0 0 12px 4px rgba(63, 149, 166, 0.4); }
+  .checkbox:focus, .checkbox--focused {
+    outline: none; }
+    .checkbox:focus .checkbox__control, .checkbox--focused .checkbox__control {
+      border: 1px solid #3f95a6 !important;
+      box-shadow: 0 0 12px 4px rgba(63, 149, 166, 0.4); }
   .checkbox--indeterminate .checkbox__control > .checkbox__control__icon {
     display: none !important; }
   .checkbox--indeterminate input[type=checkbox]:checked + .checkbox__control {
@@ -752,15 +753,17 @@ button.button--danger {
       background: #3f95a6;
       content: '';
       display: block;
-      width: calc(100% - 4px);
-      height: 2px; }
+      height: 2px;
+      position: absolute;
+      width: calc(100% - 4px); }
   .checkbox[disabled], .checkbox--disabled {
     cursor: not-allowed;
     pointer-events: none; }
     .checkbox[disabled] input[type=checkbox] + .checkbox__control, .checkbox--disabled input[type=checkbox] + .checkbox__control {
-      background: #f7f7f7;
-      border: 1px solid #d6d6d6 !important;
+      background: #f0f0f0;
+      border: 1px solid #b3b3b3 !important;
       box-shadow: none; }
-    input[type=checkbox]:checked + .checkbox[disabled]__control, input[type=checkbox]:checked + .checkbox--disabled__control {
-      background: #d6d6d6;
-      border: 1px solid #c7c7c7 !important; }
+    .checkbox[disabled] input[type=checkbox]:checked + .checkbox__control, .checkbox--disabled input[type=checkbox]:checked + .checkbox__control {
+      background: #f0f0f0; }
+    .checkbox[disabled].checkbox--indeterminate input[type=checkbox]:checked + .checkbox__control:after, .checkbox--disabled.checkbox--indeterminate input[type=checkbox]:checked + .checkbox__control:after {
+      background: #b3b3b3; }
