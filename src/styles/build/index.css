@@ -757,13 +757,15 @@ button.button--danger {
       position: absolute;
       width: calc(100% - 4px); }
   .checkbox[disabled], .checkbox--disabled {
-    cursor: not-allowed;
+    cursor: not-allowed !important;
     pointer-events: none; }
     .checkbox[disabled] input[type=checkbox] + .checkbox__control, .checkbox--disabled input[type=checkbox] + .checkbox__control {
       background: #f0f0f0;
-      border: 1px solid #b3b3b3 !important;
+      border: 1px solid #999999 !important;
       box-shadow: none; }
-    .checkbox[disabled] input[type=checkbox]:checked + .checkbox__control, .checkbox--disabled input[type=checkbox]:checked + .checkbox__control {
+      .checkbox[disabled] input[type=checkbox] + .checkbox__control > .checkbox__control__icon, .checkbox--disabled input[type=checkbox] + .checkbox__control > .checkbox__control__icon {
+        fill: #999999; }
+    .checkbox[disabled].checkbox--indeterminate input[type=checkbox]:checked + .checkbox__control, .checkbox--disabled.checkbox--indeterminate input[type=checkbox]:checked + .checkbox__control {
       background: #f0f0f0; }
-    .checkbox[disabled].checkbox--indeterminate input[type=checkbox]:checked + .checkbox__control:after, .checkbox--disabled.checkbox--indeterminate input[type=checkbox]:checked + .checkbox__control:after {
-      background: #b3b3b3; }
+      .checkbox[disabled].checkbox--indeterminate input[type=checkbox]:checked + .checkbox__control:after, .checkbox--disabled.checkbox--indeterminate input[type=checkbox]:checked + .checkbox__control:after {
+        background: #999999; }

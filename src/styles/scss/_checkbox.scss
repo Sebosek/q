@@ -80,24 +80,25 @@
 
     &[disabled],
     &--disabled {
-        cursor: not-allowed;
+        cursor: not-allowed !important;
         pointer-events: none;
 
         input[type=checkbox] + .checkbox__control {
             background: $_color-gray--lighter;
-            border: 1px solid $_color-gray--darker !important;
+            border: 1px solid $_color-gray--darkest !important;
             box-shadow: none;
-        }
 
-        input[type=checkbox]:checked + .checkbox__control {
-            background: $_color-gray--lighter;
-            // border: 1px solid $_color-gray--dark !important;
+            & > .checkbox__control__icon {
+                fill: $_color-gray--darkest;
+            }
         }
 
         &.checkbox--indeterminate {
             input[type=checkbox]:checked + .checkbox__control {
+                background: $_color-gray--lighter;
+
                 &:after {
-                    background: $_color-gray--darker;
+                    background: $_color-gray--darkest;
                 }
             }
         }
