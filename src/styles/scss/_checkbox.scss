@@ -1,0 +1,106 @@
+@import 'mixins/colors';
+
+.checkbox {
+    $duration: .2s;
+    $size: 16px;
+
+    display: inline-flex;
+    position: relative;
+    margin-bottom: 0;
+    user-select: none;
+
+    input[type=checkbox] + &__control {
+        align-items: center;
+        background: $_color-white;
+        border: 1px solid $_color-gray--normal;
+        border-radius: 4px;
+        display: inline-flex;
+        height: $size;
+        justify-content: center;
+        position: relative;
+        width: $size;
+
+        & > .checkbox__control__icon {
+            height: 16px;
+            width: 16px;
+            fill: $_color-white;
+        }
+    }
+    
+    input[type=checkbox] {
+        z-index: -1;
+        opacity: 0;
+        width: 0;
+        margin: 0;
+        display: none;
+    }
+
+    input[type=checkbox]:checked + &__control {
+        background: $_color-primary--normal;
+        border: 1px solid $_color-primary--normal;
+    }
+
+    &:hover,
+    &--hovered {
+        .checkbox__control {
+            border: 1px solid $_color-primary--normal;
+        }
+    } 
+
+    &:focus,
+    &--focused {
+        outline: none;
+
+        .checkbox__control {
+            border: 1px solid $_color-primary--normal !important;
+            box-shadow: 0 0 12px 4px change-color($_color-primary--normal, $alpha: .4);
+        }
+    }
+
+    &--indeterminate {
+        .checkbox__control {
+            & > .checkbox__control__icon {
+                display: none !important;
+            }
+        }
+
+        input[type=checkbox]:checked + .checkbox__control {
+            background: $_color-white;
+
+            &:after {
+                background: $_color-primary--normal;
+                content: '';
+                display: block;
+                height: 2px;
+                position: absolute;
+                width: calc(100% - 4px);
+            }
+        }
+    }
+
+    &[disabled],
+    &--disabled {
+        cursor: not-allowed !important;
+        pointer-events: none;
+
+        input[type=checkbox] + .checkbox__control {
+            background: $_color-gray--lighter;
+            border: 1px solid $_color-gray--darkest !important;
+            box-shadow: none;
+
+            & > .checkbox__control__icon {
+                fill: $_color-gray--darkest;
+            }
+        }
+
+        &.checkbox--indeterminate {
+            input[type=checkbox]:checked + .checkbox__control {
+                background: $_color-gray--lighter;
+
+                &:after {
+                    background: $_color-gray--darkest;
+                }
+            }
+        }
+    }
+}

@@ -1,4 +1,5 @@
 @import "variables";
+@import "colors";
 
 @mixin font(
     $font-size: $_font-size-base, 
@@ -63,6 +64,7 @@
         #{$_font-size-note}, 
         calc(#{$_vertical-rhythm} / 2) 0 calc(#{$_vertical-rhythm} / 2) 0
     );
+    color: $_color-gray--darkest;
 }
 
 @mixin label() {
