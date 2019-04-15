@@ -720,15 +720,19 @@ button.button--danger {
     background: #fff;
     border: 1px solid #d6d6d6;
     border-radius: 4px;
+    box-sizing: border-box;
     display: inline-flex;
     height: 16px;
     justify-content: center;
     position: relative;
     width: 16px; }
     input[type=checkbox] + .checkbox__control > .checkbox__control__icon {
-      height: 16px;
-      width: 16px;
-      fill: #fff; }
+      width: 14px;
+      height: 14px; }
+      input[type=checkbox] + .checkbox__control > .checkbox__control__icon > svg {
+        height: 14px;
+        width: 14px;
+        fill: #fff; }
   .checkbox input[type=checkbox] {
     z-index: -1;
     opacity: 0;
@@ -744,7 +748,7 @@ button.button--danger {
     outline: none; }
     .checkbox:focus .checkbox__control, .checkbox--focused .checkbox__control {
       border: 1px solid #3f95a6 !important;
-      box-shadow: 0 0 12px 4px rgba(63, 149, 166, 0.4); }
+      box-shadow: 0 0 12px 0px rgba(63, 149, 166, 0.4); }
   .checkbox--indeterminate .checkbox__control > .checkbox__control__icon {
     display: none !important; }
   .checkbox--indeterminate input[type=checkbox]:checked + .checkbox__control {
@@ -760,12 +764,60 @@ button.button--danger {
     cursor: not-allowed !important;
     pointer-events: none; }
     .checkbox[disabled] input[type=checkbox] + .checkbox__control, .checkbox--disabled input[type=checkbox] + .checkbox__control {
-      background: #f0f0f0;
-      border: 1px solid #999999 !important;
+      background: #f7f7f7;
+      border: 1px solid #c7c7c7 !important;
       box-shadow: none; }
-      .checkbox[disabled] input[type=checkbox] + .checkbox__control > .checkbox__control__icon, .checkbox--disabled input[type=checkbox] + .checkbox__control > .checkbox__control__icon {
-        fill: #999999; }
+      .checkbox[disabled] input[type=checkbox] + .checkbox__control > .checkbox__control__icon > svg, .checkbox--disabled input[type=checkbox] + .checkbox__control > .checkbox__control__icon > svg {
+        fill: #c7c7c7; }
     .checkbox[disabled].checkbox--indeterminate input[type=checkbox]:checked + .checkbox__control, .checkbox--disabled.checkbox--indeterminate input[type=checkbox]:checked + .checkbox__control {
-      background: #f0f0f0; }
+      background: #f7f7f7; }
       .checkbox[disabled].checkbox--indeterminate input[type=checkbox]:checked + .checkbox__control:after, .checkbox--disabled.checkbox--indeterminate input[type=checkbox]:checked + .checkbox__control:after {
-        background: #999999; }
+        background: #c7c7c7; }
+
+.radio {
+  display: inline-flex;
+  position: relative;
+  user-select: none; }
+  input[type=radio] + .radio__control {
+    align-items: center;
+    display: inline-flex;
+    border-radius: 50%;
+    height: 16px;
+    justify-content: center;
+    position: relative;
+    width: 16px; }
+    input[type=radio] + .radio__control:after {
+      background: #fff;
+      border: 1px solid #c7c7c7;
+      border-radius: 50%;
+      box-sizing: border-box;
+      color: #fff;
+      content: '';
+      position: absolute;
+      height: 100%;
+      width: 100%; }
+  .radio:hover > .radio__control:after {
+    border: 1px solid #3f95a6; }
+  .radio input[type=radio] {
+    z-index: -1;
+    opacity: 0;
+    width: 0;
+    margin: 0; }
+  input[type=radio]:checked + .radio__control:after {
+    border: 6px solid #3f95a6; }
+  .radio:focus,
+  .radio:focus-within .radio--focused {
+    outline: none; }
+    .radio:focus .radio__control,
+    .radio:focus-within .radio--focused .radio__control {
+      box-shadow: 0 0 12px 0px rgba(63, 149, 166, 0.4); }
+      .radio:focus .radio__control:after,
+      .radio:focus-within .radio--focused .radio__control:after {
+        border-color: #3f95a6; }
+  .radio[disabled], .radio--disabled {
+    cursor: not-allowed;
+    pointer-events: none; }
+    .radio[disabled] input[type=radio] + .radio__control:after, .radio--disabled input[type=radio] + .radio__control:after {
+      background: #f7f7f7;
+      border-color: #c7c7c7;
+      box-shadow: none; }

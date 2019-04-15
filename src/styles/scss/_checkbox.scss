@@ -14,6 +14,7 @@
         background: $_color-white;
         border: 1px solid $_color-gray--normal;
         border-radius: 4px;
+        box-sizing: border-box;
         display: inline-flex;
         height: $size;
         justify-content: center;
@@ -21,9 +22,14 @@
         width: $size;
 
         & > .checkbox__control__icon {
-            height: 16px;
-            width: 16px;
-            fill: $_color-white;
+            width: 14px;
+            height: 14px;
+
+            & > svg {
+                height: 14px;
+                width: 14px;
+                fill: $_color-white;
+            }
         }
     }
     
@@ -53,7 +59,7 @@
 
         .checkbox__control {
             border: 1px solid $_color-primary--normal !important;
-            box-shadow: 0 0 12px 4px change-color($_color-primary--normal, $alpha: .4);
+            box-shadow: 0 0 12px 0px change-color($_color-primary--normal, $alpha: .4);
         }
     }
 
@@ -84,21 +90,21 @@
         pointer-events: none;
 
         input[type=checkbox] + .checkbox__control {
-            background: $_color-gray--lighter;
-            border: 1px solid $_color-gray--darkest !important;
+            background: $_color-gray--lightest;
+            border: 1px solid $_color-gray--dark !important;
             box-shadow: none;
 
-            & > .checkbox__control__icon {
-                fill: $_color-gray--darkest;
+            & > .checkbox__control__icon > svg {
+                fill: $_color-gray--dark;
             }
         }
 
         &.checkbox--indeterminate {
             input[type=checkbox]:checked + .checkbox__control {
-                background: $_color-gray--lighter;
+                background: $_color-gray--lightest;
 
                 &:after {
-                    background: $_color-gray--darkest;
+                    background: $_color-gray--dark;
                 }
             }
         }
