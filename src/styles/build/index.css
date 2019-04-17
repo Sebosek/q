@@ -706,7 +706,7 @@ button.button--danger {
     .input > input:focus {
       outline: none; }
   .input--focus, .input:focus, .input:focus-within {
-    box-shadow: 0 10px 15px -5px rgba(199, 199, 199, 0.4), 0 0 40px 0 rgba(199, 199, 199, 0.1); }
+    box-shadow: 0 8px 20px -8px rgba(199, 199, 199, 0.2), 0 0 12px 0 rgba(199, 199, 199, 0.2); }
     .input--focus .input__envelope .input__addon, .input:focus .input__envelope .input__addon, .input:focus-within .input__envelope .input__addon {
       background: transparent; }
 
@@ -748,7 +748,7 @@ button.button--danger {
     outline: none; }
     .checkbox:focus .checkbox__control, .checkbox--focused .checkbox__control {
       border: 1px solid #3f95a6 !important;
-      box-shadow: 0 0 12px 0px rgba(63, 149, 166, 0.4); }
+      box-shadow: 0 8px 20px -8px rgba(63, 149, 166, 0.4), 0 0 12px 0 rgba(63, 149, 166, 0.4); }
   .checkbox--indeterminate .checkbox__control > .checkbox__control__icon {
     display: none !important; }
   .checkbox--indeterminate input[type=checkbox]:checked + .checkbox__control {

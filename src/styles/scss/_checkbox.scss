@@ -59,7 +59,8 @@
 
         .checkbox__control {
             border: 1px solid $_color-primary--normal !important;
-            box-shadow: 0 0 12px 0px change-color($_color-primary--normal, $alpha: .4);
+            // box-shadow: 0 0 12px 0px change-color($_color-primary--normal, $alpha: .4);
+            box-shadow: 0 8px 20px -8px change-color($_color-primary--normal, $alpha: .4), 0 0 12px 0 change-color($_color-primary--normal, $alpha: .4);
         }
     }
 

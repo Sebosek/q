@@ -68,7 +68,8 @@ $focus__shadow: $_color-secondary--lighter;
     &--focus,
     &:focus,
     &:focus-within {
-        @include shadow-normal($_color-gray--dark);
+        // @include shadow-normal($_color-gray--dark);  
+        box-shadow: 0 8px 20px -8px change-color($_color-gray--dark, $alpha: .2), 0 0 12px 0 change-color($_color-gray--dark, $alpha: .2);
 
         .input__envelope {
             .input__addon {
