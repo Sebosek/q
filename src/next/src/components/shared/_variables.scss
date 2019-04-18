@@ -48,7 +48,7 @@ $colors: (
   '--q-color-danger--darkest': hsl(357, 100, 23),
 );
 
-@function map-val($key, $map) {
-  $def: map-get($key, $map);
-  @return 'val(#{$key}, #{$def}';
+@function map-val($map, $key) {
+  $def: map-get($map, $key);
+  @return "val(#{$key}, #{$def})";
 }

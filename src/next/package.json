@@ -2,7 +2,7 @@
   "name": "q.components",
   "version": "0.1.0",
   "description": "Q Components",
-  "module": "dist/index.js",
+  "module": "dist/index.mjs",
   "es2015": "dist/esm/index.mjs.js",
   "es2017": "dist/esm/index.mjs.js",
   "jsnext:main": "dist/esm/index.mjs.js",
@@ -24,7 +24,7 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "@stencil/core": "~1.0.0-alpha.9",
+    "@stencil/core": "~1.0.0-alpha.10",
     "@stencil/sass": "^0.1.1",
     "@types/jest": "23.3.14",
     "@types/puppeteer": "1.12.2",

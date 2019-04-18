@@ -3,7 +3,7 @@ import { level } from './title.level';
 
 @Component({
   tag: 'q-title',
-  styleUrl: 'title.scss',
+  styleUrls: ['title.scss'],
   shadow: true
 })
 export class Title {

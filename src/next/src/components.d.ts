@@ -7,6 +7,9 @@
 
 import { HTMLStencilElement, JSXBase } from '@stencil/core/internal';
 import { JSX } from '@stencil/core';
+import {
+  level,
+} from './components/title/title.level';
 
 
 export namespace Components {
@@ -23,6 +26,32 @@ export namespace Components {
     * The middle name
     */
     'middle': string;
+  }
+  interface MyComponent {
+    /**
+    * The first name
+    */
+    'first': string;
+    /**
+    * The last name
+    */
+    'last': string;
+    /**
+    * The middle name
+    */
+    'middle': string;
+  }
+  interface QTitle {
+    /**
+    * Defines general column size
+    */
+    'level': level;
+  }
+  interface QTitle {
+    /**
+    * Defines general column size
+    */
+    'level': level;
   }
 }
 
@@ -41,13 +70,45 @@ declare namespace LocalJSX {
     */
     'middle'?: string;
   }
+  interface MyComponent extends JSXBase.HTMLAttributes {
+    /**
+    * The first name
+    */
+    'first'?: string;
+    /**
+    * The last name
+    */
+    'last'?: string;
+    /**
+    * The middle name
+    */
+    'middle'?: string;
+  }
+  interface QTitle extends JSXBase.HTMLAttributes {
+    /**
+    * Defines general column size
+    */
+    'level'?: level;
+  }
+  interface QTitle extends JSXBase.HTMLAttributes {
+    /**
+    * Defines general column size
+    */
+    'level'?: level;
+  }
 
   interface ElementInterfaces {
     'MyComponent': Components.MyComponent;
+    'MyComponent': Components.MyComponent;
+    'QTitle': Components.QTitle;
+    'QTitle': Components.QTitle;
   }
 
   interface IntrinsicElements {
     'MyComponent': LocalJSX.MyComponent;
+    'MyComponent': LocalJSX.MyComponent;
+    'QTitle': LocalJSX.QTitle;
+    'QTitle': LocalJSX.QTitle;
   }
 }
 export { LocalJSX as JSX };
@@ -67,12 +128,36 @@ declare global {
     prototype: HTMLMyComponentElement;
     new (): HTMLMyComponentElement;
   };
+
+  interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {}
+  var HTMLMyComponentElement: {
+    prototype: HTMLMyComponentElement;
+    new (): HTMLMyComponentElement;
+  };
+
+  interface HTMLQTitleElement extends Components.QTitle, HTMLStencilElement {}
+  var HTMLQTitleElement: {
+    prototype: HTMLQTitleElement;
+    new (): HTMLQTitleElement;
+  };
+
+  interface HTMLQTitleElement extends Components.QTitle, HTMLStencilElement {}
+  var HTMLQTitleElement: {
+    prototype: HTMLQTitleElement;
+    new (): HTMLQTitleElement;
+  };
   interface HTMLElementTagNameMap {
     'my-component': HTMLMyComponentElement
+    'my-component': HTMLMyComponentElement
+    'q-title': HTMLQTitleElement
+    'q-title': HTMLQTitleElement
   }
 
   interface ElementTagNameMap {
     'my-component': HTMLMyComponentElement;
+    'my-component': HTMLMyComponentElement;
+    'q-title': HTMLQTitleElement;
+    'q-title': HTMLQTitleElement;
   }
 }
 
