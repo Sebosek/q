@@ -35,6 +35,9 @@ export namespace Components {
     'role'?: role;
   }
 
+  interface QCaption {}
+  interface QCaptionAttributes extends StencilHTMLAttributes {}
+
   interface QGridColumn {
     /**
     * Defines column pulling
@@ -113,9 +116,6 @@ export namespace Components {
   interface QLabel {}
   interface QLabelAttributes extends StencilHTMLAttributes {}
 
-  interface QNote {}
-  interface QNoteAttributes extends StencilHTMLAttributes {}
-
   interface QParagraph {}
   interface QParagraphAttributes extends StencilHTMLAttributes {}
 
@@ -136,22 +136,22 @@ export namespace Components {
 declare global {
   interface StencilElementInterfaces {
     'QButton': Components.QButton;
+    'QCaption': Components.QCaption;
     'QGridColumn': Components.QGridColumn;
     'QGrid': Components.QGrid;
     'QInput': Components.QInput;
     'QLabel': Components.QLabel;
-    'QNote': Components.QNote;
     'QParagraph': Components.QParagraph;
     'QTitle': Components.QTitle;
   }
 
   interface StencilIntrinsicElements {
     'q-button': Components.QButtonAttributes;
+    'q-caption': Components.QCaptionAttributes;
     'q-grid-column': Components.QGridColumnAttributes;
     'q-grid': Components.QGridAttributes;
     'q-input': Components.QInputAttributes;
     'q-label': Components.QLabelAttributes;
-    'q-note': Components.QNoteAttributes;
     'q-paragraph': Components.QParagraphAttributes;
     'q-title': Components.QTitleAttributes;
   }
@@ -161,6 +161,12 @@ declare global {
   var HTMLQButtonElement: {
     prototype: HTMLQButtonElement;
     new (): HTMLQButtonElement;
+  };
+
+  interface HTMLQCaptionElement extends Components.QCaption, HTMLStencilElement {}
+  var HTMLQCaptionElement: {
+    prototype: HTMLQCaptionElement;
+    new (): HTMLQCaptionElement;
   };
 
   interface HTMLQGridColumnElement extends Components.QGridColumn, HTMLStencilElement {}
@@ -187,12 +193,6 @@ declare global {
     new (): HTMLQLabelElement;
   };
 
-  interface HTMLQNoteElement extends Components.QNote, HTMLStencilElement {}
-  var HTMLQNoteElement: {
-    prototype: HTMLQNoteElement;
-    new (): HTMLQNoteElement;
-  };
-
   interface HTMLQParagraphElement extends Components.QParagraph, HTMLStencilElement {}
   var HTMLQParagraphElement: {
     prototype: HTMLQParagraphElement;
@@ -207,22 +207,22 @@ declare global {
 
   interface HTMLElementTagNameMap {
     'q-button': HTMLQButtonElement
+    'q-caption': HTMLQCaptionElement
     'q-grid-column': HTMLQGridColumnElement
     'q-grid': HTMLQGridElement
     'q-input': HTMLQInputElement
     'q-label': HTMLQLabelElement
-    'q-note': HTMLQNoteElement
     'q-paragraph': HTMLQParagraphElement
     'q-title': HTMLQTitleElement
   }
 
   interface ElementTagNameMap {
     'q-button': HTMLQButtonElement;
+    'q-caption': HTMLQCaptionElement;
     'q-grid-column': HTMLQGridColumnElement;
     'q-grid': HTMLQGridElement;
     'q-input': HTMLQInputElement;
     'q-label': HTMLQLabelElement;
-    'q-note': HTMLQNoteElement;
     'q-paragraph': HTMLQParagraphElement;
     'q-title': HTMLQTitleElement;
   }

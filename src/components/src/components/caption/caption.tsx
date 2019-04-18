@@ -1,11 +1,11 @@
 import { Component } from '@stencil/core';
 
 @Component({
-  tag: 'q-note',
-  styleUrl: 'note.scss',
+  tag: 'q-caption',
+  styleUrls: ['caption.scss'],
   shadow: true
 })
-export class Note {
+export class Caption {
   render() {
     return (
       <small>
