@@ -103,6 +103,13 @@ export namespace Components {
     'gutter'?: gutter | undefined;
   }
 
+  interface QInput {
+    'placeholder': string;
+  }
+  interface QInputAttributes extends StencilHTMLAttributes {
+    'placeholder'?: string;
+  }
+
   interface QLabel {}
   interface QLabelAttributes extends StencilHTMLAttributes {}
 
@@ -131,6 +138,7 @@ declare global {
     'QButton': Components.QButton;
     'QGridColumn': Components.QGridColumn;
     'QGrid': Components.QGrid;
+    'QInput': Components.QInput;
     'QLabel': Components.QLabel;
     'QNote': Components.QNote;
     'QParagraph': Components.QParagraph;
@@ -141,6 +149,7 @@ declare global {
     'q-button': Components.QButtonAttributes;
     'q-grid-column': Components.QGridColumnAttributes;
     'q-grid': Components.QGridAttributes;
+    'q-input': Components.QInputAttributes;
     'q-label': Components.QLabelAttributes;
     'q-note': Components.QNoteAttributes;
     'q-paragraph': Components.QParagraphAttributes;
@@ -164,6 +173,12 @@ declare global {
   var HTMLQGridElement: {
     prototype: HTMLQGridElement;
     new (): HTMLQGridElement;
+  };
+
+  interface HTMLQInputElement extends Components.QInput, HTMLStencilElement {}
+  var HTMLQInputElement: {
+    prototype: HTMLQInputElement;
+    new (): HTMLQInputElement;
   };
 
   interface HTMLQLabelElement extends Components.QLabel, HTMLStencilElement {}
@@ -194,6 +209,7 @@ declare global {
     'q-button': HTMLQButtonElement
     'q-grid-column': HTMLQGridColumnElement
     'q-grid': HTMLQGridElement
+    'q-input': HTMLQInputElement
     'q-label': HTMLQLabelElement
     'q-note': HTMLQNoteElement
     'q-paragraph': HTMLQParagraphElement
@@ -204,6 +220,7 @@ declare global {
     'q-button': HTMLQButtonElement;
     'q-grid-column': HTMLQGridColumnElement;
     'q-grid': HTMLQGridElement;
+    'q-input': HTMLQInputElement;
     'q-label': HTMLQLabelElement;
     'q-note': HTMLQNoteElement;
     'q-paragraph': HTMLQParagraphElement;
