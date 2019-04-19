@@ -25,11 +25,13 @@ import {
 export namespace Components {
 
   interface QButton {
+    'disabled': boolean;
     'ghost': boolean;
     'htmlType': boolean;
     'role': role;
   }
   interface QButtonAttributes extends StencilHTMLAttributes {
+    'disabled'?: boolean;
     'ghost'?: boolean;
     'htmlType'?: boolean;
     'role'?: role;
