@@ -1,0 +1,77 @@
+@import "../shared/variables";
+
+:host {
+  display: inline-flex;
+  position: relative;
+}
+
+.radio {
+  $size: 16px;
+
+  display: inline-flex;
+  position: relative;
+  user-select: none;
+
+  input[type="radio"] + &__control {
+    align-items: center;
+    display: inline-flex;
+    border-radius: 50%;
+    height: $size;
+    justify-content: center;
+    position: relative;
+    width: $size;
+
+    &:after {
+      background: #{map-val($colors, "--q-color-white")};
+      border: 1px solid #{map-val($colors, "--q-color-gray--dark")};
+      border-radius: 50%;
+      box-sizing: border-box;
+      color: #{map-val($colors, "--q-color-white")};
+      content: "";
+
+      position: absolute;
+      height: 100%;
+      width: 100%;
+    }
+  }
+
+  &:hover > .radio__control:after {
+    border: 1px solid #{map-val($colors, "--q-color-primary--normal")};
+  }
+
+  input[type="radio"] {
+    z-index: -1;
+    opacity: 0;
+    width: 0;
+    margin: 0;
+  }
+
+  input[type="radio"]:checked + &__control:after {
+    border: 6px solid #{map-val($colors, "--q-color-primary--normal")};
+  }
+
+  &:focus,
+  &:focus-within &--focused {
+    outline: none;
+
+    .radio__control {
+      box-shadow: 0 0 12px 0 #{map-val($colors, "--q-color-primary--light")};
+
+      &:after {
+        border-color: #{map-val($colors, "--q-color-primary--normal")};
+      }
+    }
+  }
+
+  &[disabled],
+  &--disabled {
+    cursor: not-allowed;
+    pointer-events: none;
+
+    input[type="radio"] + .radio__control:after {
+      background: #{map-val($colors, "--q-color-gray--lightest")};
+      border-color: #{map-val($colors, "--q-color-gray--dark")};
+      box-shadow: none;
+    }
+  }
+}

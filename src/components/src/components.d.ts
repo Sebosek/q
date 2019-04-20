@@ -40,6 +40,9 @@ export namespace Components {
   interface QCaption {}
   interface QCaptionAttributes extends StencilHTMLAttributes {}
 
+  interface QCheckbox {}
+  interface QCheckboxAttributes extends StencilHTMLAttributes {}
+
   interface QGridColumn {
     /**
     * Defines column pulling
@@ -121,6 +124,9 @@ export namespace Components {
   interface QParagraph {}
   interface QParagraphAttributes extends StencilHTMLAttributes {}
 
+  interface QRadio {}
+  interface QRadioAttributes extends StencilHTMLAttributes {}
+
   interface QTitle {
     /**
     * Defines general column size
@@ -139,22 +145,26 @@ declare global {
   interface StencilElementInterfaces {
     'QButton': Components.QButton;
     'QCaption': Components.QCaption;
+    'QCheckbox': Components.QCheckbox;
     'QGridColumn': Components.QGridColumn;
     'QGrid': Components.QGrid;
     'QInput': Components.QInput;
     'QLabel': Components.QLabel;
     'QParagraph': Components.QParagraph;
+    'QRadio': Components.QRadio;
     'QTitle': Components.QTitle;
   }
 
   interface StencilIntrinsicElements {
     'q-button': Components.QButtonAttributes;
     'q-caption': Components.QCaptionAttributes;
+    'q-checkbox': Components.QCheckboxAttributes;
     'q-grid-column': Components.QGridColumnAttributes;
     'q-grid': Components.QGridAttributes;
     'q-input': Components.QInputAttributes;
     'q-label': Components.QLabelAttributes;
     'q-paragraph': Components.QParagraphAttributes;
+    'q-radio': Components.QRadioAttributes;
     'q-title': Components.QTitleAttributes;
   }
 
@@ -169,6 +179,12 @@ declare global {
   var HTMLQCaptionElement: {
     prototype: HTMLQCaptionElement;
     new (): HTMLQCaptionElement;
+  };
+
+  interface HTMLQCheckboxElement extends Components.QCheckbox, HTMLStencilElement {}
+  var HTMLQCheckboxElement: {
+    prototype: HTMLQCheckboxElement;
+    new (): HTMLQCheckboxElement;
   };
 
   interface HTMLQGridColumnElement extends Components.QGridColumn, HTMLStencilElement {}
@@ -201,6 +217,12 @@ declare global {
     new (): HTMLQParagraphElement;
   };
 
+  interface HTMLQRadioElement extends Components.QRadio, HTMLStencilElement {}
+  var HTMLQRadioElement: {
+    prototype: HTMLQRadioElement;
+    new (): HTMLQRadioElement;
+  };
+
   interface HTMLQTitleElement extends Components.QTitle, HTMLStencilElement {}
   var HTMLQTitleElement: {
     prototype: HTMLQTitleElement;
@@ -210,22 +232,26 @@ declare global {
   interface HTMLElementTagNameMap {
     'q-button': HTMLQButtonElement
     'q-caption': HTMLQCaptionElement
+    'q-checkbox': HTMLQCheckboxElement
     'q-grid-column': HTMLQGridColumnElement
     'q-grid': HTMLQGridElement
     'q-input': HTMLQInputElement
     'q-label': HTMLQLabelElement
     'q-paragraph': HTMLQParagraphElement
+    'q-radio': HTMLQRadioElement
     'q-title': HTMLQTitleElement
   }
 
   interface ElementTagNameMap {
     'q-button': HTMLQButtonElement;
     'q-caption': HTMLQCaptionElement;
+    'q-checkbox': HTMLQCheckboxElement;
     'q-grid-column': HTMLQGridColumnElement;
     'q-grid': HTMLQGridElement;
     'q-input': HTMLQInputElement;
     'q-label': HTMLQLabelElement;
     'q-paragraph': HTMLQParagraphElement;
+    'q-radio': HTMLQRadioElement;
     'q-title': HTMLQTitleElement;
   }
 

@@ -1,2 +1,67 @@
-@import "@q/styles/scss/mixins/typography";
-@import "@q/styles/scss/input";
+@import "../shared/variables";
+
+.input {
+  align-items: baseline;
+  background: #{map-val($colors, '--q-color-white')};
+  border: 1px solid #{map-val($colors, '--q-color-gray--lighter')};
+  border-radius: 2px;
+  display: inline-flex;
+  font-size: map-val($typography, '--q-font-size');
+  font-family: map-val($typography, '--q-font-family');
+  padding: 0;
+  position: relative;
+  transition: 0.2s;
+  width: 384px;
+
+  &__addon {
+    background: transparent;
+    align-self: stretch;
+    display: inline-flex;
+    align-items: center;
+    padding: 0 12px;
+
+    &__control {
+      height: 60%;
+      display: inline-flex;
+      align-items: center;
+      margin-left: -12px;
+      margin-right: -12px;
+      padding: 0 12px;
+    }
+
+    &:first-child > .input__addon__control:last-child {
+      border-right: 1px solid #{map-val($colors, '--q-color-gray--lighter')};
+      margin-left: -12px;
+    }
+
+    &:last-child > .input__addon__control:first-child {
+      border-left: 1px solid #{map-val($colors, '--q-color-gray--lighter')};
+      margin-right: -12px;
+    }
+  }
+
+  & > input {
+    border: none;
+    background-color: transparent;
+    color: #{map-val($colors, '--q-color-blackish--normal')};
+    font-size: 1em;
+    padding: 12px;
+    width: 100%;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &--focus,
+  &:focus,
+  &:focus-within {
+    box-shadow: 0 8px 12px -8px #{map-val($colors, '--q-color-gray--normal')}, 0 0 12px 0 #{map-val($colors, '--q-color-gray--lighter')};
+
+    .input__envelope {
+      .input__addon {
+        background: transparent;
+      }
+    }
+  }
+}

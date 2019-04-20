@@ -25,7 +25,7 @@ button {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-    padding: 1em 0;
+    padding: calc(1em - 1px) 0;
   }
 
   &:hover:not(:disabled),
