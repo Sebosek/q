@@ -22,12 +22,63 @@
       height: 60px;
       justify-content: center;
     }
+
+    .form-entity {
+      display: flex;
+      flex-direction: row;
+    }
+    .form-entity__control {
+      display: inline-flex;
+      justify-content: center;
+      width: 32px;
+      padding: 8px 0;
+    }
+    .form-entity__label {
+      display: inline-flex;
+      flex-direction: column;
+      padding: 8px 0;
+    }
+    .form-entity__label {
+      margin-top: 1px;
+    }
+    .form-item q-label {
+      margin-bottom: 8px;
+    }
   </style>
 </head>
 <body>
-  <q-input></q-input>
-  <q-radio></q-radio>
-  <q-checkbox></q-checkbox>
+  <div class="form-item">
+    <q-label>Your name</q-label>
+    <q-input></q-input>
+  </div>
+  <div class="form-entity">
+    <div class="form-entity__control">
+      <q-radio></q-radio>
+    </div>
+    <div class="form-entity__label">
+      <q-label>Radio item</q-label>
+      <q-caption>Some not so iportant caption.</q-caption>
+    </div>
+  </div>
+  <label class="form-entity">
+    <div class="form-entity__control">
+      <q-radio></q-radio>
+    </div>
+    <div class="form-entity__label">
+      <q-label>Radio item</q-label>
+      <q-caption>Some not so iportant caption.</q-caption>
+    </div>
+  </label>
+  <label class="form-entity">
+    <div class="form-entity__control">
+        <q-checkbox></q-checkbox>
+    </div>
+    <div class="form-entity__label">
+      <q-label>Checkbox item</q-label>
+      <q-caption>Some not so iportant caption.</q-caption>
+    </div>
+  </label>
+
   <q-button role="primary">Create user</q-button>
+  </html>
 </body>
-</html>

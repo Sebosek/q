@@ -2,7 +2,7 @@
 
 :host {
   display: inline-flex;
-  position: relative;
+  vertical-align: baseline;
 }
 
 .radio {
@@ -44,6 +44,8 @@
     opacity: 0;
     width: 0;
     margin: 0;
+    display: none;
+    position: absolute;
   }
 
   input[type="radio"]:checked + &__control:after {
@@ -51,7 +53,8 @@
   }
 
   &:focus,
-  &:focus-within &--focused {
+  &:focus-within,
+  &--focused {
     outline: none;
 
     .radio__control {

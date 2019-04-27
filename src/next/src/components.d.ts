@@ -27,26 +27,6 @@ export namespace Components {
     */
     'middle': string;
   }
-  interface MyComponent {
-    /**
-    * The first name
-    */
-    'first': string;
-    /**
-    * The last name
-    */
-    'last': string;
-    /**
-    * The middle name
-    */
-    'middle': string;
-  }
-  interface QTitle {
-    /**
-    * Defines general column size
-    */
-    'level': level;
-  }
   interface QTitle {
     /**
     * Defines general column size
@@ -70,26 +50,6 @@ declare namespace LocalJSX {
     */
     'middle'?: string;
   }
-  interface MyComponent extends JSXBase.HTMLAttributes {
-    /**
-    * The first name
-    */
-    'first'?: string;
-    /**
-    * The last name
-    */
-    'last'?: string;
-    /**
-    * The middle name
-    */
-    'middle'?: string;
-  }
-  interface QTitle extends JSXBase.HTMLAttributes {
-    /**
-    * Defines general column size
-    */
-    'level'?: level;
-  }
   interface QTitle extends JSXBase.HTMLAttributes {
     /**
     * Defines general column size
@@ -99,15 +59,11 @@ declare namespace LocalJSX {
 
   interface ElementInterfaces {
     'MyComponent': Components.MyComponent;
-    'MyComponent': Components.MyComponent;
-    'QTitle': Components.QTitle;
     'QTitle': Components.QTitle;
   }
 
   interface IntrinsicElements {
     'MyComponent': LocalJSX.MyComponent;
-    'MyComponent': LocalJSX.MyComponent;
-    'QTitle': LocalJSX.QTitle;
     'QTitle': LocalJSX.QTitle;
   }
 }
@@ -129,18 +85,6 @@ declare global {
     new (): HTMLMyComponentElement;
   };
 
-  interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {}
-  var HTMLMyComponentElement: {
-    prototype: HTMLMyComponentElement;
-    new (): HTMLMyComponentElement;
-  };
-
-  interface HTMLQTitleElement extends Components.QTitle, HTMLStencilElement {}
-  var HTMLQTitleElement: {
-    prototype: HTMLQTitleElement;
-    new (): HTMLQTitleElement;
-  };
-
   interface HTMLQTitleElement extends Components.QTitle, HTMLStencilElement {}
   var HTMLQTitleElement: {
     prototype: HTMLQTitleElement;
@@ -148,15 +92,11 @@ declare global {
   };
   interface HTMLElementTagNameMap {
     'my-component': HTMLMyComponentElement
-    'my-component': HTMLMyComponentElement
-    'q-title': HTMLQTitleElement
     'q-title': HTMLQTitleElement
   }
 
   interface ElementTagNameMap {
     'my-component': HTMLMyComponentElement;
-    'my-component': HTMLMyComponentElement;
-    'q-title': HTMLQTitleElement;
     'q-title': HTMLQTitleElement;
   }
 }

@@ -4,8 +4,8 @@ $size: 16px;
 
 :host {
   display: inline-flex;
-  position: relative;
-  height: $size;
+  max-height: $size;
+  vertical-align: baseline;
 }
 
 .checkbox {
@@ -46,6 +46,7 @@ $size: 16px;
     width: 0;
     margin: 0;
     display: none;
+    position: absolute;
   }
 
   input[type="checkbox"]:checked + &__control {
@@ -61,6 +62,7 @@ $size: 16px;
   }
 
   &:focus,
+  &:focus-within,
   &--focused {
     outline: none;
 
