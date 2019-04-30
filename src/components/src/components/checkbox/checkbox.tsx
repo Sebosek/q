@@ -1,4 +1,4 @@
-import { Component, Prop, Listen } from "@stencil/core";
+import { Component, EventEmitter, Event, Prop, Listen, Watch } from "@stencil/core";
 
 @Component({
   tag: "q-checkbox",
@@ -6,21 +6,41 @@ import { Component, Prop, Listen } from "@stencil/core";
   shadow: true
 })
 export class Checkbox {
+  constructor() {
+    this.toggle = this.toggle.bind(this);
+  }
+
   @Prop({ reflectToAttr: true, mutable: true }) checked: boolean = false
   @Prop({ reflectToAttr: true, mutable: true }) intermediate: boolean = false
   @Prop({ reflectToAttr: true, mutable: true }) name: string
   @Prop({ reflectToAttr: true, mutable: true }) value: string | number
 
+  @Watch('intermediate') watchIntermediate() {
+    this.el.classList.toggle('checkbox--indeterminate', this.intermediate)
+  }
+
+  @Event() changed: EventEmitter<string | number | boolean>
+
   @Listen('keydown') handleKeyDown(ev: KeyboardEvent) {
     const keys = [' ', 'Enter']
     if (keys.includes(ev.key)) {
-      this.checked = !this.checked
+      this.toggle()
     }
+  }
+
+  private el: HTMLElement
+
+  componentDidLoad() {
+    this.el.classList.toggle('checkbox--indeterminate', this.intermediate)
   }
 
   render() {
     return (
-      <label class="checkbox" tabindex="0">
+      <div
+        class="checkbox"
+        tabindex="0"
+        ref={(el: HTMLElement) => this.el = el}
+        onClick={this.toggle}>
         <input
           type="checkbox"
           checked={this.checked}
@@ -37,7 +57,15 @@ export class Checkbox {
             </svg>
           </div>
         </div>
-      </label>
+      </div>
     );
+  }
+
+  private toggle() {
+    this.checked = !this.checked
+    this.intermediate = false;
+    const value = !this.checked || (this.value || true)
+
+    this.changed.emit(value)
   }
 }

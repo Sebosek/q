@@ -18,7 +18,8 @@ export class Toggle {
   }
 
   @Listen('keydown') handleKeyDown(ev: KeyboardEvent) {
-    if (ev.key === ' ') {
+    const keys = [' ', 'Enter']
+    if (keys.includes(ev.key)) {
       this.toggle()
     }
   }

@@ -50,6 +50,7 @@ export namespace Components {
     'checked'?: boolean;
     'intermediate'?: boolean;
     'name'?: string;
+    'onChanged'?: (event: CustomEvent<string | number | boolean>) => void;
     'value'?: string | number;
   }
 
