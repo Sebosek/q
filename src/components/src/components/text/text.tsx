@@ -1,11 +1,11 @@
 import { Component } from '@stencil/core';
 
 @Component({
-  tag: 'q-paragraph',
-  styleUrls: ['paragraph.scss'],
+  tag: 'q-text',
+  styleUrls: ['text.scss'],
   shadow: true
 })
-export class Paragraph {
+export class Text {
   render() {
     return (
       <p>
