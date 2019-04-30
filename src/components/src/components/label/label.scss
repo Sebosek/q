@@ -1,5 +1,8 @@
-@import "@q/styles/scss/mixins/typography";
+@import '../shared/variables';
 
 .label {
-    @include label();
+  line-height: 1;
+  font-size: map-val($typography, '--q-font-size');
+  font-family: map-val($typography, '--q-font-family');
+  font-weight: 500;
 }

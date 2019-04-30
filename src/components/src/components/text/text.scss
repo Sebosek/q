@@ -1,0 +1,9 @@
+@import '../shared/variables';
+
+p {
+  font-size: map-val($typography, '--q-font-size');
+  font-family: map-val($typography, '--q-font-family');
+  font-weight: normal;
+  margin: map-val($spacing, '--q-vertical-spacing--small') 0 map-val($spacing, '--q-vertical-spacing--small');
+  line-height: 1.5;
+}

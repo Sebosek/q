@@ -1,0 +1,8 @@
+@import '../shared/variables';
+
+small {
+  font-size: calc(#{map-val($typography, '--q-font-size')} / #{map-val($typography, '--q-font-scale')});
+  font-family: map-val($typography, '--q-font-family');
+  color: #{map-val($colors, '--q-color-gray--darker')};
+  line-height: 1;
+}

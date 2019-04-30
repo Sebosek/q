@@ -25,14 +25,37 @@ import {
 export namespace Components {
 
   interface QButton {
+    'disabled': boolean;
     'ghost': boolean;
     'htmlType': boolean;
     'role': role;
   }
   interface QButtonAttributes extends StencilHTMLAttributes {
+    'disabled'?: boolean;
     'ghost'?: boolean;
     'htmlType'?: boolean;
     'role'?: role;
+  }
+
+  interface QCaption {}
+  interface QCaptionAttributes extends StencilHTMLAttributes {}
+
+  interface QCheckbox {
+    'checked': boolean;
+    'disabled': boolean;
+    'intermediate': boolean;
+    'name': string;
+    'tabindex': number;
+    'value': string | number;
+  }
+  interface QCheckboxAttributes extends StencilHTMLAttributes {
+    'checked'?: boolean;
+    'disabled'?: boolean;
+    'intermediate'?: boolean;
+    'name'?: string;
+    'onChanged'?: (event: CustomEvent<string | number | boolean>) => void;
+    'tabindex'?: number;
+    'value'?: string | number;
   }
 
   interface QGridColumn {
@@ -103,14 +126,33 @@ export namespace Components {
     'gutter'?: gutter | undefined;
   }
 
+  interface QInput {
+    'placeholder': string;
+  }
+  interface QInputAttributes extends StencilHTMLAttributes {
+    'placeholder'?: string;
+  }
+
   interface QLabel {}
   interface QLabelAttributes extends StencilHTMLAttributes {}
 
-  interface QNote {}
-  interface QNoteAttributes extends StencilHTMLAttributes {}
-
   interface QParagraph {}
   interface QParagraphAttributes extends StencilHTMLAttributes {}
+
+  interface QRadio {
+    'checked': boolean;
+    'disabled': boolean;
+    'name': string;
+    'tabindex': number;
+    'value': string | number;
+  }
+  interface QRadioAttributes extends StencilHTMLAttributes {
+    'checked'?: boolean;
+    'disabled'?: boolean;
+    'name'?: string;
+    'tabindex'?: number;
+    'value'?: string | number;
+  }
 
   interface QTitle {
     /**
@@ -124,27 +166,43 @@ export namespace Components {
     */
     'level'?: level;
   }
+
+  interface QToggle {
+    'switched': boolean;
+  }
+  interface QToggleAttributes extends StencilHTMLAttributes {
+    'onChanged'?: (event: CustomEvent<boolean>) => void;
+    'switched'?: boolean;
+  }
 }
 
 declare global {
   interface StencilElementInterfaces {
     'QButton': Components.QButton;
+    'QCaption': Components.QCaption;
+    'QCheckbox': Components.QCheckbox;
     'QGridColumn': Components.QGridColumn;
     'QGrid': Components.QGrid;
+    'QInput': Components.QInput;
     'QLabel': Components.QLabel;
-    'QNote': Components.QNote;
     'QParagraph': Components.QParagraph;
+    'QRadio': Components.QRadio;
     'QTitle': Components.QTitle;
+    'QToggle': Components.QToggle;
   }
 
   interface StencilIntrinsicElements {
     'q-button': Components.QButtonAttributes;
+    'q-caption': Components.QCaptionAttributes;
+    'q-checkbox': Components.QCheckboxAttributes;
     'q-grid-column': Components.QGridColumnAttributes;
     'q-grid': Components.QGridAttributes;
+    'q-input': Components.QInputAttributes;
     'q-label': Components.QLabelAttributes;
-    'q-note': Components.QNoteAttributes;
     'q-paragraph': Components.QParagraphAttributes;
+    'q-radio': Components.QRadioAttributes;
     'q-title': Components.QTitleAttributes;
+    'q-toggle': Components.QToggleAttributes;
   }
 
 
@@ -152,6 +210,18 @@ declare global {
   var HTMLQButtonElement: {
     prototype: HTMLQButtonElement;
     new (): HTMLQButtonElement;
+  };
+
+  interface HTMLQCaptionElement extends Components.QCaption, HTMLStencilElement {}
+  var HTMLQCaptionElement: {
+    prototype: HTMLQCaptionElement;
+    new (): HTMLQCaptionElement;
+  };
+
+  interface HTMLQCheckboxElement extends Components.QCheckbox, HTMLStencilElement {}
+  var HTMLQCheckboxElement: {
+    prototype: HTMLQCheckboxElement;
+    new (): HTMLQCheckboxElement;
   };
 
   interface HTMLQGridColumnElement extends Components.QGridColumn, HTMLStencilElement {}
@@ -166,16 +236,16 @@ declare global {
     new (): HTMLQGridElement;
   };
 
+  interface HTMLQInputElement extends Components.QInput, HTMLStencilElement {}
+  var HTMLQInputElement: {
+    prototype: HTMLQInputElement;
+    new (): HTMLQInputElement;
+  };
+
   interface HTMLQLabelElement extends Components.QLabel, HTMLStencilElement {}
   var HTMLQLabelElement: {
     prototype: HTMLQLabelElement;
     new (): HTMLQLabelElement;
-  };
-
-  interface HTMLQNoteElement extends Components.QNote, HTMLStencilElement {}
-  var HTMLQNoteElement: {
-    prototype: HTMLQNoteElement;
-    new (): HTMLQNoteElement;
   };
 
   interface HTMLQParagraphElement extends Components.QParagraph, HTMLStencilElement {}
@@ -184,30 +254,50 @@ declare global {
     new (): HTMLQParagraphElement;
   };
 
+  interface HTMLQRadioElement extends Components.QRadio, HTMLStencilElement {}
+  var HTMLQRadioElement: {
+    prototype: HTMLQRadioElement;
+    new (): HTMLQRadioElement;
+  };
+
   interface HTMLQTitleElement extends Components.QTitle, HTMLStencilElement {}
   var HTMLQTitleElement: {
     prototype: HTMLQTitleElement;
     new (): HTMLQTitleElement;
   };
 
+  interface HTMLQToggleElement extends Components.QToggle, HTMLStencilElement {}
+  var HTMLQToggleElement: {
+    prototype: HTMLQToggleElement;
+    new (): HTMLQToggleElement;
+  };
+
   interface HTMLElementTagNameMap {
     'q-button': HTMLQButtonElement
+    'q-caption': HTMLQCaptionElement
+    'q-checkbox': HTMLQCheckboxElement
     'q-grid-column': HTMLQGridColumnElement
     'q-grid': HTMLQGridElement
+    'q-input': HTMLQInputElement
     'q-label': HTMLQLabelElement
-    'q-note': HTMLQNoteElement
     'q-paragraph': HTMLQParagraphElement
+    'q-radio': HTMLQRadioElement
     'q-title': HTMLQTitleElement
+    'q-toggle': HTMLQToggleElement
   }
 
   interface ElementTagNameMap {
     'q-button': HTMLQButtonElement;
+    'q-caption': HTMLQCaptionElement;
+    'q-checkbox': HTMLQCheckboxElement;
     'q-grid-column': HTMLQGridColumnElement;
     'q-grid': HTMLQGridElement;
+    'q-input': HTMLQInputElement;
     'q-label': HTMLQLabelElement;
-    'q-note': HTMLQNoteElement;
     'q-paragraph': HTMLQParagraphElement;
+    'q-radio': HTMLQRadioElement;
     'q-title': HTMLQTitleElement;
+    'q-toggle': HTMLQToggleElement;
   }
 
 

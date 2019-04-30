@@ -9,19 +9,20 @@ import { role } from './button.role';
 export class Button {
   @Prop({ reflectToAttr: true, mutable: true }) ghost: boolean;
   @Prop({ reflectToAttr: true, mutable: true }) htmlType: boolean;
+  @Prop({ reflectToAttr: true, mutable: true }) disabled: boolean;
   @Prop({ reflectToAttr: true, mutable: true }) role: role = 'default';
 
   private buildRole() {
     const result = {};
     if (this.role !== 'default') {
-      result[`button--${this.role}`] = true;
+      result[`${this.role}`] = true;
     }
 
     return result;
   }
 
   private buildGhost() {
-    return { 'button--ghost': this.ghost };
+    return { 'ghost': this.ghost };
   }
 
   private buildType() {
@@ -42,13 +43,16 @@ export class Button {
     return ({
       'class': { ...this.buildRole(), ...this.buildGhost.bind(this)() },
       'type': this.buildType.bind(this)(),
+      'disabled': this.disabled,
     });
   }
 
   render() {
     return (
       <button { ...this.buttonData() }>
-        <slot />
+        <span>
+          <slot />
+        </span>
       </button>
     );
   }

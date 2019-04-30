@@ -3,7 +3,7 @@ import { cols } from './column.cols';
 
 @Component({
   tag: 'q-grid-column',
-  styleUrl: 'column.scss',
+  styleUrls: ['column.scss'],
   shadow: true
 })
 export class Column {

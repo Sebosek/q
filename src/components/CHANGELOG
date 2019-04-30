@@ -2,14 +2,14 @@
 
 Keep a changelog. https://keepachangelog.com/en/1.0.0/
 
-## 0.3.0 - 0.3.1
-- Modified `ghost` property of `q-button` component. (_sebastian.busek_)
-- Added `q-button` component. (_sebastian.busek_)
-
-## 0.2.0
-- Added typography components `q-title`, `q-paragraph`, `q-note` and `q-label`. (_sebastian.busek_)
-
-## 0.1.0 - 0.1.2
-- Added `gutter` propertie to `q-grid` component. (_sebastian.busek_)
-- Added `push` and `pull` properties to `q-grid-column` component. (_sebastian.busek_)
-- Added grid system. (_sebastian.busek_)
+## Unreleased
+- Added `q-button` component
+- Added `q-caption` component
+- Added `q-checkbox` component
+- Added `q-column` component
+- Added `q-grid` component
+- Added `q-label` component
+- Added `q-radio` component
+- Added `q-text` component
+- Added `q-title` component
+- Added `q-toggle` component

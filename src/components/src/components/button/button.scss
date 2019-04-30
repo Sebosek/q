@@ -1,77 +1,177 @@
-@import "@q/styles/scss/mixins/button";
-@import "@q/styles/scss/mixins/colors";
-@import "@q/styles/scss/mixins/typography";
+@import "../shared/variables";
 
-button,
-input[type=button],
-.button {
-    @include base-button((
-        'border-radius': 4px,
-        'horizontal-spacing': 24px,
-        'shadow-size': 4px,
-    ), (
-        'background': transparent,
-        'color': $_color-blackish--normal,
-        'disabled__color': $_color-gray--normal,
-        'hover__background': $_color-gray--lightest,
-        'focus__background': transparent,
-        'focus__shadow-color': $_color-gray--light
-    ), (
-        'background': transparent,
-        'border': $_color-gray--light,
-        'color': $_color-blackish--normal,
-        'disabled__background': transparent,
-        'disabled__color': $_color-gray--darker,
-        'focus__shadow-color': $_color-gray--light,
-        'hover__background': transparent,
-        'hover__border-color': $_color-gray--darkest
-    ));
+button {
+  align-items: center;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 2px;
+  box-shadow: 0 10px 15px -5px transparent, 0 0 40px 0 transparent;
+  color: #{map-val($colors, '--q-color-blackish--normal')};
+  cursor: pointer;
+  display: inline-flex;
+  font-size: #{map-val($typography, '--q-font-size')};
+  font-weight: 500;
+  line-height: 1;
+  margin: 0;
+  max-width: 320px;
+  padding: 0 #{map-val($spacing, '--q-vertical-spacing--small')};
+  position: relative;
+  transition: .2s;
+  text-transform: none;
+  user-select: none;
+  -webkit-appearance: button;
+
+  & > span {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    padding: calc(1em - 1px) 0;
+  }
+
+  &:hover:not(:disabled),
+  &.hovered:not(:disabled) {
+    background: #{map-val($colors, '--q-color-gray--lightest')};
+    border: 1px solid #{map-val($colors, '--q-color-gray--lighter')};
+  }
+
+  &:focus,
+  &.focused {
+    border: 1px solid #{map-val($colors, '--q-color-gray--lightest')};
+    box-shadow: 0 8px 12px -8px #{map-val($colors, '--q-color-gray--normal')}, 0 0 12px 0 #{map-val($colors, '--q-color-gray--lighter')};
+    outline: none;
+  }
+
+  &:disabled {
+    color: #{map-val($colors, '--q-color-gray--dark')};
+    cursor: not-allowed !important;
+  }
+
+  &[type=submit],
+  &.primary {
+    background: #{map-val($colors, '--q-color-primary--normal')};
+    color: #{map-val($colors, '--q-color-white')};
+    border-color: #{map-val($colors, '--q-color-primary--normal')};
+
+    &:hover:not(:disabled) {
+      background: #{map-val($colors, '--q-color-primary--light')};
+      border-color: #{map-val($colors, '--q-color-primary--light')};
+    }
+
+    &:focus {
+      background: #{map-val($colors, '--q-color-primary--dark')};
+      box-shadow: 0 8px 12px -8px #{map-val($colors, '--q-color-primary--light')}, 0 0 12px 0 #{map-val($colors, '--q-color-primary--lightest')};
+    }
+
+    &:disabled {
+      background: #{map-val($colors, '--q-color-gray--darkest')};
+      border-color: #{map-val($colors, '--q-color-gray--darkest')};
+      color: #{map-val($colors, '--q-color-gray--lightest')};
+    }
+  }
+
+  &[type=reset],
+  &.danger {
+    background: #{map-val($colors, '--q-color-danger--normal')};
+    color: #{map-val($colors, '--q-color-white')};
+    border-color: #{map-val($colors, '--q-color-danger--normal')};
+
+    &:hover:not(:disabled) {
+      background: #{map-val($colors, '--q-color-danger--light')};
+      border-color: #{map-val($colors, '--q-color-danger--light')};
+    }
+
+    &:focus {
+      background: #{map-val($colors, '--q-color-danger--dark')};
+      box-shadow: 0 8px 12px -8px #{map-val($colors, '--q-color-danger--light')}, 0 0 12px 0 #{map-val($colors, '--q-color-danger--lightest')};
+    }
+
+    &:disabled {
+      background: #{map-val($colors, '--q-color-gray--darkest')};
+      border-color: #{map-val($colors, '--q-color-gray--darkest')};
+      color: #{map-val($colors, '--q-color-gray--lightest')};
+    }
+  }
+
+  &.ghost {
+    background: #{map-val($colors, '--q-color-white')};
+    border-color: #{map-val($colors, '--q-color-gray--darker')};
+    color: #{map-val($colors, '--q-color-blackish--normal')};
+
+    &:hover:not(:disabled) {
+      border-color: #{map-val($colors, '--q-color-gray--darkest')};
+    }
+
+    &:disabled {
+      color: #{map-val($colors, '--q-color-gray--darker')};
+      border-color: #{map-val($colors, '--q-color-gray--normal')};
+    }
+
+    &[type=submit],
+    &.primary {
+      border-color: #{map-val($colors, '--q-color-primary--light')};
+      color: #{map-val($colors, '--q-color-primary--normal')};
+
+      &:hover:not(:disabled) {
+        background: #{map-val($colors, '--q-color-white')};
+        border-color: #{map-val($colors, '--q-color-primary--dark')};
+        color: #{map-val($colors, '--q-color-primary--darker')};
+      }
+
+      &:focus {
+        background: #{map-val($colors, '--q-color-white')};
+      }
+
+      &:disabled {
+        color: #{map-val($colors, '--q-color-gray--darker')};
+        background: #{map-val($colors, '--q-color-gray--lightest')};
+        border-color: #{map-val($colors, '--q-color-gray--normal')};
+      }
+    }
+
+    &[type=reset],
+    &.danger {
+      border-color: #{map-val($colors, '--q-color-danger--light')};
+      color: #{map-val($colors, '--q-color-danger--normal')};
+
+      &:hover:not(:disabled) {
+        background: #{map-val($colors, '--q-color-white')};
+        border-color: #{map-val($colors, '--q-color-danger--dark')};
+        color: #{map-val($colors, '--q-color-danger--darker')};
+      }
+
+      &:focus {
+        background: #{map-val($colors, '--q-color-white')};
+      }
+
+      &:disabled {
+        color: #{map-val($colors, '--q-color-gray--darker')};
+        background: #{map-val($colors, '--q-color-gray--lightest')};
+        border-color: #{map-val($colors, '--q-color-gray--normal')};
+      }
+    }
+  }
 }
 
-button.button--primary {
-    @include base-button((
-        'border-radius': 4px,
-        'horizontal-spacing': 24px,
-        'shadow-size': 4px,
-    ), (
-        'background': $_color-primary--normal,
-        'color': $_color-white,
-        'disabled__color': $_color-gray--normal,
-        'hover__background': $_color-primary--light,
-        'focus__background': $_color-primary--dark,
-        'focus__shadow-color': $_color-primary--lighter
-    ), (
-        'background': transparent,
-        'border': $_color-primary--light,
-        'color': $_color-primary--normal,
-        'disabled__background': transparent,
-        'disabled__color': $_color-gray--darker,
-        'focus__shadow-color': $_color-primary--lighter,
-        'hover__background': transparent,
-        'hover__border-color': $_color-primary--dark
-    ));
-}
+// button,
+// input[type=button],
+// .button {
+//     @include base-button($button, $button-disabled, $button-focus, $button-hover) {
+//         @include ghost-button($ghost, $ghost-disabled, $ghost-focus, $ghost-hover);
+//     }
+// }
 
-button.button--danger {
-    @include base-button((
-        'border-radius': 4px,
-        'horizontal-spacing': 24px,
-        'shadow-size': 4px,
-    ), (
-        'background': $_color-danger--normal,
-        'color': $_color-white,
-        'disabled__color': $_color-gray--normal,
-        'hover__background': $_color-danger--light,
-        'focus__background': $_color-danger--dark,
-        'focus__shadow-color': $_color-danger--lighter
-    ), (
-        'background': transparent,
-        'border': $_color-danger--light,
-        'color': $_color-danger--normal,
-        'disabled__background': transparent,
-        'disabled__color': $_color-gray--darker,
-        'focus__shadow-color': $_color-danger--lighter,
-        'hover__background': transparent,
-        'hover__border-color': $_color-danger--dark
-    ));
-}
+// button[type=submit],
+// input[type=submit],
+// button.button--primary {
+//     @include base-button($primary, $primary-disabled, $primary-focus, $primary-hover) {
+//         @include ghost-button($primary-ghost, $primary-ghost-disabled, $primary-ghost-focus, $primary-ghost-hover);
+//     }
+// }
+
+// button[type=reset],
+// input[type=reset],
+// button.button--danger {
+//     @include base-button($danger, $danger-disabled, $danger-focus, $danger-hover) {
+//         @include ghost-button($danger-ghost, $danger-ghost-disabled, $danger-ghost-focus, $danger-ghost-hover);
+//     }
+// }

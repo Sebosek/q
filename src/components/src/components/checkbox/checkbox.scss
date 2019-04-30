@@ -1,0 +1,122 @@
+@import "../shared/variables";
+
+$size: 16px;
+
+:host {
+  display: inline-flex;
+  max-height: $size;
+  vertical-align: baseline;
+}
+
+.checkbox {
+  $duration: 0.2s;
+
+  display: inline-flex;
+  position: relative;
+  margin-bottom: 0;
+  user-select: none;
+
+  input[type="checkbox"] + &__control {
+    align-items: center;
+    background: #{map-val($colors, '--q-color-white')};
+    border: 1px solid #{map-val($colors, '--q-color-gray--normal')};
+    border-radius: 4px;
+    box-sizing: border-box;
+    display: inline-flex;
+    height: $size;
+    justify-content: center;
+    position: relative;
+    width: $size;
+
+    & > .checkbox__control__icon {
+      width: 14px;
+      height: 14px;
+
+      & > svg {
+        height: 14px;
+        width: 14px;
+        fill: #{map-val($colors, '--q-color-white')};
+      }
+    }
+  }
+
+  input[type="checkbox"] {
+    z-index: -1;
+    opacity: 0;
+    width: 0;
+    margin: 0;
+    display: none;
+    position: absolute;
+  }
+
+  input[type="checkbox"]:checked + &__control {
+    background: #{map-val($colors, '--q-color-primary--normal')};
+    border: 1px solid #{map-val($colors, '--q-color-primary--normal')};
+  }
+
+  &:hover,
+  &--hovered {
+    .checkbox__control {
+      border: 1px solid #{map-val($colors, '--q-color-primary--normal')};
+    }
+  }
+
+  &:focus,
+  &:focus-within,
+  &--focused {
+    outline: none;
+
+    .checkbox__control {
+      border: 1px solid #{map-val($colors, '--q-color-primary--normal')} !important;
+      // box-shadow: 0 8px 12px -8px #{map-val($colors, '--q-color-primary--light')}, 0 0 12px 0 #{map-val($colors, '--q-color-primary--lightest')};
+      box-shadow: 0 0 12px 0 #{map-val($colors, '--q-color-primary--light')};
+    }
+  }
+
+  &--indeterminate {
+    .checkbox__control {
+      & > .checkbox__control__icon {
+        display: none !important;
+      }
+    }
+
+    input[type="checkbox"]:checked + .checkbox__control {
+      background: #{map-val($colors, '--q-color-white')};
+
+      &:after {
+        background: #{map-val($colors, '--q-color-primary--normal')};
+        content: "";
+        display: block;
+        height: 2px;
+        position: absolute;
+        width: calc(100% - 4px);
+      }
+    }
+  }
+
+  &[disabled],
+  &--disabled {
+    cursor: not-allowed !important;
+    pointer-events: none;
+
+    input[type="checkbox"] + .checkbox__control {
+      background: #{map-val($colors, '--q-color-gray--lightest')};
+      border: 1px solid #{map-val($colors, '--q-color-gray--dark')} !important;
+      box-shadow: none;
+
+      & > .checkbox__control__icon > svg {
+        fill: #{map-val($colors, '--q-color-gray--dark')};
+      }
+    }
+
+    &.checkbox--indeterminate {
+      input[type="checkbox"]:checked + .checkbox__control {
+        background: #{map-val($colors, '--q-color-gray--lightest')};
+
+        &:after {
+          background: #{map-val($colors, '--q-color-gray--dark')};
+        }
+      }
+    }
+  }
+}
