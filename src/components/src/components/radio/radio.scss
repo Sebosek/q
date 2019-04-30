@@ -5,6 +5,10 @@
   vertical-align: baseline;
 }
 
+:host(:focus) {
+  outline: none;
+}
+
 .radio {
   $size: 16px;
 
@@ -12,7 +16,7 @@
   position: relative;
   user-select: none;
 
-  input[type="radio"] + &__control {
+  input[type="radio"] + .control {
     align-items: center;
     display: inline-flex;
     border-radius: 50%;
@@ -32,10 +36,11 @@
       position: absolute;
       height: 100%;
       width: 100%;
+      transition: $transition-time;
     }
   }
 
-  &:hover > .radio__control:after {
+  &:hover > .control:after {
     border: 1px solid #{map-val($colors, "--q-color-primary--normal")};
   }
 
@@ -48,16 +53,16 @@
     position: absolute;
   }
 
-  input[type="radio"]:checked + &__control:after {
+  input[type="radio"]:checked + .control:after {
     border: 6px solid #{map-val($colors, "--q-color-primary--normal")};
   }
 
   &:focus,
   &:focus-within,
-  &--focused {
+  &.focused {
     outline: none;
 
-    .radio__control {
+    .control {
       box-shadow: 0 0 12px 0 #{map-val($colors, "--q-color-primary--light")};
 
       &:after {
@@ -67,11 +72,11 @@
   }
 
   &[disabled],
-  &--disabled {
+  &.disabled {
     cursor: not-allowed;
     pointer-events: none;
 
-    input[type="radio"] + .radio__control:after {
+    input[type="radio"] + .control:after {
       background: #{map-val($colors, "--q-color-gray--lightest")};
       border-color: #{map-val($colors, "--q-color-gray--dark")};
       box-shadow: none;

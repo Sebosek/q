@@ -14,9 +14,15 @@ export class Checkbox {
   @Prop({ reflectToAttr: true, mutable: true }) intermediate: boolean = false
   @Prop({ reflectToAttr: true, mutable: true }) name: string
   @Prop({ reflectToAttr: true, mutable: true }) value: string | number
+  @Prop({ reflectToAttr: true, mutable: true }) disabled: boolean = false
+  @Prop() tabindex: number = 0
 
   @Watch('intermediate') watchIntermediate() {
     this.el.classList.toggle('checkbox--indeterminate', this.intermediate)
+  }
+
+  @Watch('disabled') watchDisabled() {
+    this.el.classList.toggle('checkbox--disabled', this.disabled)
   }
 
   @Event() changed: EventEmitter<string | number | boolean>
@@ -38,14 +44,16 @@ export class Checkbox {
     return (
       <div
         class="checkbox"
-        tabindex="0"
+        tabindex={this.tabindex}
         ref={(el: HTMLElement) => this.el = el}
-        onClick={this.toggle}>
+        onClick={this.toggle}
+      >
         <input
           type="checkbox"
           checked={this.checked}
           name={this.name}
           value={this.value}
+          disabled={this.disabled}
         />
         <div class="checkbox__control">
           <div class="checkbox__control__icon">
@@ -62,6 +70,10 @@ export class Checkbox {
   }
 
   private toggle() {
+    if (this.disabled) {
+      return;
+    }
+
     this.checked = !this.checked
     this.intermediate = false;
     const value = !this.checked || (this.value || true)

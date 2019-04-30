@@ -42,15 +42,19 @@ export namespace Components {
 
   interface QCheckbox {
     'checked': boolean;
+    'disabled': boolean;
     'intermediate': boolean;
     'name': string;
+    'tabindex': number;
     'value': string | number;
   }
   interface QCheckboxAttributes extends StencilHTMLAttributes {
     'checked'?: boolean;
+    'disabled'?: boolean;
     'intermediate'?: boolean;
     'name'?: string;
     'onChanged'?: (event: CustomEvent<string | number | boolean>) => void;
+    'tabindex'?: number;
     'value'?: string | number;
   }
 
@@ -135,8 +139,20 @@ export namespace Components {
   interface QParagraph {}
   interface QParagraphAttributes extends StencilHTMLAttributes {}
 
-  interface QRadio {}
-  interface QRadioAttributes extends StencilHTMLAttributes {}
+  interface QRadio {
+    'checked': boolean;
+    'disabled': boolean;
+    'name': string;
+    'tabindex': number;
+    'value': string | number;
+  }
+  interface QRadioAttributes extends StencilHTMLAttributes {
+    'checked'?: boolean;
+    'disabled'?: boolean;
+    'name'?: string;
+    'tabindex'?: number;
+    'value'?: string | number;
+  }
 
   interface QTitle {
     /**

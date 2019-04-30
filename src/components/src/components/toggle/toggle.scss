@@ -17,7 +17,8 @@ $switched-x: 18px;
   display: block;
   height: 24px;
   position: relative;
-  transition: .3s;
+  outline: none;
+  transition: $transition-time;
   width: 40px;
 
   &::after {
@@ -42,22 +43,22 @@ $switched-x: 18px;
   }
 
   &--play-switched::after {
-    animation: .3s on linear forwards;
+    animation: $transition-time on linear forwards;
   }
 
   &--play-unswitched::after {
-    animation: .3s off linear forwards;
+    animation: $transition-time off linear forwards;
   }
 }
 
 @keyframes on {
   0% { left: 2px; }
-  50% { transform: scaleX(1.17); }
+  50% { transform: scaleX(1.25); }
   100% { left: $switched-x; transform: scaleX(1); }
 }
 
 @keyframes off {
   0% { left: $switched-x; }
-  50% { width: scaleX(2); }
+  50% { width: scaleX(1.25); }
   100% { left: 2px; transform: scaleX(1); }
 }
