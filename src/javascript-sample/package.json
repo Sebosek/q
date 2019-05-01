@@ -1,0 +1,27 @@
+{
+    "name": "@q/javascript-sample",
+    "version": "0.1.0",
+    "description": "Q Components JavaScript sample",
+    "scripts": {
+        "watch": "webpack --watch",
+        "start": "webpack-dev-server",
+        "build": "webpack -p --config webpack.config.js"
+    },
+    "repository": {},
+    "keywords": [],
+    "author": "Sebastian",
+    "license": "Apache 2.0",
+    "devDependencies": {
+        "@babel/core": "^7.2.2",
+        "@babel/plugin-proposal-object-rest-spread": "^7.3.2",
+        "@babel/polyfill": "^7.2.5",
+        "@babel/preset-env": "^7.3.1",
+        "babel-loader": "^8.0.5",
+        "copy-webpack-plugin": "^4.6.0",
+        "webpack": "^4.29.3",
+        "webpack-cli": "^3.2.3",
+        "webpack-dev-server": "^3.1.14",
+        "webpack-merge": "^4.2.1"
+    },
+    "dependencies": {}
+}
