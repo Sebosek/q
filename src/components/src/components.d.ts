@@ -136,23 +136,24 @@ export namespace Components {
   interface QLabel {}
   interface QLabelAttributes extends StencilHTMLAttributes {}
 
-  interface QParagraph {}
-  interface QParagraphAttributes extends StencilHTMLAttributes {}
-
   interface QRadio {
     'checked': boolean;
     'disabled': boolean;
     'name': string;
     'tabindex': number;
-    'value': string | number;
+    'value': string | number | null;
   }
   interface QRadioAttributes extends StencilHTMLAttributes {
     'checked'?: boolean;
     'disabled'?: boolean;
     'name'?: string;
+    'onSelected'?: (event: CustomEvent<void | string | number>) => void;
     'tabindex'?: number;
-    'value'?: string | number;
+    'value'?: string | number | null;
   }
+
+  interface QText {}
+  interface QTextAttributes extends StencilHTMLAttributes {}
 
   interface QTitle {
     /**
@@ -185,8 +186,8 @@ declare global {
     'QGrid': Components.QGrid;
     'QInput': Components.QInput;
     'QLabel': Components.QLabel;
-    'QParagraph': Components.QParagraph;
     'QRadio': Components.QRadio;
+    'QText': Components.QText;
     'QTitle': Components.QTitle;
     'QToggle': Components.QToggle;
   }
@@ -199,8 +200,8 @@ declare global {
     'q-grid': Components.QGridAttributes;
     'q-input': Components.QInputAttributes;
     'q-label': Components.QLabelAttributes;
-    'q-paragraph': Components.QParagraphAttributes;
     'q-radio': Components.QRadioAttributes;
+    'q-text': Components.QTextAttributes;
     'q-title': Components.QTitleAttributes;
     'q-toggle': Components.QToggleAttributes;
   }
@@ -248,16 +249,16 @@ declare global {
     new (): HTMLQLabelElement;
   };
 
-  interface HTMLQParagraphElement extends Components.QParagraph, HTMLStencilElement {}
-  var HTMLQParagraphElement: {
-    prototype: HTMLQParagraphElement;
-    new (): HTMLQParagraphElement;
-  };
-
   interface HTMLQRadioElement extends Components.QRadio, HTMLStencilElement {}
   var HTMLQRadioElement: {
     prototype: HTMLQRadioElement;
     new (): HTMLQRadioElement;
+  };
+
+  interface HTMLQTextElement extends Components.QText, HTMLStencilElement {}
+  var HTMLQTextElement: {
+    prototype: HTMLQTextElement;
+    new (): HTMLQTextElement;
   };
 
   interface HTMLQTitleElement extends Components.QTitle, HTMLStencilElement {}
@@ -280,8 +281,8 @@ declare global {
     'q-grid': HTMLQGridElement
     'q-input': HTMLQInputElement
     'q-label': HTMLQLabelElement
-    'q-paragraph': HTMLQParagraphElement
     'q-radio': HTMLQRadioElement
+    'q-text': HTMLQTextElement
     'q-title': HTMLQTitleElement
     'q-toggle': HTMLQToggleElement
   }
@@ -294,8 +295,8 @@ declare global {
     'q-grid': HTMLQGridElement;
     'q-input': HTMLQInputElement;
     'q-label': HTMLQLabelElement;
-    'q-paragraph': HTMLQParagraphElement;
     'q-radio': HTMLQRadioElement;
+    'q-text': HTMLQTextElement;
     'q-title': HTMLQTitleElement;
     'q-toggle': HTMLQToggleElement;
   }

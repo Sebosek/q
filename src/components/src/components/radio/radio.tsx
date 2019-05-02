@@ -1,4 +1,4 @@
-import { Component, Listen, Prop, Watch } from "@stencil/core";
+import { Component, Event, EventEmitter, Listen, Prop, Watch } from "@stencil/core";
 
 @Component({
   tag: "q-radio",
@@ -6,9 +6,13 @@ import { Component, Listen, Prop, Watch } from "@stencil/core";
   shadow: true
 })
 export class Radio {
+  constructor() {
+    this.select = this.select.bind(this);
+  }
+
   @Prop({ reflectToAttr: true, mutable: true }) checked: boolean = false
   @Prop({ reflectToAttr: true, mutable: true }) name: string
-  @Prop({ reflectToAttr: true, mutable: true }) value: string | number
+  @Prop({ reflectToAttr: true, mutable: true }) value: string | number | null
   @Prop({ reflectToAttr: true, mutable: true }) disabled: boolean = false
   @Prop({ mutable: true }) tabindex: number = 0
 
@@ -16,10 +20,12 @@ export class Radio {
     this.el.classList.toggle('disabled', this.disabled)
   }
 
+  @Event() selected: EventEmitter<void | string | number>
+
   @Listen('keydown') handleKeyDown(ev: KeyboardEvent) {
     const keys = [' ', 'Enter']
     if (keys.includes(ev.key)) {
-      this.checked = true
+      this.select()
     }
   }
 
@@ -34,10 +40,11 @@ export class Radio {
 
   render() {
     return (
-      <label
+      <div
         class="radio"
         tabindex={this.tabindex}
         ref={(el: HTMLElement) => this.el = el}
+        onClick={this.select}
       >
         <input
           type="radio"
@@ -47,7 +54,16 @@ export class Radio {
           value={this.value}
         />
         <div class="control" />
-      </label>
+      </div>
     );
+  }
+
+  private select() {
+    if (this.checked) {
+      return
+    }
+
+    this.checked = true
+    this.selected.emit(this.value)
   }
 }
