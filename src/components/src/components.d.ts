@@ -18,6 +18,9 @@ import {
   gutter,
 } from './components/grid/grid.gutter';
 import {
+  InputInterface,
+} from './components/input/input.interface';
+import {
   level,
 } from './components/title/title.level';
 
@@ -127,19 +130,19 @@ export namespace Components {
   }
 
   interface QInput {
-    'default': string;
+    'default': string | number;
     'name': string;
     'placeholder': string;
-    'prefixes': Array<any>;
-    'suffixes': Array<any>;
+    'prefixes': Array<(input: InputInterface) => JSX.Element>;
+    'suffixes': Array<(input: InputInterface) => JSX.Element>;
     'type': string;
   }
   interface QInputAttributes extends StencilHTMLAttributes {
-    'default'?: string;
+    'default'?: string | number;
     'name'?: string;
     'placeholder'?: string;
-    'prefixes'?: Array<any>;
-    'suffixes'?: Array<any>;
+    'prefixes'?: Array<(input: InputInterface) => JSX.Element>;
+    'suffixes'?: Array<(input: InputInterface) => JSX.Element>;
     'type'?: string;
   }
 

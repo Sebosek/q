@@ -10,7 +10,7 @@ export class Sample {
       <q-input
         name="sample"
         prefixes={[
-          <span>hello</span>
+          (control) => <span onClick={_ => control.value = ''}>hello</span>,
         ]}
       >
       </q-input>
