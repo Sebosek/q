@@ -127,10 +127,20 @@ export namespace Components {
   }
 
   interface QInput {
+    'default': string;
+    'name': string;
     'placeholder': string;
+    'prefixes': Array<any>;
+    'suffixes': Array<any>;
+    'type': string;
   }
   interface QInputAttributes extends StencilHTMLAttributes {
+    'default'?: string;
+    'name'?: string;
     'placeholder'?: string;
+    'prefixes'?: Array<any>;
+    'suffixes'?: Array<any>;
+    'type'?: string;
   }
 
   interface QLabel {}
@@ -152,6 +162,9 @@ export namespace Components {
     'value'?: string | number | null;
   }
 
+  interface QSample {}
+  interface QSampleAttributes extends StencilHTMLAttributes {}
+
   interface QText {}
   interface QTextAttributes extends StencilHTMLAttributes {}
 
@@ -160,12 +173,14 @@ export namespace Components {
     * Defines general column size
     */
     'level': level;
+    'spaceless': boolean;
   }
   interface QTitleAttributes extends StencilHTMLAttributes {
     /**
     * Defines general column size
     */
     'level'?: level;
+    'spaceless'?: boolean;
   }
 
   interface QToggle {
@@ -187,6 +202,7 @@ declare global {
     'QInput': Components.QInput;
     'QLabel': Components.QLabel;
     'QRadio': Components.QRadio;
+    'QSample': Components.QSample;
     'QText': Components.QText;
     'QTitle': Components.QTitle;
     'QToggle': Components.QToggle;
@@ -201,6 +217,7 @@ declare global {
     'q-input': Components.QInputAttributes;
     'q-label': Components.QLabelAttributes;
     'q-radio': Components.QRadioAttributes;
+    'q-sample': Components.QSampleAttributes;
     'q-text': Components.QTextAttributes;
     'q-title': Components.QTitleAttributes;
     'q-toggle': Components.QToggleAttributes;
@@ -255,6 +272,12 @@ declare global {
     new (): HTMLQRadioElement;
   };
 
+  interface HTMLQSampleElement extends Components.QSample, HTMLStencilElement {}
+  var HTMLQSampleElement: {
+    prototype: HTMLQSampleElement;
+    new (): HTMLQSampleElement;
+  };
+
   interface HTMLQTextElement extends Components.QText, HTMLStencilElement {}
   var HTMLQTextElement: {
     prototype: HTMLQTextElement;
@@ -282,6 +305,7 @@ declare global {
     'q-input': HTMLQInputElement
     'q-label': HTMLQLabelElement
     'q-radio': HTMLQRadioElement
+    'q-sample': HTMLQSampleElement
     'q-text': HTMLQTextElement
     'q-title': HTMLQTitleElement
     'q-toggle': HTMLQToggleElement
@@ -296,6 +320,7 @@ declare global {
     'q-input': HTMLQInputElement;
     'q-label': HTMLQLabelElement;
     'q-radio': HTMLQRadioElement;
+    'q-sample': HTMLQSampleElement;
     'q-text': HTMLQTextElement;
     'q-title': HTMLQTitleElement;
     'q-toggle': HTMLQToggleElement;

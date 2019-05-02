@@ -7,6 +7,12 @@ import { role } from './button.role';
   shadow: true
 })
 export class Button {
+  constructor() {
+    this.buildRole = this.buildRole.bind(this)
+    this.buildGhost = this.buildGhost.bind(this)
+    this.buildType = this.buildType.bind(this)
+  }
+
   @Prop({ reflectToAttr: true, mutable: true }) ghost: boolean;
   @Prop({ reflectToAttr: true, mutable: true }) htmlType: boolean;
   @Prop({ reflectToAttr: true, mutable: true }) disabled: boolean;
@@ -41,8 +47,8 @@ export class Button {
 
   private buttonData() {
     return ({
-      'class': { ...this.buildRole(), ...this.buildGhost.bind(this)() },
-      'type': this.buildType.bind(this)(),
+      'class': { ...this.buildRole(), ...this.buildGhost() },
+      'type': this.buildType(),
       'disabled': this.disabled,
     });
   }

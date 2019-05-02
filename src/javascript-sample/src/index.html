@@ -6,8 +6,60 @@
         <meta name="viewport" content="width=device-width,initial-scale=1.0">
         <title>Q Components JavaScript sample</title>
         <base href="/">
+        <style type="text/css">
+        :root {
+            --q-color-white: #fff;
+            --q-color-gray--lightest: #F7F7F7;
+            --q-color-gray--lighter: #f0f0f0;
+            --q-color-gray--light: #E3E3E3;
+            --q-color-gray--normal: #d6d6d6;
+            --q-color-gray--dark: #c7c7c7;
+            --q-color-gray--darker: #B3B3B3;
+            --q-color-gray--darkest: #999999;
+        }
+
+        html {
+            background-color: var(--q-color-gray--lightest);
+            height: 100%;
+        }
+
+        .app {
+            align-content: center;
+            background-color: var(--q-color-white);
+            border: 1px solid var(--q-color-gray--light);
+            border-radius: 4px;
+            display: flex;
+            flex-direction: column;
+            margin: 40px auto;
+            padding: 40px;
+            width: 800px;
+        }
+        .app q-title {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .app .new-task {
+            margin-bottom: 40px;
+        }
+        .app .new-task q-input {
+            flex: 1;
+        }
+        </style>
     </head>
     <body>
+        <div class="app">
+            <q-title spaceless>Things to do</q-title>
+            <div class="new-task">
+                <q-input name="new-todo"></q-input>
+                <q-button role="primary">Add</q-button>
+            </div>
+            <div class="tasks">
+                <div class="task-item">
+                    <q-input name="todo-foo"></q-input>
+                    <q-checkbox name="done-todo-foo" checked></q-checkbox>
+                </div>
+            </div>
+        </div>
         <script type="text/javascript" src="main.js"></script>
     </body>
 </html>
