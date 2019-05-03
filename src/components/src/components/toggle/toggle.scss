@@ -59,6 +59,6 @@ $switched-x: 18px;
 
 @keyframes off {
   0% { left: $switched-x; }
-  50% { width: scaleX(1.25); }
+  50% { transform: scaleX(1.25); }
   100% { left: 2px; transform: scaleX(1); }
 }
