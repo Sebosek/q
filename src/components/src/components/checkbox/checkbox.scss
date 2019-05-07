@@ -57,7 +57,7 @@ $size: 16px;
   &:hover,
   &--hovered {
     .checkbox__control {
-      border: 1px solid #{map-val($colors, '--q-color-primary--normal')};
+      border-color: #{map-val($colors, '--q-color-primary--normal')} !important;
     }
   }
 
@@ -82,9 +82,11 @@ $size: 16px;
 
     input[type="checkbox"]:checked + .checkbox__control {
       background: #{map-val($colors, '--q-color-white')};
+      border-color: #{map-val($colors, '--q-color-gray--normal')};
 
       &:after {
         background: #{map-val($colors, '--q-color-primary--normal')};
+        // box-shadow: 0 0 4px 0 #{map-val($colors, '--q-color-primary--normal')};
         content: "";
         display: block;
         height: 2px;

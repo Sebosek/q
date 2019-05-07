@@ -149,6 +149,16 @@ export namespace Components {
   interface QLabel {}
   interface QLabelAttributes extends StencilHTMLAttributes {}
 
+  interface QPopUp {
+    'state': 'shown' | 'hidden';
+  }
+  interface QPopUpAttributes extends StencilHTMLAttributes {
+    'state'?: 'shown' | 'hidden';
+  }
+
+  interface QPortal {}
+  interface QPortalAttributes extends StencilHTMLAttributes {}
+
   interface QRadio {
     'checked': boolean;
     'disabled': boolean;
@@ -167,6 +177,13 @@ export namespace Components {
 
   interface QSample {}
   interface QSampleAttributes extends StencilHTMLAttributes {}
+
+  interface QEllipsis {
+    'width': number;
+  }
+  interface QEllipsisAttributes extends StencilHTMLAttributes {
+    'width'?: number;
+  }
 
   interface QText {}
   interface QTextAttributes extends StencilHTMLAttributes {}
@@ -204,8 +221,11 @@ declare global {
     'QGrid': Components.QGrid;
     'QInput': Components.QInput;
     'QLabel': Components.QLabel;
+    'QPopUp': Components.QPopUp;
+    'QPortal': Components.QPortal;
     'QRadio': Components.QRadio;
     'QSample': Components.QSample;
+    'QEllipsis': Components.QEllipsis;
     'QText': Components.QText;
     'QTitle': Components.QTitle;
     'QToggle': Components.QToggle;
@@ -219,8 +239,11 @@ declare global {
     'q-grid': Components.QGridAttributes;
     'q-input': Components.QInputAttributes;
     'q-label': Components.QLabelAttributes;
+    'q-pop-up': Components.QPopUpAttributes;
+    'q-portal': Components.QPortalAttributes;
     'q-radio': Components.QRadioAttributes;
     'q-sample': Components.QSampleAttributes;
+    'q-ellipsis': Components.QEllipsisAttributes;
     'q-text': Components.QTextAttributes;
     'q-title': Components.QTitleAttributes;
     'q-toggle': Components.QToggleAttributes;
@@ -269,6 +292,18 @@ declare global {
     new (): HTMLQLabelElement;
   };
 
+  interface HTMLQPopUpElement extends Components.QPopUp, HTMLStencilElement {}
+  var HTMLQPopUpElement: {
+    prototype: HTMLQPopUpElement;
+    new (): HTMLQPopUpElement;
+  };
+
+  interface HTMLQPortalElement extends Components.QPortal, HTMLStencilElement {}
+  var HTMLQPortalElement: {
+    prototype: HTMLQPortalElement;
+    new (): HTMLQPortalElement;
+  };
+
   interface HTMLQRadioElement extends Components.QRadio, HTMLStencilElement {}
   var HTMLQRadioElement: {
     prototype: HTMLQRadioElement;
@@ -279,6 +314,12 @@ declare global {
   var HTMLQSampleElement: {
     prototype: HTMLQSampleElement;
     new (): HTMLQSampleElement;
+  };
+
+  interface HTMLQEllipsisElement extends Components.QEllipsis, HTMLStencilElement {}
+  var HTMLQEllipsisElement: {
+    prototype: HTMLQEllipsisElement;
+    new (): HTMLQEllipsisElement;
   };
 
   interface HTMLQTextElement extends Components.QText, HTMLStencilElement {}
@@ -307,8 +348,11 @@ declare global {
     'q-grid': HTMLQGridElement
     'q-input': HTMLQInputElement
     'q-label': HTMLQLabelElement
+    'q-pop-up': HTMLQPopUpElement
+    'q-portal': HTMLQPortalElement
     'q-radio': HTMLQRadioElement
     'q-sample': HTMLQSampleElement
+    'q-ellipsis': HTMLQEllipsisElement
     'q-text': HTMLQTextElement
     'q-title': HTMLQTitleElement
     'q-toggle': HTMLQToggleElement
@@ -322,8 +366,11 @@ declare global {
     'q-grid': HTMLQGridElement;
     'q-input': HTMLQInputElement;
     'q-label': HTMLQLabelElement;
+    'q-pop-up': HTMLQPopUpElement;
+    'q-portal': HTMLQPortalElement;
     'q-radio': HTMLQRadioElement;
     'q-sample': HTMLQSampleElement;
+    'q-ellipsis': HTMLQEllipsisElement;
     'q-text': HTMLQTextElement;
     'q-title': HTMLQTitleElement;
     'q-toggle': HTMLQToggleElement;

@@ -48,6 +48,10 @@
 </head>
 <body>
   <q-sample></q-sample>
+  <q-button>
+    <q-ellipsis>Hello this should be a very very long text in the button, but the text SHOULD be hidden with ellipsis</q-ellipsis>
+  </q-button>
+  <q-button>Hello this should be a very very long text in the button, but the text shouldn't be hidden with ellipsis</q-button>
   <q-toggle switched></q-toggle>
   <br><br>
   <div class="form-item">
@@ -81,7 +85,31 @@
       <q-caption>Some not so iportant caption.</q-caption>
     </div>
   </label>
-
   <q-button role="primary">Create user</q-button>
+
+  <div style="position: relative;">
+    <q-button>Select an option</q-button>
+    <q-pop-up>
+      <label class="form-entity">
+        <div class="form-entity__control">
+          <q-checkbox></q-checkbox>
+        </div>
+        <div class="form-entity__label">
+          <q-label>Checkbox item</q-label>
+        </div>
+      </label>
+      <label class="form-entity">
+        <div class="form-entity__control">
+          <q-checkbox></q-checkbox>
+        </div>
+        <div class="form-entity__label">
+          <q-label>Checkbox item</q-label>
+        </div>
+      </label>
+    </q-pop-up>
+  </div>
+
+  <q-portal></q-portal>
+
   </html>
 </body>

@@ -1,0 +1,13 @@
+@import "../shared/variables";
+
+.popup {
+  background: #{map-val($colors, '--q-color-white')};
+  box-shadow: 0 16px 24px -16px #{map-val($colors, '--q-color-gray--normal')}, 0 0 24px 0 #{map-val($colors, '--q-color-gray--lighter')};
+  border-radius: 2px;
+  display: block;
+  padding: 8px 4px;
+  position: absolute;
+  // height: 480px;
+  min-width: 140px;
+  top: 100%;
+}

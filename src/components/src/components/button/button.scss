@@ -12,21 +12,14 @@ button {
   font-size: #{map-val($typography, '--q-font-size')};
   font-weight: 500;
   line-height: 1;
+  height: 42px;
   margin: 0;
-  max-width: 320px;
   padding: 0 #{map-val($spacing, '--q-vertical-spacing--small')};
   position: relative;
   transition: .2s;
   text-transform: none;
   user-select: none;
   -webkit-appearance: button;
-
-  & > span {
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    padding: calc(1em - 1px) 0;
-  }
 
   &:hover:not(:disabled),
   &.hovered:not(:disabled) {

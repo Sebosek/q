@@ -13,10 +13,10 @@ export class Button {
     this.buildType = this.buildType.bind(this)
   }
 
-  @Prop({ reflectToAttr: true, mutable: true }) ghost: boolean;
-  @Prop({ reflectToAttr: true, mutable: true }) htmlType: boolean;
-  @Prop({ reflectToAttr: true, mutable: true }) disabled: boolean;
-  @Prop({ reflectToAttr: true, mutable: true }) role: role = 'default';
+  @Prop({ reflectToAttr: true, mutable: true }) ghost : boolean;
+  @Prop({ reflectToAttr: true, mutable: true }) htmlType : boolean;
+  @Prop({ reflectToAttr: true, mutable: true }) disabled : boolean;
+  @Prop({ reflectToAttr: true, mutable: true }) role : role = 'default';
 
   private buildRole() {
     const result = {};
@@ -56,9 +56,7 @@ export class Button {
   render() {
     return (
       <button { ...this.buttonData() }>
-        <span>
-          <slot />
-        </span>
+        <slot />
       </button>
     );
   }
