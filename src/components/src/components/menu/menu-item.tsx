@@ -1,13 +1,14 @@
 import { Component } from "@stencil/core";
 
 @Component({
-  tag: 'q-portal',
+  tag: 'q-menu-item',
+  styleUrl: 'menu-item.scss',
   shadow: true
 })
-export class Portal {
+export class MenuItem {
   render() {
     return (
-      <div>
+      <div class="menu-item">
         <slot></slot>
       </div>
     )

@@ -3,22 +3,22 @@ enum level {
   error
 }
 
-export function info(component: string, message: string) {
+export function info(component: string, message: any) {
   return log(component, message, level.info)
 }
 
-export function error(component: string, message: string) {
+export function error(component: string, message: any) {
   return log(component, message, level.error)
 }
 
-function log(component: string, message: string, lvl: level) {
+function log(component: string, message: any, lvl: level) {
   const key = `%c Q ${component} `;
   const color = [{
     color: '#226977',
-    print: () => console.log(key, styles, message.trim())
+    print: () => console.log(key, styles, message)
   }, {
     color: '#9F0F16',
-    print: () => console.error(key, styles, message.trim())
+    print: () => console.error(key, styles, message)
   }]
 
   const styles = [

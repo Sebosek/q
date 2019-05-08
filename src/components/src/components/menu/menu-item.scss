@@ -1,0 +1,29 @@
+@import "../shared/variables";
+
+.menu-item {
+  align-items: center;
+  box-sizing: border-box;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 2px;
+  color: #{map-val($colors, '--q-color-blackish--normal')};
+  cursor: pointer;
+  display: inline-flex;
+  font-family: map-val($typography, '--q-font-family');
+  font-size: #{map-val($typography, '--q-font-size')};
+  // font-weight: 500;
+  line-height: 1;
+  height: 42px;
+  margin: 0;
+  padding: 0 #{map-val($spacing, '--q-vertical-spacing--small')};
+  position: relative;
+  transition: .2s;
+  text-transform: none;
+  user-select: none;
+  width: 100%;
+
+  &:hover {
+    background-color: #{map-val($colors, '--q-color-gray--lightest')};
+    border-color: #{map-val($colors, '--q-color-gray--lighter')};
+  }
+}

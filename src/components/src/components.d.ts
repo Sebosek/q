@@ -122,6 +122,9 @@ export namespace Components {
     'sizeXs'?: cols | undefined;
   }
 
+  interface QEcho {}
+  interface QEchoAttributes extends StencilHTMLAttributes {}
+
   interface QGrid {
     'gutter': gutter | undefined;
   }
@@ -149,6 +152,12 @@ export namespace Components {
   interface QLabel {}
   interface QLabelAttributes extends StencilHTMLAttributes {}
 
+  interface QMenuItem {}
+  interface QMenuItemAttributes extends StencilHTMLAttributes {}
+
+  interface QMenu {}
+  interface QMenuAttributes extends StencilHTMLAttributes {}
+
   interface QPopUp {
     'state': 'shown' | 'hidden';
   }
@@ -156,7 +165,9 @@ export namespace Components {
     'state'?: 'shown' | 'hidden';
   }
 
-  interface QPortal {}
+  interface QPortal {
+    'transport': (content: HTMLElement) => void;
+  }
   interface QPortalAttributes extends StencilHTMLAttributes {}
 
   interface QRadio {
@@ -218,9 +229,12 @@ declare global {
     'QCaption': Components.QCaption;
     'QCheckbox': Components.QCheckbox;
     'QGridColumn': Components.QGridColumn;
+    'QEcho': Components.QEcho;
     'QGrid': Components.QGrid;
     'QInput': Components.QInput;
     'QLabel': Components.QLabel;
+    'QMenuItem': Components.QMenuItem;
+    'QMenu': Components.QMenu;
     'QPopUp': Components.QPopUp;
     'QPortal': Components.QPortal;
     'QRadio': Components.QRadio;
@@ -236,9 +250,12 @@ declare global {
     'q-caption': Components.QCaptionAttributes;
     'q-checkbox': Components.QCheckboxAttributes;
     'q-grid-column': Components.QGridColumnAttributes;
+    'q-echo': Components.QEchoAttributes;
     'q-grid': Components.QGridAttributes;
     'q-input': Components.QInputAttributes;
     'q-label': Components.QLabelAttributes;
+    'q-menu-item': Components.QMenuItemAttributes;
+    'q-menu': Components.QMenuAttributes;
     'q-pop-up': Components.QPopUpAttributes;
     'q-portal': Components.QPortalAttributes;
     'q-radio': Components.QRadioAttributes;
@@ -274,6 +291,12 @@ declare global {
     new (): HTMLQGridColumnElement;
   };
 
+  interface HTMLQEchoElement extends Components.QEcho, HTMLStencilElement {}
+  var HTMLQEchoElement: {
+    prototype: HTMLQEchoElement;
+    new (): HTMLQEchoElement;
+  };
+
   interface HTMLQGridElement extends Components.QGrid, HTMLStencilElement {}
   var HTMLQGridElement: {
     prototype: HTMLQGridElement;
@@ -290,6 +313,18 @@ declare global {
   var HTMLQLabelElement: {
     prototype: HTMLQLabelElement;
     new (): HTMLQLabelElement;
+  };
+
+  interface HTMLQMenuItemElement extends Components.QMenuItem, HTMLStencilElement {}
+  var HTMLQMenuItemElement: {
+    prototype: HTMLQMenuItemElement;
+    new (): HTMLQMenuItemElement;
+  };
+
+  interface HTMLQMenuElement extends Components.QMenu, HTMLStencilElement {}
+  var HTMLQMenuElement: {
+    prototype: HTMLQMenuElement;
+    new (): HTMLQMenuElement;
   };
 
   interface HTMLQPopUpElement extends Components.QPopUp, HTMLStencilElement {}
@@ -345,9 +380,12 @@ declare global {
     'q-caption': HTMLQCaptionElement
     'q-checkbox': HTMLQCheckboxElement
     'q-grid-column': HTMLQGridColumnElement
+    'q-echo': HTMLQEchoElement
     'q-grid': HTMLQGridElement
     'q-input': HTMLQInputElement
     'q-label': HTMLQLabelElement
+    'q-menu-item': HTMLQMenuItemElement
+    'q-menu': HTMLQMenuElement
     'q-pop-up': HTMLQPopUpElement
     'q-portal': HTMLQPortalElement
     'q-radio': HTMLQRadioElement
@@ -363,9 +401,12 @@ declare global {
     'q-caption': HTMLQCaptionElement;
     'q-checkbox': HTMLQCheckboxElement;
     'q-grid-column': HTMLQGridColumnElement;
+    'q-echo': HTMLQEchoElement;
     'q-grid': HTMLQGridElement;
     'q-input': HTMLQInputElement;
     'q-label': HTMLQLabelElement;
+    'q-menu-item': HTMLQMenuItemElement;
+    'q-menu': HTMLQMenuElement;
     'q-pop-up': HTMLQPopUpElement;
     'q-portal': HTMLQPortalElement;
     'q-radio': HTMLQRadioElement;
