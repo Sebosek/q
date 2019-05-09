@@ -1,4 +1,4 @@
-import { Component, Prop, Watch, Element } from "@stencil/core";
+import { Component, Prop, Watch, Element, Listen } from "@stencil/core";
 import { Portal } from "../../services/portal";
 
 @Component({
@@ -26,6 +26,20 @@ export class Popup {
     if (newValue === 'hidden') {
       this.portal.unmount()
     }
+  }
+
+  @Listen('document:click') handleOffClick(ev: MouseEvent) {
+    const target = ev.target as HTMLElement
+    if (!target) {
+      return
+    }
+
+    if (target.closest('q-pop-up')) {
+      // click inside pop-up
+      return
+    }
+
+    //this.state = 'hidden'
   }
 
   render() {

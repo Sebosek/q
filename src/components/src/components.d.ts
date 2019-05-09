@@ -122,9 +122,6 @@ export namespace Components {
     'sizeXs'?: cols | undefined;
   }
 
-  interface QEcho {}
-  interface QEchoAttributes extends StencilHTMLAttributes {}
-
   interface QGrid {
     'gutter': gutter | undefined;
   }
@@ -152,8 +149,12 @@ export namespace Components {
   interface QLabel {}
   interface QLabelAttributes extends StencilHTMLAttributes {}
 
-  interface QMenuItem {}
-  interface QMenuItemAttributes extends StencilHTMLAttributes {}
+  interface QMenuItem {
+    'defaultCursor': boolean;
+  }
+  interface QMenuItemAttributes extends StencilHTMLAttributes {
+    'defaultCursor'?: boolean;
+  }
 
   interface QMenu {}
   interface QMenuAttributes extends StencilHTMLAttributes {}
@@ -164,11 +165,6 @@ export namespace Components {
   interface QPopUpAttributes extends StencilHTMLAttributes {
     'state'?: 'shown' | 'hidden';
   }
-
-  interface QPortal {
-    'transport': (content: HTMLElement) => void;
-  }
-  interface QPortalAttributes extends StencilHTMLAttributes {}
 
   interface QRadio {
     'checked': boolean;
@@ -229,14 +225,12 @@ declare global {
     'QCaption': Components.QCaption;
     'QCheckbox': Components.QCheckbox;
     'QGridColumn': Components.QGridColumn;
-    'QEcho': Components.QEcho;
     'QGrid': Components.QGrid;
     'QInput': Components.QInput;
     'QLabel': Components.QLabel;
     'QMenuItem': Components.QMenuItem;
     'QMenu': Components.QMenu;
     'QPopUp': Components.QPopUp;
-    'QPortal': Components.QPortal;
     'QRadio': Components.QRadio;
     'QSample': Components.QSample;
     'QEllipsis': Components.QEllipsis;
@@ -250,14 +244,12 @@ declare global {
     'q-caption': Components.QCaptionAttributes;
     'q-checkbox': Components.QCheckboxAttributes;
     'q-grid-column': Components.QGridColumnAttributes;
-    'q-echo': Components.QEchoAttributes;
     'q-grid': Components.QGridAttributes;
     'q-input': Components.QInputAttributes;
     'q-label': Components.QLabelAttributes;
     'q-menu-item': Components.QMenuItemAttributes;
     'q-menu': Components.QMenuAttributes;
     'q-pop-up': Components.QPopUpAttributes;
-    'q-portal': Components.QPortalAttributes;
     'q-radio': Components.QRadioAttributes;
     'q-sample': Components.QSampleAttributes;
     'q-ellipsis': Components.QEllipsisAttributes;
@@ -289,12 +281,6 @@ declare global {
   var HTMLQGridColumnElement: {
     prototype: HTMLQGridColumnElement;
     new (): HTMLQGridColumnElement;
-  };
-
-  interface HTMLQEchoElement extends Components.QEcho, HTMLStencilElement {}
-  var HTMLQEchoElement: {
-    prototype: HTMLQEchoElement;
-    new (): HTMLQEchoElement;
   };
 
   interface HTMLQGridElement extends Components.QGrid, HTMLStencilElement {}
@@ -331,12 +317,6 @@ declare global {
   var HTMLQPopUpElement: {
     prototype: HTMLQPopUpElement;
     new (): HTMLQPopUpElement;
-  };
-
-  interface HTMLQPortalElement extends Components.QPortal, HTMLStencilElement {}
-  var HTMLQPortalElement: {
-    prototype: HTMLQPortalElement;
-    new (): HTMLQPortalElement;
   };
 
   interface HTMLQRadioElement extends Components.QRadio, HTMLStencilElement {}
@@ -380,14 +360,12 @@ declare global {
     'q-caption': HTMLQCaptionElement
     'q-checkbox': HTMLQCheckboxElement
     'q-grid-column': HTMLQGridColumnElement
-    'q-echo': HTMLQEchoElement
     'q-grid': HTMLQGridElement
     'q-input': HTMLQInputElement
     'q-label': HTMLQLabelElement
     'q-menu-item': HTMLQMenuItemElement
     'q-menu': HTMLQMenuElement
     'q-pop-up': HTMLQPopUpElement
-    'q-portal': HTMLQPortalElement
     'q-radio': HTMLQRadioElement
     'q-sample': HTMLQSampleElement
     'q-ellipsis': HTMLQEllipsisElement
@@ -401,14 +379,12 @@ declare global {
     'q-caption': HTMLQCaptionElement;
     'q-checkbox': HTMLQCheckboxElement;
     'q-grid-column': HTMLQGridColumnElement;
-    'q-echo': HTMLQEchoElement;
     'q-grid': HTMLQGridElement;
     'q-input': HTMLQInputElement;
     'q-label': HTMLQLabelElement;
     'q-menu-item': HTMLQMenuItemElement;
     'q-menu': HTMLQMenuElement;
     'q-pop-up': HTMLQPopUpElement;
-    'q-portal': HTMLQPortalElement;
     'q-radio': HTMLQRadioElement;
     'q-sample': HTMLQSampleElement;
     'q-ellipsis': HTMLQEllipsisElement;

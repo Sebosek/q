@@ -34,6 +34,11 @@ export class Checkbox {
     }
   }
 
+  @Listen('click') handleClick(ev: MouseEvent) {
+    ev.stopPropagation()
+    this.toggle()
+  }
+
   private el: HTMLElement
 
   componentDidLoad() {
@@ -46,7 +51,6 @@ export class Checkbox {
         class="checkbox"
         tabindex={this.tabindex}
         ref={(el: HTMLElement) => this.el = el}
-        onClick={this.toggle}
       >
         <input
           type="checkbox"

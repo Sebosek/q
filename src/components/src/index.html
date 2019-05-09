@@ -44,58 +44,36 @@
     .form-item q-label {
       margin-bottom: 8px;
     }
+
+    q-checkbox {
+      margin-right: 8px;
+    }
   </style>
 </head>
 <body>
-  <q-sample></q-sample>
-  <q-button>
-    <q-ellipsis>Hello this should be a very very long text in the button, but the text SHOULD be hidden with ellipsis</q-ellipsis>
-  </q-button>
-  <q-button>Hello this should be a very very long text in the button, but the text shouldn't be hidden with ellipsis</q-button>
-  <q-toggle switched></q-toggle>
-  <br><br>
-  <div class="form-item">
-    <q-label>Your name</q-label>
-    <q-input></q-input>
-  </div>
-  <div class="form-entity">
-    <div class="form-entity__control">
-      <q-radio></q-radio>
-    </div>
-    <div class="form-entity__label">
-      <q-label>Radio item</q-label>
-      <q-caption>Some not so iportant caption.</q-caption>
-    </div>
-  </div>
-  <label class="form-entity">
-    <div class="form-entity__control">
-      <q-radio disabled checked></q-radio>
-    </div>
-    <div class="form-entity__label">
-      <q-label>Radio item</q-label>
-      <q-caption>Some not so iportant caption.</q-caption>
-    </div>
-  </label>
-  <label class="form-entity">
-    <div class="form-entity__control">
-        <q-checkbox intermediate checked></q-checkbox>
-    </div>
-    <div class="form-entity__label">
-      <q-label>Checkbox item</q-label>
-      <q-caption>Some not so iportant caption.</q-caption>
-    </div>
-  </label>
-  <q-button role="primary">Create user</q-button>
-
-  <div style="position: relative; display: inline-block;">
-    <q-button>Select an option</q-button>
-    <q-pop-up>
+  <div style="position: relative;">
+    <q-button id="select">Select an option</q-button>
+    <q-pop-up id="popup">
       <q-menu>
         <q-menu-item>Hello</q-menu-item>
-        <q-menu-item>Menu item</q-menu-item>
+        <q-menu-item>Menu item which should be so long</q-menu-item>
+        <q-menu-item default-cursor>
+          <q-checkbox></q-checkbox>
+          <q-label>Send e-mail</q-label>
+        </q-menu-item>
       </q-menu>
     </q-pop-up>
   </div>
-
   </html>
+  <script>
+    document.getElementById('select').addEventListener('click', () => {
+      const popup = document.getElementById('popup');
+      const state = popup.getAttribute('state');
+      if (!state || state === 'hidden') {
+        popup.setAttribute('state', 'shown');
+      } else {
+        popup.setAttribute('state', 'hidden');
+      }
+    })
+  </script>
 </body>

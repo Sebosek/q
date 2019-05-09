@@ -22,8 +22,16 @@
   user-select: none;
   width: 100%;
 
+  &.default {
+    cursor: default;
+  }
+
   &:hover {
     background-color: #{map-val($colors, '--q-color-gray--lightest')};
     border-color: #{map-val($colors, '--q-color-gray--lighter')};
+  }
+
+  * {
+    --q-font-size: 1em;
   }
 }

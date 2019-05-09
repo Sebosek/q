@@ -26,6 +26,7 @@ $size: 16px;
     height: $size;
     justify-content: center;
     position: relative;
+    transition: .2s;
     width: $size;
 
     & > .checkbox__control__icon {
