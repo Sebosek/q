@@ -9,6 +9,9 @@ import '@stencil/core';
 
 
 import {
+  size,
+} from './components/avatar/avatar.size';
+import {
   role,
 } from './components/button/button.role';
 import {
@@ -26,6 +29,17 @@ import {
 
 
 export namespace Components {
+
+  interface QAvatar {
+    'initials': string;
+    'size': size;
+    'src': string;
+  }
+  interface QAvatarAttributes extends StencilHTMLAttributes {
+    'initials'?: string;
+    'size'?: size;
+    'src'?: string;
+  }
 
   interface QButton {
     'disabled': boolean;
@@ -225,6 +239,7 @@ export namespace Components {
 
 declare global {
   interface StencilElementInterfaces {
+    'QAvatar': Components.QAvatar;
     'QButton': Components.QButton;
     'QCaption': Components.QCaption;
     'QCheckbox': Components.QCheckbox;
@@ -244,6 +259,7 @@ declare global {
   }
 
   interface StencilIntrinsicElements {
+    'q-avatar': Components.QAvatarAttributes;
     'q-button': Components.QButtonAttributes;
     'q-caption': Components.QCaptionAttributes;
     'q-checkbox': Components.QCheckboxAttributes;
@@ -262,6 +278,12 @@ declare global {
     'q-toggle': Components.QToggleAttributes;
   }
 
+
+  interface HTMLQAvatarElement extends Components.QAvatar, HTMLStencilElement {}
+  var HTMLQAvatarElement: {
+    prototype: HTMLQAvatarElement;
+    new (): HTMLQAvatarElement;
+  };
 
   interface HTMLQButtonElement extends Components.QButton, HTMLStencilElement {}
   var HTMLQButtonElement: {
@@ -360,6 +382,7 @@ declare global {
   };
 
   interface HTMLElementTagNameMap {
+    'q-avatar': HTMLQAvatarElement
     'q-button': HTMLQButtonElement
     'q-caption': HTMLQCaptionElement
     'q-checkbox': HTMLQCheckboxElement
@@ -379,6 +402,7 @@ declare global {
   }
 
   interface ElementTagNameMap {
+    'q-avatar': HTMLQAvatarElement;
     'q-button': HTMLQButtonElement;
     'q-caption': HTMLQCaptionElement;
     'q-checkbox': HTMLQCheckboxElement;
