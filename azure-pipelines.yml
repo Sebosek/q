@@ -19,10 +19,16 @@ steps:
     cd ./src/components
     npm install
     npm run build
-    npm run version-bump -- --alpha --version=$Build.BuildNumber
   displayName: 'npm install, build and bump-version'
 
 - task: Npm@1
   inputs:
+    command: 'custom'
+    workingDir: './src/components'
+    customCommand: 'npm run bump-version -- --alpha --version=$(Build.BuildNumber)'
+
+- task: Npm@1
+  inputs:
     command: 'publish'
+    workingDir: './src/components'
     publishEndpoint: 'myget'
