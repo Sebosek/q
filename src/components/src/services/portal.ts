@@ -1,6 +1,4 @@
-import { info } from "./logger";
-
-export class Portal {
+class Portal {
   private clone: HTMLElement
   private el: HTMLElement
 
@@ -31,7 +29,6 @@ export class Portal {
     removeEventListener('resize', this.updatePosition)
     removeEventListener('scroll', this.updatePosition)
 
-    info('portal', this.clone)
     document.body.removeChild(this.clone)
     this.el.style.visibility = 'initial'
   }
@@ -49,3 +46,5 @@ export class Portal {
     this.clone.style.transform = 'initial'
   }
 }
+
+export const portal = new Portal();

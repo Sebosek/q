@@ -27,7 +27,7 @@ function log(component: string, message: any, lvl: level) {
     'color: #fff',
     'font-weight: 500',
     `font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Ubuntu, 'Helvetica Neue', Arial, sans-serif`,
-    'font-size: 10px',
+    'font-size: 9px',
     'padding: 2px',
   ].join(';')
 

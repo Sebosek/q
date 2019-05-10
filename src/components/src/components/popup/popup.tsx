@@ -1,6 +1,5 @@
 import { Component, Prop, Watch, Element, Listen } from "@stencil/core";
-import { Portal } from "../../services/portal";
-import { info } from "../../services/logger";
+import { portal } from "../../services/portal";
 
 @Component({
   tag: 'q-pop-up',
@@ -8,13 +7,10 @@ import { info } from "../../services/logger";
   shadow: true
 })
 export class Popup {
-  private portal : Portal
-
   constructor() {
     this.styles = this.styles.bind(this)
     this.handleOffClick = this.handleOffClick.bind(this)
     this.handleClick = this.handleClick.bind(this)
-    this.portal = new Portal()
   }
 
   @Element() el : HTMLElement
@@ -24,10 +20,8 @@ export class Popup {
   @Prop({ reflectToAttr: true, mutable: true }) multipleClicks : boolean = false
 
   @Watch('state') watchState(newValue : 'shown' | 'hidden') {
-    info('popup', 'Running watch')
     if (newValue === 'shown') {
-      info('popup', this.el)
-      this.portal.mount(this.el)
+      portal.mount(this.el)
 
       if (this.offclickCloses) {
         setTimeout(() => document.addEventListener('click', this.handleOffClick), 0)
@@ -35,8 +29,7 @@ export class Popup {
     }
 
     if (newValue === 'hidden') {
-      info('popup', 'NewValue = hidden')
-      this.portal.unmount()
+      portal.unmount()
 
       if (this.offclickCloses) {
         document.removeEventListener('click', this.handleOffClick)
@@ -49,8 +42,7 @@ export class Popup {
       return
     }
 
-    this.portal.source.setAttribute('state', 'hidden')
-    info('popup', 'State = hidden on element')
+    portal.source.setAttribute('state', 'hidden')
   }
 
   handleOffClick(ev : MouseEvent) {
