@@ -1,0 +1,5 @@
+.stencil/
+node_modules/
+build/
+src/
+www/
