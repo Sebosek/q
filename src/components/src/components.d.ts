@@ -160,9 +160,13 @@ export namespace Components {
   interface QMenuAttributes extends StencilHTMLAttributes {}
 
   interface QPopUp {
+    'multipleClicks': boolean;
+    'offclickCloses': boolean;
     'state': 'shown' | 'hidden';
   }
   interface QPopUpAttributes extends StencilHTMLAttributes {
+    'multipleClicks'?: boolean;
+    'offclickCloses'?: boolean;
     'state'?: 'shown' | 'hidden';
   }
 

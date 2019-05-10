@@ -1,9 +1,15 @@
+import { info } from "./logger";
+
 export class Portal {
   private clone: HTMLElement
   private el: HTMLElement
 
   constructor() {
     this.updatePosition = this.updatePosition.bind(this)
+  }
+
+  public get source() : HTMLElement {
+    return this.el
   }
 
   public mount(el: HTMLElement) {
@@ -25,6 +31,7 @@ export class Portal {
     removeEventListener('resize', this.updatePosition)
     removeEventListener('scroll', this.updatePosition)
 
+    info('portal', this.clone)
     document.body.removeChild(this.clone)
     this.el.style.visibility = 'initial'
   }
