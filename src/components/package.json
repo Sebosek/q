@@ -14,12 +14,14 @@
     "build": "stencil build --docs",
     "start": "stencil build --dev --watch --serve",
     "test": "stencil test --spec --e2e",
-    "test.watch": "stencil test --spec --e2e --watchAll"
+    "test.watch": "stencil test --spec --e2e --watchAll",
+    "version-bump": "node script/version-bump.js"
   },
   "dependencies": {},
   "devDependencies": {
     "@stencil/core": "~0.18.1",
-    "@stencil/sass": "^0.2.1"
+    "@stencil/sass": "^0.2.1",
+    "minimist": "^1.2.0"
   },
   "license": "Apache 2.0"
 }
