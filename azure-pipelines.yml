@@ -36,7 +36,7 @@ steps:
   inputs:
     command: 'custom'
     workingDir: './src/components'
-    customCommand: 'run bump-version -- --alpha --version=$(Build.BuildNumber)'
+    customCommand: 'run version-bump -- --alpha --version=$(Build.BuildNumber)'
 
 - task: Npm@1
   inputs:
