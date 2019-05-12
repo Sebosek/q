@@ -23,38 +23,24 @@
       justify-content: center;
     }
 
-    .form-entity {
-      display: flex;
-      flex-direction: row;
-    }
-    .form-entity__control {
-      display: inline-flex;
-      justify-content: center;
-      width: 32px;
-      padding: 8px 0;
-    }
-    .form-entity__label {
-      display: inline-flex;
-      flex-direction: column;
-      padding: 8px 0;
-    }
-    .form-entity__label {
-      margin-top: 1px;
-    }
-    .form-item q-label {
-      margin-bottom: 8px;
-    }
-
     q-checkbox,
     q-avatar {
       margin-right: 8px;
     }
+
+    .person {
+      display: inline-flex;
+      flex-direction: column;
+    }
+
+    q-label {
+      margin-bottom: 0px;
+    }
   </style>
 </head>
 <body>
-  <div>
-    <q-avatar initials="SB" size="xl"></q-avatar>
-  </div>
+  <q-sample></q-sample>
+
   <div style="padding: 20px; overflow: hidden;">
     <div style="position: relative;">
       <q-button id="select">Select an option</q-button>
@@ -68,7 +54,10 @@
           </q-menu-item>
           <q-menu-item default-cursor>
             <q-avatar initials="JD" size="m"></q-avatar>
-            <q-label>John Doe</q-label>
+            <div class="person">
+              <q-label>John Doe</q-label>
+              <q-caption>Administrator</q-caption>
+            </div>
           </q-menu-item>
         </q-menu>
       </q-pop-up>

@@ -44,6 +44,7 @@
     border: none;
     background-color: transparent;
     color: #{map-val($colors, '--q-color-blackish--normal')};
+    font-family: map-val($typography, '--q-font-family');
     font-size: 1em;
     padding: 12px;
     width: 100%;

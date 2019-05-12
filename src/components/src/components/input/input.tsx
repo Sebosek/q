@@ -1,5 +1,4 @@
-import { Component, Prop, State } from '@stencil/core';
-import { InputInterface } from './input.interface';
+import { Component, Prop, Element, Method } from '@stencil/core';
 import { InputEvent } from '../shared/common';
 
 @Component({
@@ -7,26 +6,30 @@ import { InputEvent } from '../shared/common';
   styleUrl: 'input.scss',
   shadow: true
 })
-export class Input implements InputInterface {
+export class Input {
   constructor() {
     this.setValue = this.setValue.bind(this)
   }
 
   @Prop({ reflectToAttr: true, mutable: true }) placeholder: string
   @Prop({ reflectToAttr: true, mutable: true }) type: string
-  @Prop({ reflectToAttr: true, mutable: true }) default: string | number
+  @Prop({ reflectToAttr: true, mutable: true }) value: string | number
   @Prop({ reflectToAttr: true, mutable: true }) name: string
-  @Prop() prefixes: Array<(input: InputInterface) => JSX.Element> = []
-  @Prop() suffixes: Array<(input: InputInterface) => JSX.Element> = []
+  @Prop() prefixes: Array<(input: HTMLQInputElement) => HTMLElement> = []
+  @Prop() suffixes: Array<(input: HTMLQInputElement) => HTMLElement> = []
 
-  @State() value: string | number = this.default
+  @Element() el : HTMLQInputElement
+
+  @Method() async clean() {
+    this.value = null
+  }
 
   render() {
     return (
       <div class="input">
         {this.prefixes && this.prefixes.map((prefix) =>
           <div class="input__addon">
-            <div class="input__addon__control">{prefix(this)}</div>
+            <div class="input__addon__control">{prefix(this.el)}</div>
           </div>
         )}
 
@@ -40,7 +43,7 @@ export class Input implements InputInterface {
 
         {this.suffixes && this.suffixes.map((sufix) =>
           <div class="input__addon">
-            <div class="input__addon__control">{sufix(this)}</div>
+            <div class="input__addon__control">{sufix(this.el)}</div>
           </div>
         )}
       </div>
@@ -49,7 +52,5 @@ export class Input implements InputInterface {
 
   private setValue(ev: Event & InputEvent) {
     this.value = ev.target.value
-
-    return Promise.resolve();
   }
 }
