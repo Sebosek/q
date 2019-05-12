@@ -1,0 +1,83 @@
+@import "../shared/variables";
+
+.avatar {
+  $base-size: 32px;
+
+  background: #{map-val($colors, '--q-color-primary--lightest')};
+  // background: #{map-val($colors, '--q-color-primary--darker')};
+  border-radius: 50%;
+  border: 1px solid #{map-val($colors, '--q-color-primary--lighter')};
+  box-sizing: border-box;
+  display: inline-block;
+  font-family: map-val($typography, '--q-font-family');
+  font-size: 1em;
+  font-weight: 500;
+  height: $base-size;
+  line-height: 1;
+  margin: 0;
+  position: relative;
+  overflow: hidden;
+  vertical-align: middle;
+  width: $base-size;
+
+  // img {
+  //   border-radius: 50%;
+  //   height: 100%;
+  //   position: relative;
+  //   width: 100%;
+  // }
+
+  img {
+    border-radius: 50%;
+    height: 100%;
+    position: absolute;
+    width: auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+  }
+
+  &[data-initials] {
+    &:before {
+      content: attr(data-initials);
+      color: #{map-val($colors, '--q-color-primary--darker')};
+      // color: #{map-val($colors, '--q-color-primary--lightest')};
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  &.xl {
+    $base-size: 64px;
+
+    font-size: 1.8rem;
+    height: $base-size;
+    width: $base-size;
+  }
+
+  &.l {
+    $base-size: 48px;
+
+    font-size: 1.4em;
+    height: $base-size;
+    width: $base-size;
+  }
+
+  &.s {
+    $base-size: 24px;
+
+    font-size: .8em;
+    height: $base-size;
+    width: $base-size;
+  }
+
+  &.xs {
+    $base-size: 16px;
+
+    font-size: .6em;
+    height: $base-size;
+    width: $base-size;
+  }
+}

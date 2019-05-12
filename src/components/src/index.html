@@ -45,24 +45,34 @@
       margin-bottom: 8px;
     }
 
-    q-checkbox {
+    q-checkbox,
+    q-avatar {
       margin-right: 8px;
     }
   </style>
 </head>
 <body>
-  <div style="position: relative;">
-    <q-button id="select">Select an option</q-button>
-    <q-pop-up id="popup" offclick-closes multiple-clicks>
-      <q-menu>
-        <q-menu-item>Hello</q-menu-item>
-        <q-menu-item>Menu item which should be so long</q-menu-item>
-        <q-menu-item default-cursor>
-          <q-checkbox></q-checkbox>
-          <q-label>Send e-mail</q-label>
-        </q-menu-item>
-      </q-menu>
-    </q-pop-up>
+  <div>
+    <q-avatar initials="SB" size="xl"></q-avatar>
+  </div>
+  <div style="padding: 20px; overflow: hidden;">
+    <div style="position: relative;">
+      <q-button id="select">Select an option</q-button>
+      <q-pop-up id="popup" offclick-closes multiple-clicks>
+        <q-menu>
+          <q-menu-item>Hello</q-menu-item>
+          <q-menu-item>Menu item which should be so long</q-menu-item>
+          <q-menu-item default-cursor>
+            <q-checkbox></q-checkbox>
+            <q-label>Send e-mail</q-label>
+          </q-menu-item>
+          <q-menu-item default-cursor>
+            <q-avatar initials="JD" size="m"></q-avatar>
+            <q-label>John Doe</q-label>
+          </q-menu-item>
+        </q-menu>
+      </q-pop-up>
+    </div>
   </div>
   </html>
   <script>
