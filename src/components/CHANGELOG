@@ -3,6 +3,11 @@
 Keep a changelog. https://keepachangelog.com/en/1.0.0/
 
 ## Unreleased
+- Added `q-message` component
+- Added `q-avatar` component
+- Added `q-pop-up` component
+- Added `q-menu` component
+- Added `q-input` component
 - Added `q-button` component
 - Added `q-caption` component
 - Added `q-checkbox` component

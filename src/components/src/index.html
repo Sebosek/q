@@ -39,7 +39,10 @@
   </style>
 </head>
 <body>
-  <q-sample></q-sample>
+  <q-message type="success" closeable>Success message.</q-message>
+  <q-message type="danger" closeable>Danger message.</q-message>
+  <q-message type="info" closeable>Info message.</q-message>
+  <q-message id="m" closeable>Just a message.</q-message>
 
   <div style="padding: 20px; overflow: hidden;">
     <div style="position: relative;">
@@ -52,11 +55,18 @@
             <q-checkbox></q-checkbox>
             <q-label>Send e-mail</q-label>
           </q-menu-item>
-          <q-menu-item default-cursor>
+          <q-menu-item>
             <q-avatar initials="JD" size="m"></q-avatar>
             <div class="person">
               <q-label>John Doe</q-label>
               <q-caption>Administrator</q-caption>
+            </div>
+          </q-menu-item>
+          <q-menu-item>
+            <q-avatar initials="SB" size="m"></q-avatar>
+            <div class="person">
+              <q-label>Sebastian Bušek</q-label>
+              <q-caption>Fullstack dev</q-caption>
             </div>
           </q-menu-item>
         </q-menu>
