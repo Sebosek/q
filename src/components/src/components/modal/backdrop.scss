@@ -1,0 +1,29 @@
+@import "../shared/variables";
+
+:host {
+  display: none;
+  display: block;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #{map-val($colors, '--q-color-backish--normal')};
+  opacity: .3;
+  position: fixed;
+  visibility: visible;
+  transition: visibility 0s linear .2s, opacity .2s linear;
+}
+
+:host([shown]) {
+  display: block;
+}
+
+:host(.closing) {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s linear .2s, opacity .2s linear;
+}
+
+:host(.closed) {
+  display: none;
+}

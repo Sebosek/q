@@ -9,6 +9,7 @@ button {
   color: #{map-val($colors, '--q-color-blackish--normal')};
   cursor: pointer;
   display: inline-flex;
+  font-family: map-val($typography, '--q-font-family');
   font-size: #{map-val($typography, '--q-font-size')};
   font-weight: 500;
   line-height: 1;

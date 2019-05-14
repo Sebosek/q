@@ -30,8 +30,9 @@ $size: 16px;
     width: $size;
 
     & > .checkbox__control__icon {
-      width: 14px;
+      display: flex;
       height: 14px;
+      width: 14px;
 
       & > svg {
         height: 14px;

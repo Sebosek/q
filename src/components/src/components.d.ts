@@ -191,8 +191,19 @@ export namespace Components {
     'type'?: type | null;
   }
 
-  interface QModal {}
-  interface QModalAttributes extends StencilHTMLAttributes {}
+  interface QBackdrop {
+    'shown': boolean;
+  }
+  interface QBackdropAttributes extends StencilHTMLAttributes {
+    'shown'?: boolean;
+  }
+
+  interface QModal {
+    'shown': boolean;
+  }
+  interface QModalAttributes extends StencilHTMLAttributes {
+    'shown'?: boolean;
+  }
 
   interface QPopUp {
     'multipleClicks': boolean;
@@ -271,6 +282,7 @@ declare global {
     'QMenuItem': Components.QMenuItem;
     'QMenu': Components.QMenu;
     'QMessage': Components.QMessage;
+    'QBackdrop': Components.QBackdrop;
     'QModal': Components.QModal;
     'QPopUp': Components.QPopUp;
     'QRadio': Components.QRadio;
@@ -293,6 +305,7 @@ declare global {
     'q-menu-item': Components.QMenuItemAttributes;
     'q-menu': Components.QMenuAttributes;
     'q-message': Components.QMessageAttributes;
+    'q-backdrop': Components.QBackdropAttributes;
     'q-modal': Components.QModalAttributes;
     'q-pop-up': Components.QPopUpAttributes;
     'q-radio': Components.QRadioAttributes;
@@ -370,6 +383,12 @@ declare global {
     new (): HTMLQMessageElement;
   };
 
+  interface HTMLQBackdropElement extends Components.QBackdrop, HTMLStencilElement {}
+  var HTMLQBackdropElement: {
+    prototype: HTMLQBackdropElement;
+    new (): HTMLQBackdropElement;
+  };
+
   interface HTMLQModalElement extends Components.QModal, HTMLStencilElement {}
   var HTMLQModalElement: {
     prototype: HTMLQModalElement;
@@ -430,6 +449,7 @@ declare global {
     'q-menu-item': HTMLQMenuItemElement
     'q-menu': HTMLQMenuElement
     'q-message': HTMLQMessageElement
+    'q-backdrop': HTMLQBackdropElement
     'q-modal': HTMLQModalElement
     'q-pop-up': HTMLQPopUpElement
     'q-radio': HTMLQRadioElement
@@ -452,6 +472,7 @@ declare global {
     'q-menu-item': HTMLQMenuItemElement;
     'q-menu': HTMLQMenuElement;
     'q-message': HTMLQMessageElement;
+    'q-backdrop': HTMLQBackdropElement;
     'q-modal': HTMLQModalElement;
     'q-pop-up': HTMLQPopUpElement;
     'q-radio': HTMLQRadioElement;

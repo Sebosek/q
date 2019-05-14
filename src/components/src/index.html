@@ -73,6 +73,19 @@
       </q-pop-up>
     </div>
   </div>
+
+  <q-backdrop shown></q-backdrop>
+  <q-modal>
+    <!-- <div slot="title">Modal title</div> -->
+    <div slot="footer" style="align-items: center; display: flex;">
+      <q-checkbox></q-checkbox><q-label>Never show again</q-label>
+    </div>
+    <div slot="buttons">
+      <q-button>Cancel operation</q-button>
+      <q-button role="primary">Create user</q-button>
+    </div>
+    Hello here is a content.
+  </q-modal>
   </html>
   <script>
     document.getElementById('select').addEventListener('click', () => {

@@ -1,0 +1,79 @@
+@import "../shared/variables";
+
+.modal {
+  background: #{map-val($colors, '--q-color-white')};
+  border: 1px solid #{map-val($colors, '--q-color-gray--lighter')};
+  border-radius: 8px;
+  box-shadow: 0 24px 30px -24px #{map-val($colors, '--q-color-gray--normal')}, 0 0 30px 0 #{map-val($colors, '--q-color-gray--darker')};
+  font-family: map-val($typography, '--q-font-family');
+  left: 50%;
+  height: 400px;
+  margin: auto;
+  opacity: 1;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  transition: visibility 0s linear .2s, opacity .2s linear, transform .2s linear;
+  visibility: visible;
+  width: 600px;
+
+  &.closing {
+    visibility: hidden;
+    opacity: 0;
+    transform: translate(-50%, -60%);
+  }
+
+  .header {
+    display: flex;
+    padding: 16px 24px;
+
+    .title {
+      flex: 1;
+      font-size: 1.2em;
+      font-weight: 400;
+      color: #{map-val($colors, '--q-color-backish--lightest')}
+    }
+
+    .close {
+      cursor: pointer;
+      display: inline-flex;
+      height: 20px;
+      margin-top: 4px;
+      width: 20px;
+      fill: #{map-val($colors, '--q-color-gray--darker')};
+
+      &:hover {
+        fill: #{map-val($colors, '--q-color-blackish--normal')};
+      }
+    }
+  }
+
+  .divider {
+    background: #{map-val($colors, '--q-color-gray--lighter')};
+    box-sizing: border-box;
+    display: block;
+    width: 60%;
+    margin: 8px auto;
+    height: 1px;
+  }
+
+  .body {
+    padding: 8px 24px;
+  }
+
+  .footer {
+    box-sizing: border-box;
+    bottom: 0;
+    display: flex;
+    padding: 20px;
+    position: absolute;
+    width: 100%;
+
+    .content {
+      display: flex;
+      flex: 1;
+      flex-direction: row;
+      margin-right: 20px;
+    }
+  }
+}
