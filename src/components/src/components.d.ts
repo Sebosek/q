@@ -191,6 +191,9 @@ export namespace Components {
     'type'?: type | null;
   }
 
+  interface QModal {}
+  interface QModalAttributes extends StencilHTMLAttributes {}
+
   interface QPopUp {
     'multipleClicks': boolean;
     'offclickCloses': boolean;
@@ -268,6 +271,7 @@ declare global {
     'QMenuItem': Components.QMenuItem;
     'QMenu': Components.QMenu;
     'QMessage': Components.QMessage;
+    'QModal': Components.QModal;
     'QPopUp': Components.QPopUp;
     'QRadio': Components.QRadio;
     'QSample': Components.QSample;
@@ -289,6 +293,7 @@ declare global {
     'q-menu-item': Components.QMenuItemAttributes;
     'q-menu': Components.QMenuAttributes;
     'q-message': Components.QMessageAttributes;
+    'q-modal': Components.QModalAttributes;
     'q-pop-up': Components.QPopUpAttributes;
     'q-radio': Components.QRadioAttributes;
     'q-sample': Components.QSampleAttributes;
@@ -365,6 +370,12 @@ declare global {
     new (): HTMLQMessageElement;
   };
 
+  interface HTMLQModalElement extends Components.QModal, HTMLStencilElement {}
+  var HTMLQModalElement: {
+    prototype: HTMLQModalElement;
+    new (): HTMLQModalElement;
+  };
+
   interface HTMLQPopUpElement extends Components.QPopUp, HTMLStencilElement {}
   var HTMLQPopUpElement: {
     prototype: HTMLQPopUpElement;
@@ -419,6 +430,7 @@ declare global {
     'q-menu-item': HTMLQMenuItemElement
     'q-menu': HTMLQMenuElement
     'q-message': HTMLQMessageElement
+    'q-modal': HTMLQModalElement
     'q-pop-up': HTMLQPopUpElement
     'q-radio': HTMLQRadioElement
     'q-sample': HTMLQSampleElement
@@ -440,6 +452,7 @@ declare global {
     'q-menu-item': HTMLQMenuItemElement;
     'q-menu': HTMLQMenuElement;
     'q-message': HTMLQMessageElement;
+    'q-modal': HTMLQModalElement;
     'q-pop-up': HTMLQPopUpElement;
     'q-radio': HTMLQRadioElement;
     'q-sample': HTMLQSampleElement;
