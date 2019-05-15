@@ -71,11 +71,13 @@
           </q-menu-item> -->
         </q-menu>
       </q-pop-up>
+
+      <q-button id="modal-btn">Open modal</q-button>
     </div>
   </div>
 
-  <q-backdrop shown></q-backdrop>
-  <q-modal>
+  <q-backdrop id="backdrop"></q-backdrop>
+  <q-modal id="modal">
     <!-- <div slot="title">Modal title</div> -->
     <div slot="footer" style="align-items: center; display: flex;">
       <q-checkbox></q-checkbox><q-label>Never show again</q-label>
@@ -96,6 +98,13 @@
       } else {
         popup.setAttribute('state', 'hidden');
       }
-    })
+    });
+
+    document.getElementById('modal-btn').addEventListener('click', () => {
+      // const modal = document.getElementById('modal');
+      // modal.shown = true;
+      const backdrop = document.getElementById('backdrop');
+      backdrop.shown = true;
+    });
   </script>
 </body>

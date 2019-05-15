@@ -1,29 +1,57 @@
 @import "../shared/variables";
 
 :host {
-  display: none;
   display: block;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
   background: #{map-val($colors, '--q-color-backish--normal')};
-  opacity: .3;
   position: fixed;
-  visibility: visible;
-  transition: visibility 0s linear .2s, opacity .2s linear;
+  animation-duration: .2s;
+  animation-name: showup;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-play-state: paused;
+  animation-delay: 0s;
 }
 
-:host([shown]) {
-  display: block;
+:host(.showing) {
+  animation-play-state: running;
 }
 
-:host(.closing) {
-  visibility: hidden;
-  opacity: 0;
-  transition: visibility 0s linear .2s, opacity .2s linear;
+:host(.hiding) {
+  animation-name: showdown;
 }
 
-:host(.closed) {
+:host(.hidden) {
   display: none;
+}
+
+@keyframes showup {
+  0% {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  1% {
+    visibility: visible;
+  }
+
+  100% {
+    opacity: .3;
+  }
+}
+
+@keyframes showdown {
+  0% {
+    opacity: .3;
+    visibility: visible;
+  }
+
+  100% {
+    opacity: 0;
+    visibility: hidden;
+    display: none;
+  }
 }
